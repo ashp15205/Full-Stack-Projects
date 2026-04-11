@@ -12,9 +12,7 @@
     <a href="https://buymeacoffee.com/ashishp05">
       <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee" />
     </a>
-    <a href="https://github.com/ashp15205/Full-Stack-Projects">
-      <img src="https://img.shields.io/github/stars/ashp15205/Full-Stack-Projects?style=for-the-badge&logo=github&color=2ea043" alt="Star on GitHub" />
-    </a>
+    <img src="https://img.shields.io/github/stars/ashp15205/Full-Stack-Projects?style=for-the-badge&label=Stars&logo=github&color=2ea043&cacheSeconds=60" />
   </p>
 
 </div>
