@@ -5,7 +5,7 @@
   --accent: #6c63ff; --accent2: #f72585; --green: #4ade80;
   --text: #e0e0f0; --muted: #888aaa;
 }
-body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); }
+body { font-family: -apple-system, sans-serif; background: var(--bg); color: var(--text); }
 
 /* Header */
 header {
@@ -29,13 +29,12 @@ header p { color: var(--muted); margin-top: 0.3rem; }
   border: 1px solid var(--border); border-radius: 8px;
   background: #0f0f18; color: var(--text);
   font-family: inherit; font-size: 0.9rem;
-  transition: border-color 0.2s;
 }
 .field input:focus, .field select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(108,99,255,0.15); }
 .form-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
-.btn-submit { padding: 0.75rem 2rem; border: none; border-radius: 10px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+.btn-submit { padding: 0.75rem 2rem; border: none; border-radius: 10px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; font-weight: 700; font-size: 0.95rem; cursor: pointer; }
 .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(108,99,255,0.4); }
-.btn-cancel { padding: 0.75rem 1.5rem; border: 1px solid var(--border); border-radius: 10px; background: transparent; color: var(--muted); font-size: 0.9rem; cursor: pointer; transition: all 0.2s; }
+.btn-cancel { padding: 0.75rem 1.5rem; border: 1px solid var(--border); border-radius: 10px; background: transparent; color: var(--muted); font-size: 0.9rem; cursor: pointer; }
 .btn-cancel:hover { border-color: var(--accent2); color: var(--accent2); }
 
 /* Message / feedback */
@@ -55,6 +54,6 @@ th { text-align: left; padding: 0.6rem 0.9rem; background: #0f0f18; color: var(-
 td { padding: 0.75rem 0.9rem; border-bottom: 1px solid #1a1a2e; }
 tr:hover td { background: rgba(108,99,255,0.05); }
 .roll-badge { background: rgba(108,99,255,0.15); color: #aab4fc; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.78rem; font-weight: 600; }
-.btn-edit   { padding: 0.3rem 0.7rem; border: none; border-radius: 6px; background: rgba(108,99,255,0.2); color: #aab4fc; cursor: pointer; font-size: 0.78rem; font-weight: 600; margin-right: 0.4rem; transition: opacity 0.2s; }
-.btn-delete { padding: 0.3rem 0.7rem; border: none; border-radius: 6px; background: rgba(247,37,133,0.15); color: #f72585; cursor: pointer; font-size: 0.78rem; font-weight: 600; transition: opacity 0.2s; }
+.btn-edit   { padding: 0.3rem 0.7rem; border: none; border-radius: 6px; background: rgba(108,99,255,0.2); color: #aab4fc; cursor: pointer; font-size: 0.78rem; font-weight: 600; margin-right: 0.4rem; }
+.btn-delete { padding: 0.3rem 0.7rem; border: none; border-radius: 6px; background: rgba(247,37,133,0.15); color: #f72585; cursor: pointer; font-size: 0.78rem; font-weight: 600; }
 .btn-edit:hover, .btn-delete:hover { opacity: 0.75; }

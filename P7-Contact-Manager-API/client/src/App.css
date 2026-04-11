@@ -6,7 +6,7 @@
   --text: #e0e0f0; --muted: #888aaa;
   --red: #f72585;
 }
-body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); }
+body { font-family: -apple-system, sans-serif; background: var(--bg); color: var(--text); }
 
 /* Header */
 header {
@@ -38,14 +38,13 @@ h2 { font-size: 1.1rem; border-bottom: 1px solid var(--border); padding-bottom: 
   border: 1px solid var(--border); border-radius: 8px;
   background: #0f0f18; color: var(--text);
   font-family: inherit; font-size: 0.9rem;
-  transition: border-color 0.2s;
 }
 .field input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15); }
 .btn-submit {
   width: 100%; padding: 0.8rem; margin-top: 0.5rem;
   border: none; border-radius: 10px;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
-  color: #fff; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+  color: #fff; font-weight: 700; font-size: 0.95rem; cursor: pointer;
 }
 .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3); }
 
@@ -69,7 +68,7 @@ h2 { font-size: 1.1rem; border-bottom: 1px solid var(--border); padding-bottom: 
 .contact-email { font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem; }
 .contact-phone { font-size: 0.8rem; color: var(--accent); margin-top: 0.2rem; }
 
-.btn-delete { background: none; border: 1px solid rgba(247, 37, 133, 0.3); border-radius: 6px; color: var(--red); cursor: pointer; padding: 0.35rem 0.7rem; font-size: 0.8rem; font-weight: 600; transition: all 0.2s; }
+.btn-delete { background: none; border: 1px solid rgba(247, 37, 133, 0.3); border-radius: 6px; color: var(--red); cursor: pointer; padding: 0.35rem 0.7rem; font-size: 0.8rem; font-weight: 600; }
 .btn-delete:hover { background: rgba(247, 37, 133, 0.15); }
 
 .loading, .empty { text-align: center; color: var(--muted); padding: 2rem; font-size: 0.9rem; }
