@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Commerce Logic Engine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <div class="header-row">
+      <div>
+        <h1>🛒 E-Commerce Logic Engine</h1>
+        <p>Add items, apply coupons, watch total update dynamically</p>
+      </div>
+      <div class="header-admin">
+        <span id="adminBadge" class="admin-badge">👤 Customer</span>
+        <button id="adminToggle" class="btn-admin">🔐 Admin Login</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Admin Panel (hidden by default) -->
+    <section id="adminPanel" class="admin-panel hidden">
+      <div class="admin-panel-header">
+        <h3>🛡 Admin: Manage Products</h3>
+        <button class="btn-add-product" onclick="openProductForm(null)">+ Add Product</button>
+      </div>
+
+      <!-- Product Form -->
+      <div id="productFormBox" class="product-form hidden">
+        <h4 id="productFormTitle">Add Product</h4>
+        <div class="pf-row">
+          <div class="pf-field"><label>Emoji</label><input id="pfEmoji" type="text" placeholder="📦" maxlength="4"/></div>
+          <div class="pf-field"><label>Name</label><input id="pfName" type="text" placeholder="Product name"/></div>
+          <div class="pf-field"><label>Price (₹)</label><input id="pfPrice" type="number" placeholder="999" min="1"/></div>
+        </div>
+        <div class="pf-actions">
+          <button id="saveProduct" class="btn-save">💾 Save</button>
+          <button class="btn-cancel" onclick="closeProductForm()">✕ Cancel</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+      <h2>Products</h2>
+      <div class="products-grid" id="productsGrid"></div>
+    </section>
+
+    <!-- Cart -->
+    <aside class="cart-section">
+      <h2>🛍 Cart</h2>
+      <div id="cartItems" class="cart-items">
+        <p class="empty-msg">Your cart is empty</p>
+      </div>
+
+      <div class="coupon-row">
+        <input type="text" id="couponInput" placeholder="Enter coupon code" />
+        <button id="applyCoupon" class="btn-outline">Apply</button>
+      </div>
+      <p id="couponMsg" class="coupon-msg"></p>
+
+      <div class="summary">
+        <div class="summary-row"><span>Subtotal</span><span id="subtotal">₹0.00</span></div>
+        <div class="summary-row"><span>Discount</span><span id="discount" class="discount-val">-₹0.00</span></div>
+        <div class="summary-row total-row"><span>Total</span><span id="total">₹0.00</span></div>
+      </div>
+      <button class="btn-checkout" id="checkoutBtn">Proceed to Checkout →</button>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

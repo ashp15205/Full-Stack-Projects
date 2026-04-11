@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="app">
+    <!-- Start Screen -->
+    <div id="startScreen" class="screen">
+      <div class="quiz-card">
+        <div class="quiz-icon">🧠</div>
+        <h1>JavaScript Quiz</h1>
+        <p>Test your JS knowledge with 10 questions</p>
+        <div class="meta-row">
+          <span>⏱ 30s per question</span>
+          <span>📊 10 Questions</span>
+          <span>🏆 Score tracked</span>
+        </div>
+        <button id="startBtn" class="btn-start">Start Quiz →</button>
+      </div>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quizScreen" class="screen hidden">
+      <div class="quiz-card">
+        <div class="quiz-header">
+          <span id="questionNum">Q 1 / 10</span>
+          <div class="timer-ring">
+            <span id="timerDisplay">30</span>
+          </div>
+          <span id="scoreDisplay">Score: 0</span>
+        </div>
+        <div class="timer-bar"><div id="timerFill" class="timer-fill"></div></div>
+        <h2 id="questionText"></h2>
+        <div id="optionsGrid" class="options-grid"></div>
+        <button id="nextQBtn" class="btn-next-q hidden">Next Question →</button>
+      </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="resultsScreen" class="screen hidden">
+      <div class="quiz-card">
+        <div class="result-icon" id="resultIcon">🏆</div>
+        <h2 id="resultTitle">Quiz Complete!</h2>
+        <div class="score-circle">
+          <span id="finalScore">0 / 10</span>
+        </div>
+        <p id="resultMsg"></p>
+        <div id="answerReview" class="answer-review"></div>
+        <button onclick="restartQuiz()" class="btn-start">Try Again</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

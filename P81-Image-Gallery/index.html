@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>🖼 Image Gallery</h1>
+    <p>Hover for zoom · Click for full preview</p>
+  </header>
+
+  <main class="container">
+    <div class="filter-row">
+      <button class="filter-btn active" data-cat="all">All</button>
+      <button class="filter-btn" data-cat="nature">Nature</button>
+      <button class="filter-btn" data-cat="architecture">Architecture</button>
+      <button class="filter-btn" data-cat="abstract">Abstract</button>
+      <button class="filter-btn" data-cat="people">People</button>
+    </div>
+
+    <div class="masonry-grid" id="gallery"></div>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+    <button class="modal-nav prev" id="modalPrev" aria-label="Previous">‹</button>
+    <div class="modal-content">
+      <div class="modal-img" id="modalImg"></div>
+      <div class="modal-info">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+        <span class="modal-cat" id="modalCat"></span>
+      </div>
+    </div>
+    <button class="modal-nav next" id="modalNext" aria-label="Next">›</button>
+  </div>
+  <div class="overlay hidden" id="overlay"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
