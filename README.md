@@ -6,7 +6,7 @@
  > ⭐ **If this repository accelerates your learning or helps you land a role, a star goes a long way!**
 
   <p>
-    <a href="https://linkedin.com/in/ashishpatil">
+    <a href="https://www.linkedin.com/in/ashishpatil2005/">
       <img src="https://img.shields.io/badge/LinkedIn-Ashish%20Patil-0077b5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
     </a>
     <a href="https://buymeacoffee.com/ashishp05">
@@ -298,7 +298,7 @@ Contributions are welcome and encouraged.
 - **Improve** code architecture, performance, or accessibility
 - **Document** additional patterns or edge cases
 - **Open an Issue** to propose a new feature or report a bug
-- **Found a mistake?** Reach out directly on [LinkedIn](https://linkedin.com/in/ashishpatil) so we can fix it!
+- **Found a mistake?** Reach out directly on [LinkedIn](https://www.linkedin.com/in/ashishpatil2005/) so we can fix it!
 
 Please keep code clean, well-commented, and consistent with the existing project structure.
 
@@ -308,10 +308,10 @@ Please keep code clean, well-commented, and consistent with the existing project
 
 If this repository helped accelerate your learning, sharpened your development thinking, or directly supported a project — please consider:
 
-- ⭐ **[Star this repository](https://github.com/ashishpatil)** — it helps others discover it
-- 👣 **[Follow me on GitHub](https://github.com/ashishpatil)** — stay updated on my latest web dev projects
+- ⭐ **[Star this repository](https://github.com/ashp15205/Full-Stack-Projects)** — it helps others discover it
+- 👣 **[Follow me on GitHub](https://github.com/ashp15205)** — stay updated on my latest web dev projects
 - 🍴 **Fork it** and build your own pattern library on top of it
-- 🔗 **[Connect on LinkedIn](https://linkedin.com/in/ashishpatil)** — I'd genuinely love to hear how you used it, or if you spot any mistakes we can fix!
+- 🔗 **[Connect on LinkedIn](https://www.linkedin.com/in/ashishpatil2005/)** — I'd genuinely love to hear how you used it, or if you spot any mistakes we can fix!
 - ☕ **[Buy me a coffee](https://buymeacoffee.com/ashishp05)** — If my work saved you time and effort, consider fueling my next late-night coding session!
 
 ---
