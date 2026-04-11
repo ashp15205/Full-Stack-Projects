@@ -220,7 +220,7 @@ npm start
 
 ---
 
-## 📋 Exam Demo Checklist
+## 📋 Checklist
 
 - [ ] Stop and restart the server to show the examiner the **`✅ MongoDB connected`** console message.
 - [ ] Open the React app at **`http://localhost:3000`**.

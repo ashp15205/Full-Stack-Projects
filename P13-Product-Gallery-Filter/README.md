@@ -71,7 +71,7 @@ Open `index.html` in browser — no dependencies.
 
 ---
 
-## 🎓 Exam Demo Checklist
+## 🎓 Checklist
 - [ ] Click "Electronics" filter → only electronics cards show
 - [ ] Type "book" in search → only book cards show
 - [ ] Clear search → all cards restore

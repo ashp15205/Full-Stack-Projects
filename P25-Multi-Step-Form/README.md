@@ -75,7 +75,7 @@ Open `index.html` in browser.
 
 ---
 
-## 🎓 Exam Demo Checklist
+## 🎓 Checklist
 - [ ] Click Next without filling → error messages appear
 - [ ] Fill Step 1 → Next → progress bar advances + Step 1 dot turns green ✓
 - [ ] Complete Steps 2 and 3

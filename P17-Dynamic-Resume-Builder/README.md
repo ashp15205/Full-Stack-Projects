@@ -83,7 +83,7 @@ Open `index.html` in browser — no dependencies needed.
 
 ---
 
-## 🎓 Exam Demo Checklist
+## 🎓 Checklist
 - [ ] Type name → avatar initials + resume name update live
 - [ ] Type job title → preview title updates
 - [ ] Type skills with commas → pill tags appear in resume

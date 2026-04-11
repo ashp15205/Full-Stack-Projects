@@ -86,7 +86,7 @@ Open `index.html` in browser.
 
 ---
 
-## 🎓 Exam Demo Checklist
+## 🎓 Checklist
 - [ ] Click ▶ Start → timer begins running
 - [ ] Display updates smoothly (centiseconds visible)
 - [ ] Click ⏸ Pause → timer freezes

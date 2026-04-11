@@ -85,7 +85,7 @@ Open `index.html` in browser.
 
 ---
 
-## 🎓 Exam Demo Checklist
+## 🎓 Checklist
 - [ ] Type 1 char in Name → red border + "Min 2 characters" error
 - [ ] Type valid email → green border, error clears
 - [ ] Type 9-digit phone → error shown

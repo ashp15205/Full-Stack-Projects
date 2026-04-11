@@ -76,7 +76,7 @@ Open `index.html` in browser. Data persists after refresh.
 
 ---
 
-## 🎓 Exam Demo Checklist
+## 🎓 Checklist
 - [ ] Add task with High priority → red dot appears
 - [ ] Press Enter to add task quickly
 - [ ] Click checkbox → task gets strikethrough

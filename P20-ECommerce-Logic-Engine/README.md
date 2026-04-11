@@ -84,7 +84,7 @@ Open `index.html` in browser — no dependencies.
 
 ---
 
-## 🎓 Exam Demo Checklist
+## 🎓 Checklist
 - [ ] Add items to cart → subtotal updates
 - [ ] Use + / − qty buttons → total changes
 - [ ] Apply coupon `SAVE10` → discount appears

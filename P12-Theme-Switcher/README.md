@@ -77,7 +77,7 @@ Open `index.html` in browser.
 
 ---
 
-## 🎓 Exam Demo Checklist
+## 🎓 Checklist
 - [ ] Page loads in Dark mode
 - [ ] Click toggle → switches to Light mode (all colors change smoothly)
 - [ ] Click again → back to Dark

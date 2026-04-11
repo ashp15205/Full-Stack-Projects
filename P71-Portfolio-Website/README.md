@@ -80,7 +80,7 @@ Open `index.html` in browser. Uses Google Fonts CDN (needs internet for fonts).
 
 ---
 
-## 🎓 Exam Demo Checklist
+## 🎓 Checklist
 - [ ] Navbar is fixed at top, scrolls with page
 - [ ] Hero: role text rotates every 2.5 seconds
 - [ ] Scroll → active nav link highlights

@@ -79,7 +79,7 @@ Open `index.html` in browser. Click "Start Quiz →".
 
 ---
 
-## 🎓 Exam Demo Checklist
+## 🎓 Checklist
 - [ ] Click "Start Quiz →" → first question loads with 30s timer
 - [ ] Select correct answer → green highlight + score increments
 - [ ] Select wrong answer → red + correct answer shown green

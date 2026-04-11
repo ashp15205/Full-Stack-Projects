@@ -78,7 +78,7 @@ Open `index.html` in browser — no dependencies.
 
 ---
 
-## 🎓 Exam Demo Checklist
+## 🎓 Checklist
 - [ ] Drag task up/down within Todo list → order changes
 - [ ] Current order display updates after every drag
 - [ ] Drag task to Done panel → moves to completed section

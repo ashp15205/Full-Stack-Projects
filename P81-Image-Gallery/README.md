@@ -80,7 +80,7 @@ Open `index.html` in browser.
 
 ---
 
-## 🎓 Exam Demo Checklist
+## 🎓 Checklist
 - [ ] Gallery loads with all 15 cards in masonry layout
 - [ ] Click "Architecture" → only architecture cards show
 - [ ] Click "All" → all cards restore

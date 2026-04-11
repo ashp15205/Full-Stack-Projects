@@ -312,7 +312,7 @@ Then visit: **http://localhost:3000**
 
 ---
 
-## 📋 Exam Demo Checklist
+## 📋 Checklist
 
 - [ ] Show MongoDB running (mongod or Compass open)
 - [ ] Show server terminal with "MongoDB connected" message

@@ -73,7 +73,7 @@ Open `index.html` in browser. **Resize window** to see mobile hamburger.
 
 ---
 
-## 🎓 Exam Demo Checklist
+## 🎓 Checklist
 - [ ] Scroll down → navbar shadow appears (sticky effect)
 - [ ] Scroll past sections → active nav link changes
 - [ ] Click "Services" → dropdown menu appears

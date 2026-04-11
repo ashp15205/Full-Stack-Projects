@@ -106,7 +106,7 @@ Open `index.html` in browser — needs Chart.js CDN (or save locally).
 
 ---
 
-## 🎓 Exam Demo Checklist
+## 🎓 Checklist
 - [ ] Show KPI cards with calculated totals
 - [ ] Show all 4 charts rendering
 - [ ] Click "Admin Login" — admin panel unlocks
