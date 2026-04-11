@@ -44,12 +44,22 @@ A selection of projects built in this repository that demonstrate both frontend 
 
 | 🏗️ Project | 🛠 Stack | ✨ Highlights |
 |------------|---------|--------------|
-| 📄 **Dynamic Resume Builder** | HTML · CSS · JS | Live DOM preview, multi-entry sections, inline CRUD |
-| 🛒 **E-Commerce Logic Engine** | HTML · CSS · JS | Cart management, coupon engine, admin product CRUD |
-| 📊 **Monthly Sales Dashboard** | Chart.js · JS | Bar, Line & Pie charts with admin data management |
-| 🖼 **Masonry Image Gallery** | HTML · CSS · JS | CSS columns, modal lightbox, category filter |
-| 📋 **Contact Manager API** | MongoDB · Express · React · Node | Full MERN REST API with browser UI client |
-| 🎓 **Student Registration System** | MongoDB · Express · React · Node | Complete MERN CRUD: Create, Read, Update, Delete |
+| 🎓 **P84: Student Registration** | MongoDB · Express · React · Node | Complete MERN CRUD workflow: Create, Read, Update, Delete |
+| 📋 **P7: Contact Manager API** | MongoDB · Express · React · Node | Full MERN REST API integrated with a browser UI client |
+| 🛒 **P20: E-Commerce Logic Engine** | HTML · CSS · JS | Cart management, coupon engine, dynamic totals, admin product CRUD |
+| 📊 **P73: Monthly Sales Dashboard** | Chart.js · JS | Interactive Bar, Line & Pie charts with admin data management |
+| 🖼 **P81: Masonry Image Gallery** | HTML · CSS · JS | CSS masonry block columns, modal lightbox, category DOM filtering |
+| 📄 **P17: Dynamic Resume Builder** | HTML · CSS · JS | Live right-pane DOM preview, multi-entry inline CRUD logic |
+| 🎨 **P12: Theme Switcher** | HTML · CSS · JS | Dynamic CSS variables toggling with permanent `localStorage` memory |
+| 🔍 **P13: Product Gallery Filter** | HTML · CSS · JS | `Array.filter` based reactive grid rendering with admin entry panel |
+| 📝 **P25: Multi-Step Form** | HTML · CSS · JS | Step-gated navigation, visual progress bar, required step validation |
+| 🛡 **P32: Form Validation** | HTML · CSS · JS | Real-time Regex validation, dynamic visual password strength meter |
+| 📱 **P42: Responsive Navbar** | HTML · CSS · JS | Smooth scroll-spy, active viewport states, mobile hamburger menu |
+| ⏱ **P46: Stopwatch** | HTML · CSS · JS | Precision tracking using `requestAnimationFrame` and recorded laps |
+| 🖐 **P51: Drag & Drop List** | HTML · CSS · JS | HTML5 Drag/Drop API, `dragover` overrides, array `splice` reordering |
+| ✅ **P65: To-Do List** | HTML · CSS · JS | Persistent `localStorage` tracking, UI state changes, inline item editing |
+| 🧠 **P67: Quiz App** | HTML · CSS · JS | Sequential question rendering, `setInterval` countdown timer, score tally |
+| 💼 **P71: Portfolio Website** | HTML · CSS · JS | Sectioned semantic layout, infinite rotating roles, smooth reveals |
 
 ---
 
