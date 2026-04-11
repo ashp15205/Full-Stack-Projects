@@ -10,12 +10,9 @@ const validators = {
       const age = (Date.now() - new Date(v)) / (365.25 * 24 * 3600 * 1000);
       return age >= 13 ? '' : 'You must be at least 13 years old'; } },
 };
-
-// Real-time validation
 Object.entries(validators).forEach(([key, vld]) => {
   vld.el.addEventListener('input', () => validateField(vld));
 });
-
 function validateField(vld) {
   const msg = vld.fn(vld.el.value);
   vld.errEl.textContent = msg;
@@ -23,13 +20,10 @@ function validateField(vld) {
   vld.el.classList.toggle('invalid', !!msg);
   return !msg;
 }
-
-// Password strength
 const pwdEl = document.getElementById('password');
 const pwdErr = document.getElementById('passwordErr');
 const strengthFill = document.getElementById('strengthFill');
 const strengthLabel = document.getElementById('strengthLabel');
-
 pwdEl.addEventListener('input', () => {
   const v = pwdEl.value;
   let score = 0;
@@ -37,7 +31,6 @@ pwdEl.addEventListener('input', () => {
   if (/[A-Z]/.test(v)) score++;
   if (/[0-9]/.test(v)) score++;
   if (/[^A-Za-z0-9]/.test(v)) score++;
-
   const levels = [
     {w:'0%', color:'#f72585', label:''},
     {w:'25%', color:'#f72585', label:'Weak'},
@@ -49,14 +42,11 @@ pwdEl.addEventListener('input', () => {
   strengthFill.style.background = levels[score].color;
   strengthLabel.textContent = levels[score].label;
   strengthLabel.style.color = levels[score].color;
-
   const err = v.length >= 8 ? '' : 'Password must be at least 8 characters';
   pwdErr.textContent = err;
   pwdEl.classList.toggle('valid', !err);
   pwdEl.classList.toggle('invalid', !!err);
 });
-
-// Confirm password
 const confirmEl = document.getElementById('confirm');
 const confirmErr = document.getElementById('confirmErr');
 confirmEl.addEventListener('input', () => {
@@ -65,23 +55,17 @@ confirmEl.addEventListener('input', () => {
   confirmEl.classList.toggle('valid', match);
   confirmEl.classList.toggle('invalid', !match);
 });
-
-// Toggle password visibility
 document.getElementById('togglePwd').addEventListener('click', () => {
   pwdEl.type = pwdEl.type === 'password' ? 'text' : 'password';
 });
-
-// Submit
 document.getElementById('regForm').addEventListener('submit', e => {
   e.preventDefault();
   let valid = true;
   Object.values(validators).forEach(v => { if (!validateField(v)) valid = false; });
-
   if (!pwdEl.value || pwdEl.value.length < 8) { pwdErr.textContent = 'Password must be at least 8 characters'; valid = false; }
   if (confirmEl.value !== pwdEl.value) { confirmErr.textContent = 'Passwords do not match'; valid = false; }
   if (!document.getElementById('terms').checked) { document.getElementById('termsErr').textContent = 'You must accept the terms'; valid = false; }
   else { document.getElementById('termsErr').textContent = ''; }
-
   if (valid) {
     document.getElementById('successMsg').classList.remove('hidden');
     document.getElementById('regForm').reset();

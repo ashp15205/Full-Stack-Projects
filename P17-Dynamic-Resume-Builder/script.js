@@ -1,4 +1,3 @@
-// Live preview text fields
 const textFields = [
   ['fullName',  'prevName'],
   ['jobTitle',  'prevTitle'],
@@ -7,7 +6,6 @@ const textFields = [
   ['location',  'prevLocation'],
   ['summary',   'prevSummary'],
 ];
-
 textFields.forEach(([inputId, previewId]) => {
   const input   = document.getElementById(inputId);
   const preview = document.getElementById(previewId);
@@ -16,14 +14,10 @@ textFields.forEach(([inputId, previewId]) => {
     preview.textContent = input.value.trim() || preview.dataset.placeholder || '';
   });
 });
-
-// Avatar initials
 document.getElementById('fullName').addEventListener('input', function () {
   const initials = this.value.split(' ').map(w => w[0]).join('').toUpperCase().slice(0,2) || 'YN';
   document.getElementById('prevAvatar').textContent = initials;
 });
-
-// Skills tags
 document.getElementById('skills').addEventListener('input', function () {
   const container = document.getElementById('prevSkills');
   const skills = this.value.split(',').map(s => s.trim()).filter(Boolean);
@@ -31,11 +25,8 @@ document.getElementById('skills').addEventListener('input', function () {
     ? skills.map(s => `<span class="tag">${s}</span>`).join('')
     : '<span class="tag">Add your skills above</span>';
 });
-
-/* ── EXPERIENCE CRUD ── */
 let experiences = [];
 let editExpIdx  = null;
-
 function renderExperiences() {
   const list = document.getElementById('expList');
   list.innerHTML = experiences.length === 0
@@ -51,8 +42,6 @@ function renderExperiences() {
             <button onclick="deleteExp(${i})" class="del">🗑</button>
           </div>
         </div>`).join('');
-
-  // Update preview
   document.getElementById('prevExpSection').innerHTML = experiences.map(e => `
     <div class="exp-block" style="margin-bottom:0.8rem">
       <div class="exp-header">
@@ -63,7 +52,6 @@ function renderExperiences() {
       <p style="color:#333;font-size:0.85rem;line-height:1.5">${e.desc}</p>
     </div>`).join('') || '<p style="color:#888;font-size:0.88rem">No experience added</p>';
 }
-
 function openExpForm(idx) {
   editExpIdx = idx;
   document.getElementById('expForm').classList.remove('hidden');
@@ -78,10 +66,8 @@ function openExpForm(idx) {
     ['expCompany','expRole','expDuration','expDesc'].forEach(id => document.getElementById(id).value = '');
   }
 }
-
 function closeExpForm() { document.getElementById('expForm').classList.add('hidden'); editExpIdx = null; }
 window.closeExpForm = closeExpForm;
-
 function editExp(i)   { openExpForm(i); }
 function deleteExp(i) {
   if (!confirm('Delete this experience?')) return;
@@ -90,7 +76,6 @@ function deleteExp(i) {
 }
 window.editExp = editExp;
 window.deleteExp = deleteExp;
-
 document.getElementById('addExpBtn').addEventListener('click', () => openExpForm(null));
 document.getElementById('saveExpBtn').addEventListener('click', () => {
   const entry = {
@@ -105,11 +90,8 @@ document.getElementById('saveExpBtn').addEventListener('click', () => {
   closeExpForm();
   renderExperiences();
 });
-
-/* ── EDUCATION CRUD ── */
 let educations = [];
 let editEduIdx = null;
-
 function renderEducations() {
   const list = document.getElementById('eduList');
   list.innerHTML = educations.length === 0
@@ -125,7 +107,6 @@ function renderEducations() {
             <button onclick="deleteEdu(${i})" class="del">🗑</button>
           </div>
         </div>`).join('');
-
   document.getElementById('prevEduSection').innerHTML = educations.map(e => `
     <div class="exp-block" style="margin-bottom:0.6rem">
       <div class="exp-header">
@@ -135,7 +116,6 @@ function renderEducations() {
       <div class="exp-company">${e.college}</div>
     </div>`).join('') || '<p style="color:#888;font-size:0.88rem">No education added</p>';
 }
-
 function openEduForm(idx) {
   editEduIdx = idx;
   document.getElementById('eduForm').classList.remove('hidden');
@@ -149,10 +129,8 @@ function openEduForm(idx) {
     ['eduDegree','eduCollege','eduYear'].forEach(id => document.getElementById(id).value = '');
   }
 }
-
 function closeEduForm() { document.getElementById('eduForm').classList.add('hidden'); editEduIdx = null; }
 window.closeEduForm = closeEduForm;
-
 function editEdu(i)   { openEduForm(i); }
 function deleteEdu(i) {
   if (!confirm('Delete this education?')) return;
@@ -161,7 +139,6 @@ function deleteEdu(i) {
 }
 window.editEdu = editEdu;
 window.deleteEdu = deleteEdu;
-
 document.getElementById('addEduBtn').addEventListener('click', () => openEduForm(null));
 document.getElementById('saveEduBtn').addEventListener('click', () => {
   const entry = {
@@ -175,14 +152,9 @@ document.getElementById('saveEduBtn').addEventListener('click', () => {
   closeEduForm();
   renderEducations();
 });
-
-// Download
 document.getElementById('downloadBtn').addEventListener('click', () => window.print());
-
 const printStyle = document.createElement('style');
 printStyle.textContent = `@media print{body{background:#fff;}.form-panel,header{display:none!important;}.container{display:block;}.resume{box-shadow:none;}}`;
 document.head.appendChild(printStyle);
-
-// Init
 renderExperiences();
 renderEducations();

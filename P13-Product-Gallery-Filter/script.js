@@ -1,34 +1,20 @@
 let products = [
-  {id:1, name:'Wireless Earbuds', category:'electronics', price:2499, emoji:'🎧', rating:5},
-  {id:2, name:'Smart Watch', category:'electronics', price:8999, emoji:'⌚', rating:4},
-  {id:3, name:'Laptop Stand', category:'electronics', price:1299, emoji:'💻', rating:5},
-  {id:4, name:'Denim Jacket', category:'clothing', price:1799, emoji:'🧥', rating:4},
-  {id:5, name:'Running Shoes', category:'sports', price:3499, emoji:'👟', rating:5},
-  {id:6, name:'JavaScript Book', category:'books', price:599, emoji:'📗', rating:5},
-  {id:7, name:'Yoga Mat', category:'sports', price:799, emoji:'🧘', rating:4},
-  {id:8, name:'Cotton T-Shirt', category:'clothing', price:349, emoji:'👕', rating:3},
-  {id:9, name:'Design Thinking', category:'books', price:449, emoji:'📘', rating:4},
-  {id:10, name:'Mechanical Keyboard', category:'electronics', price:2999, emoji:'⌨️', rating:5},
-  {id:11, name:'Dumbbells Set', category:'sports', price:1599, emoji:'🏋️', rating:4},
-  {id:12, name:'Winter Hoodie', category:'clothing', price:1199, emoji:'🧤', rating:4},
+{id:1, name:'Wireless Earbuds', category:'electronics', price:2499, emoji:'🎧', rating:5},
+{id:2, name:'Smart Watch', category:'electronics', price:8999, emoji:'⌚', rating:4},
+{id:3, name:'Laptop Stand', category:'electronics', price:1299, emoji:'💻', rating:5}
 ];
-
 let nextId = 13;
 let currentCat = 'all';
 let searchQuery = '';
 let isAdmin = false;
 let editingId = null;
-
-/* ── Admin Toggle ── */
 document.getElementById('adminToggle').addEventListener('click', () => {
   isAdmin = !isAdmin;
   document.getElementById('adminToggle').textContent = isAdmin ? '🔓 Admin Logout' : '🔐 Admin Login';
   document.getElementById('addProductBtn').classList.toggle('hidden', !isAdmin);
   render();
 });
-
 document.getElementById('addProductBtn').addEventListener('click', () => openAdminForm(null));
-
 function openAdminForm(id) {
   editingId = id;
   document.getElementById('adminForm').classList.remove('hidden');
@@ -44,22 +30,18 @@ function openAdminForm(id) {
     ['fEmoji','fName','fPrice','fRating'].forEach(id => document.getElementById(id).value = '');
   }
 }
-
 function closeAdminForm() {
   document.getElementById('adminForm').classList.add('hidden');
   editingId = null;
 }
 window.closeAdminForm = closeAdminForm;
-
 document.getElementById('saveProductBtn').addEventListener('click', () => {
   const emoji    = document.getElementById('fEmoji').value.trim() || '📦';
   const name     = document.getElementById('fName').value.trim();
   const category = document.getElementById('fCat').value;
   const price    = parseInt(document.getElementById('fPrice').value);
   const rating   = Math.min(5, Math.max(1, parseInt(document.getElementById('fRating').value) || 3));
-
   if (!name || !price) { alert('Name and Price are required'); return; }
-
   if (editingId) {
     const p = products.find(p => p.id === editingId);
     Object.assign(p, { emoji, name, category, price, rating });
@@ -69,7 +51,6 @@ document.getElementById('saveProductBtn').addEventListener('click', () => {
   closeAdminForm();
   render();
 });
-
 function deleteProduct(id) {
   if (!confirm('Delete this product?')) return;
   products = products.filter(p => p.id !== id);
@@ -77,24 +58,18 @@ function deleteProduct(id) {
 }
 window.deleteProduct = deleteProduct;
 window.openAdminForm = openAdminForm;
-
-/* ── Render ── */
 function starsHtml(n) { return '⭐'.repeat(n) + '☆'.repeat(5 - n); }
-
 function render() {
   const filtered = products.filter(p => {
     const matchCat    = currentCat === 'all' || p.category === currentCat;
     const matchSearch = p.name.toLowerCase().includes(searchQuery);
     return matchCat && matchSearch;
   });
-
   const grid      = document.getElementById('grid');
   const noResults = document.getElementById('noResults');
   countMsg.textContent = `Showing ${filtered.length} of ${products.length} products`;
-
   if (filtered.length === 0) { grid.innerHTML = ''; noResults.classList.remove('hidden'); return; }
   noResults.classList.add('hidden');
-
   grid.innerHTML = filtered.map(p => `
     <div class="product-card">
       <div class="card-img">${p.emoji}</div>
@@ -112,9 +87,7 @@ function render() {
     </div>
   `).join('');
 }
-
 const countMsg = document.getElementById('countMsg');
-
 document.getElementById('filterBtns').addEventListener('click', e => {
   if (!e.target.classList.contains('filter-btn')) return;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -122,10 +95,8 @@ document.getElementById('filterBtns').addEventListener('click', e => {
   currentCat = e.target.dataset.cat;
   render();
 });
-
 document.getElementById('searchInput').addEventListener('input', e => {
   searchQuery = e.target.value.trim().toLowerCase();
   render();
 });
-
 render();

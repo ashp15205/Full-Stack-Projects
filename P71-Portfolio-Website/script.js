@@ -1,16 +1,8 @@
 const skills = [
-  {icon:'⚛️', name:'React', pct:85},
-  {icon:'🌐', name:'HTML5', pct:95},
-  {icon:'🎨', name:'CSS3', pct:90},
-  {icon:'⚡', name:'JavaScript', pct:88},
-  {icon:'🔷', name:'TypeScript', pct:75},
-  {icon:'🟢', name:'Node.js', pct:70},
-  {icon:'🍃', name:'MongoDB', pct:65},
-  {icon:'🐙', name:'Git', pct:80},
-  {icon:'📦', name:'Webpack', pct:60},
-  {icon:'🎯', name:'Figma', pct:72},
+{icon:'⚛️', name:'React', pct:85},
+{icon:'🌐', name:'HTML5', pct:95},
+{icon:'🎨', name:'CSS3', pct:90}
 ];
-
 const projects = [
   {icon:'🛒', name:'E-Commerce Platform', desc:'Full-stack MERN shopping platform with cart, auth, and payment integration.', tags:['React','Node.js','MongoDB','Express']},
   {icon:'📊', name:'Sales Dashboard', desc:'Real-time analytics dashboard with Chart.js visualizations and KPI tracking.', tags:['JavaScript','Chart.js','CSS']},
@@ -19,8 +11,6 @@ const projects = [
   {icon:'🎮', name:'Quiz Game App', desc:'Multiplayer quiz with real-time scoring, leaderboard, and timer.', tags:['JavaScript','Socket.io','CSS']},
   {icon:'🗂', name:'Task Manager', desc:'Kanban-style task manager with drag & drop, labels, and due dates.', tags:['React','localStorage','DnD API']},
 ];
-
-// Render Skills
 document.getElementById('skillsGrid').innerHTML = skills.map(s => `
   <div class="skill-card">
     <span class="skill-icon">${s.icon}</span>
@@ -28,8 +18,6 @@ document.getElementById('skillsGrid').innerHTML = skills.map(s => `
     <div class="skill-bar"><div class="skill-fill" style="width:${s.pct}%"></div></div>
   </div>
 `).join('');
-
-// Render Projects
 document.getElementById('projectsGrid').innerHTML = projects.map(p => `
   <div class="project-card">
     <div class="project-icon">${p.icon}</div>
@@ -38,13 +26,9 @@ document.getElementById('projectsGrid').innerHTML = projects.map(p => `
     <div class="project-tags">${p.tags.map(t => `<span class="project-tag">${t}</span>`).join('')}</div>
   </div>
 `).join('');
-
-// Hamburger
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.querySelector('.nav-links');
 hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-
-// Role rotator
 const roles = ['Frontend Developer', 'UI/UX Enthusiast', 'React Engineer', 'Full Stack Developer'];
 let roleIdx = 0;
 const roleEl = document.getElementById('roleText');
@@ -54,8 +38,6 @@ setInterval(() => {
   setTimeout(() => { roleEl.textContent = roles[roleIdx]; roleEl.style.opacity = '1'; }, 300);
 }, 2500);
 roleEl.style.transition = 'opacity 0.3s';
-
-// Active nav link on scroll
 const sections = document.querySelectorAll('section[id]');
 window.addEventListener('scroll', () => {
   let current = '';
@@ -64,15 +46,11 @@ window.addEventListener('scroll', () => {
     a.style.color = a.getAttribute('href') === '#' + current ? '#fff' : '';
   });
 });
-
-// Contact form
 document.getElementById('contactForm').addEventListener('submit', e => {
   e.preventDefault();
   document.getElementById('formMsg').textContent = '🎉 Message sent! I\'ll get back to you soon.';
   e.target.reset();
 });
-
-// Scroll sticky navbar
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').style.boxShadow =
     window.scrollY > 20 ? '0 4px 24px rgba(0,0,0,0.4)' : '';

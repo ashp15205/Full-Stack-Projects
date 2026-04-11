@@ -1,20 +1,15 @@
-/* ── P65 Todo: Updated script with inline Edit ── */
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 let filter = 'all';
 let editingId = null;
-
 function save() { localStorage.setItem('tasks', JSON.stringify(tasks)); }
-
 function render() {
   const filtered = tasks.filter(t => {
     if (filter === 'active') return !t.done;
     if (filter === 'completed') return t.done;
     return true;
   });
-
   const list = document.getElementById('taskList');
   const empty = document.getElementById('emptyMsg');
-
   if (filtered.length === 0) {
     list.innerHTML = '';
     empty.classList.remove('hidden');
@@ -22,7 +17,6 @@ function render() {
     empty.classList.add('hidden');
     list.innerHTML = filtered.map(t => {
       if (editingId === t.id) {
-        // Inline edit mode
         return `
           <li class="task-item editing" data-id="${t.id}">
             <span class="priority-dot ${t.priority}"></span>
@@ -46,12 +40,10 @@ function render() {
         </li>`;
     }).join('');
   }
-
   const total = tasks.length;
   const done = tasks.filter(t => t.done).length;
   document.getElementById('taskCount').textContent = `${total} tasks · ${done} completed`;
 }
-
 function addTask() {
   const input = document.getElementById('taskInput');
   const text = input.value.trim();
@@ -61,24 +53,20 @@ function addTask() {
   save(); render();
   input.value = ''; input.focus();
 }
-
 function toggleDone(id) {
   const t = tasks.find(t => t.id === id);
   if (t) { t.done = !t.done; save(); render(); }
 }
-
 function deleteTask(id) {
   if (!confirm('Delete this task?')) return;
   tasks = tasks.filter(t => t.id !== id);
   save(); render();
 }
-
 function startEdit(id) {
   editingId = id;
   render();
   document.getElementById('editInput_' + id)?.focus();
 }
-
 function saveEdit(id) {
   const newText = document.getElementById('editInput_' + id)?.value.trim();
   const newPrio = document.getElementById('editPrio_' + id)?.value;
@@ -88,12 +76,9 @@ function saveEdit(id) {
   editingId = null;
   save(); render();
 }
-
 function cancelEdit() { editingId = null; render(); }
-
 document.getElementById('addBtn').addEventListener('click', addTask);
 document.getElementById('taskInput').addEventListener('keydown', e => { if (e.key === 'Enter') addTask(); });
-
 document.querySelectorAll('.filt').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filt').forEach(b => b.classList.remove('active'));
@@ -102,10 +87,8 @@ document.querySelectorAll('.filt').forEach(btn => {
     render();
   });
 });
-
 document.getElementById('clearCompleted').addEventListener('click', () => {
   tasks = tasks.filter(t => !t.done);
   save(); render();
 });
-
 render();

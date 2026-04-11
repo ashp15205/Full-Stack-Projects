@@ -1,25 +1,18 @@
 let products = [
-  { id: 1, name: 'Mechanical Keyboard', price: 2499, emoji: '⌨️' },
-  { id: 2, name: 'Wireless Mouse',       price: 899,  emoji: '🖱️' },
-  { id: 3, name: 'USB-C Hub',            price: 1299, emoji: '🔌' },
-  { id: 4, name: 'Webcam HD',            price: 1799, emoji: '📷' },
-  { id: 5, name: 'LED Desk Lamp',        price: 699,  emoji: '💡' },
-  { id: 6, name: 'Headphones',           price: 2999, emoji: '🎧' },
+{ id: 1, name: 'Mechanical Keyboard', price: 2499, emoji: '⌨️' },
+{ id: 2, name: 'Wireless Mouse',       price: 899,  emoji: '🖱️' },
+{ id: 3, name: 'USB-C Hub',            price: 1299, emoji: '🔌' }
 ];
-
 const COUPONS = {
   SAVE10:  { type:'percent', value:10  },
   FLAT200: { type:'flat',    value:200 },
   HALF:    { type:'percent', value:50  },
 };
-
 let cart = {};
 let appliedCoupon = null;
 let isAdmin = false;
 let editingId = null;
 let nextId = 7;
-
-/* ── Admin Toggle ── */
 document.getElementById('adminToggle').addEventListener('click', () => {
   isAdmin = !isAdmin;
   document.getElementById('adminToggle').textContent = isAdmin ? '🔓 Admin Logout' : '🔐 Admin Login';
@@ -27,8 +20,6 @@ document.getElementById('adminToggle').addEventListener('click', () => {
   document.getElementById('adminPanel').classList.toggle('hidden', !isAdmin);
   renderProducts();
 });
-
-/* ── Admin: open/close form ── */
 function openProductForm(id) {
   editingId = id;
   document.getElementById('productFormBox').classList.remove('hidden');
@@ -42,42 +33,35 @@ function openProductForm(id) {
     ['pfEmoji','pfName','pfPrice'].forEach(i => document.getElementById(i).value = '');
   }
 }
-
 function closeProductForm() {
   document.getElementById('productFormBox').classList.add('hidden');
   editingId = null;
 }
 window.openProductForm = openProductForm;
 window.closeProductForm = closeProductForm;
-
 document.getElementById('saveProduct').addEventListener('click', () => {
   const emoji = document.getElementById('pfEmoji').value.trim() || '📦';
   const name  = document.getElementById('pfName').value.trim();
   const price = parseInt(document.getElementById('pfPrice').value);
   if (!name || !price) { alert('Name and price are required'); return; }
-
   if (editingId) {
     const p = products.find(p => p.id === editingId);
     Object.assign(p, { emoji, name, price });
-    // Update qty in cart if price changed
   } else {
     products.push({ id: nextId++, name, price, emoji });
   }
   closeProductForm();
   renderProducts();
-  renderCart();        // re-render cart in case price changed
+  renderCart();        
 });
-
 function deleteProduct(id) {
   if (!confirm('Delete this product?')) return;
   products = products.filter(p => p.id !== id);
-  delete cart[id];    // remove from cart if present
+  delete cart[id];    
   renderProducts();
   renderCart();
 }
 window.deleteProduct = deleteProduct;
-
-/* ── Render Products ── */
 function renderProducts() {
   const grid = document.getElementById('productsGrid');
   grid.innerHTML = products.map(p => `
@@ -94,8 +78,6 @@ function renderProducts() {
     </div>
   `).join('');
 }
-
-/* ── Cart CRUD (unchanged) ── */
 function addToCart(id) { cart[id] = (cart[id] || 0) + 1; renderCart(); }
 function removeFromCart(id) { delete cart[id]; renderCart(); }
 function changeQty(id, delta) {
@@ -106,16 +88,13 @@ function changeQty(id, delta) {
 window.addToCart = addToCart;
 window.removeFromCart = removeFromCart;
 window.changeQty = changeQty;
-
 function renderCart() {
   const container = document.getElementById('cartItems');
   const ids = Object.keys(cart).filter(id => products.find(p => p.id === +id));
-
   if (ids.length === 0) {
     container.innerHTML = '<p class="empty-msg">Your cart is empty</p>';
     updateSummary(0); return;
   }
-
   container.innerHTML = ids.map(id => {
     const p = products.find(x => x.id === +id);
     const qty = cart[id];
@@ -132,11 +111,9 @@ function renderCart() {
         <button class="remove-btn" onclick="removeFromCart(${id})">✕</button>
       </div>`;
   }).join('');
-
   const subtotal = ids.reduce((s, id) => s + products.find(x => x.id === +id).price * cart[id], 0);
   updateSummary(subtotal);
 }
-
 function updateSummary(subtotal) {
   let discount = 0;
   if (appliedCoupon) {
@@ -148,8 +125,6 @@ function updateSummary(subtotal) {
   document.getElementById('discount').textContent = `-₹${discount.toLocaleString()}`;
   document.getElementById('total').textContent    = `₹${total.toLocaleString()}`;
 }
-
-/* ── Coupon ── */
 document.getElementById('applyCoupon').addEventListener('click', () => {
   const code = document.getElementById('couponInput').value.trim().toUpperCase();
   const msg  = document.getElementById('couponMsg');
@@ -165,8 +140,6 @@ document.getElementById('applyCoupon').addEventListener('click', () => {
   }
   renderCart();
 });
-
-/* ── Checkout ── */
 document.getElementById('checkoutBtn').addEventListener('click', () => {
   if (!Object.keys(cart).length) { alert('Add items to cart first!'); return; }
   alert('🎉 Order placed! Thank you.');
@@ -175,7 +148,5 @@ document.getElementById('checkoutBtn').addEventListener('click', () => {
   document.getElementById('couponMsg').textContent = '';
   renderCart();
 });
-
-/* ── Init ── */
 renderProducts();
 renderCart();

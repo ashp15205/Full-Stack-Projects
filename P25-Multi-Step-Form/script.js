@@ -1,20 +1,17 @@
 const TOTAL_STEPS = 4;
 let currentStep = 1;
 const data = {};
-
 function init() {
   renderIndicators();
   showStep(1);
   updateProgress();
 }
-
 function renderIndicators() {
   const c = document.getElementById('stepIndicators');
   c.innerHTML = Array.from({length: TOTAL_STEPS}, (_, i) => `
     <div class="step-dot" id="dot${i+1}">${i+1}</div>
   `).join('');
 }
-
 function updateProgress() {
   document.getElementById('progressFill').style.width = ((currentStep - 1) / TOTAL_STEPS * 100) + '%';
   for (let i = 1; i <= TOTAL_STEPS; i++) {
@@ -29,18 +26,15 @@ function updateProgress() {
   else if (currentStep === 5) { document.getElementById('navBtns').style.display = 'none'; }
   else { nextBtn.textContent = 'Next →'; }
 }
-
 function showStep(n) {
   document.querySelectorAll('.step').forEach(s => s.classList.add('hidden'));
   document.getElementById('step' + n).classList.remove('hidden');
 }
-
 function validateStep() {
   const errs = { firstName:'firstNameErr', lastName:'lastNameErr', dob:'dobErr',
                   email:'emailErr', phone:'phoneErr', city:'cityErr',
                   username:'usernameErr', password:'passwordErr', role:'roleErr' };
   let valid = true;
-
   function check(id, errId, fn) {
     const el = document.getElementById(id);
     if (!el) return;
@@ -49,7 +43,6 @@ function validateStep() {
     el.classList.toggle('invalid', !!msg);
     if (msg) valid = false;
   }
-
   if (currentStep === 1) {
     check('firstName','firstNameErr', v => v.trim().length >= 2 ? '' : 'Required (min 2 chars)');
     check('lastName','lastNameErr', v => v.trim().length >= 2 ? '' : 'Required (min 2 chars)');
@@ -65,7 +58,6 @@ function validateStep() {
   }
   return valid;
 }
-
 function collectData() {
   const fields = ['firstName','lastName','dob','email','phone','city','username','role'];
   fields.forEach(id => {
@@ -73,7 +65,6 @@ function collectData() {
     if (el) data[id] = el.value;
   });
 }
-
 function renderReview() {
   collectData();
   const labels = { firstName:'First Name', lastName:'Last Name', dob:'Date of Birth',
@@ -85,7 +76,6 @@ function renderReview() {
     </div>
   `).join('');
 }
-
 function nextStep() {
   if (!validateStep()) return;
   if (currentStep < TOTAL_STEPS) {
@@ -94,17 +84,14 @@ function nextStep() {
     showStep(currentStep);
     updateProgress();
   } else {
-    // Submit
     showStep(5);
     document.getElementById('navBtns').style.display = 'none';
     document.getElementById('progressFill').style.width = '100%';
   }
 }
-
 function prevStep() {
   if (currentStep > 1) { currentStep--; showStep(currentStep); updateProgress(); }
 }
-
 function restart() {
   currentStep = 1;
   document.getElementById('multiForm').reset();
@@ -113,5 +100,4 @@ function restart() {
   renderIndicators();
   updateProgress();
 }
-
 init();

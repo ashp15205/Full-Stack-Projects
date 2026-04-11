@@ -1,14 +1,10 @@
-// Hamburger toggle
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('navLinks');
-
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('open');
   hamburger.setAttribute('aria-expanded', hamburger.classList.contains('open'));
   navLinks.classList.toggle('open');
 });
-
-// Mobile dropdown toggle
 document.querySelectorAll('.has-dropdown').forEach(item => {
   item.addEventListener('click', e => {
     if (window.innerWidth <= 768) {
@@ -16,8 +12,6 @@ document.querySelectorAll('.has-dropdown').forEach(item => {
     }
   });
 });
-
-// Close menu when link clicked
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', function(){
     navLinks.classList.remove('open');
@@ -27,8 +21,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
     this.classList.add('active');
   });
 });
-
-// Scroll shadow
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
 });
