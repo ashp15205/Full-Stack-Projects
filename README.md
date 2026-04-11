@@ -1,7 +1,9 @@
 <div align="center">
 
-  <h1>⚡ Full-Stack Development — Pattern-Based Project Repository</h1>
+  <h1>Full-Stack Development Projects</h1>
   <p><i>16 production-grade implementations · 15 reusable patterns · 84 mapped problem statements</i></p>
+
+ > ⭐ **If this repository accelerates your learning or helps you land a role, a star goes a long way!**
 
   <p>
     <a href="https://linkedin.com/in/ashishpatil">
@@ -10,15 +12,10 @@
     <a href="https://buymeacoffee.com/ashishp05">
       <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee" />
     </a>
-    <img src="https://img.shields.io/badge/Problems%20Mapped-84-blue?style=for-the-badge" />
-    <img src="https://img.shields.io/badge/Core%20Patterns-15-22c55e?style=for-the-badge" />
-    <img src="https://img.shields.io/badge/Implementations-16-f59e0b?style=for-the-badge" />
-    <img src="https://img.shields.io/badge/Stack-Full--Stack-e11d48?style=for-the-badge" />
+    <a href="https://github.com/ashp15205/Full-Stack-Projects">
+      <img src="https://img.shields.io/github/stars/ashp15205/Full-Stack-Projects?style=for-the-badge&logo=github&color=2ea043" alt="Star on GitHub" />
+    </a>
   </p>
-
-  <br/>
-
-  > ⭐ **If this repository accelerates your learning or helps you land a role, a star goes a long way!**
 
 </div>
 
