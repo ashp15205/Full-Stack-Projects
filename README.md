@@ -19,6 +19,9 @@
 
 ---
 
+### **Full-stack development projects to build strong fundamentals and create impactful resume-ready applications**
+
+
 ## 🎯 What is This?
 
 This repository is a **systematic, pattern-based collection of full-stack web development implementations** built to solve 84 real-world problem statements from the ground up.
