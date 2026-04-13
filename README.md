@@ -32,7 +32,7 @@ The 84 problem statements are cleanly separated into three mastery levels to hel
 *Mastering DOM Manipulation, Vanilla HTML/CSS structures, Form Validation, and fundamental JavaScript Logic.*
 
 **Problem Statements Covered:**
-- `PS1`, `PS2`, `PS3`, `PS5`, `PS8`, `PS12`, `PS13`, `PS15`, `PS16`, `PS17`
+- `PS01`, `PS02`, `PS03`, `PS05`, `PS08`, `PS12`, `PS13`, `PS15`, `PS16`, `PS17`
 - `PS20`, `PS22`, `PS25`, `PS30`, `PS31`, `PS32`, `PS33`, `PS34`, `PS35`, `PS37`
 - `PS42`, `PS43`, `PS44`, `PS45`, `PS46`, `PS47`, `PS48`, `PS52`, `PS53`, `PS54`
 - `PS58`, `PS61`, `PS63`, `PS64`, `PS66`, `PS67`, `PS68`, `PS70`, `PS71`, `PS72`
@@ -42,7 +42,7 @@ The 84 problem statements are cleanly separated into three mastery levels to hel
 *Working with LocalStorage persistence, asynchronous API fetching, complex array mappings, and Data Visualizations (Chart.js / D3.js).*
 
 **Problem Statements Covered:**
-- `PS6`, `PS9`, `PS10`, `PS14`, `PS19`, `PS21`, `PS24`, `PS26`, `PS27`, `PS36`
+- `PS06`, `PS09`, `PS10`, `PS14`, `PS19`, `PS21`, `PS24`, `PS26`, `PS27`, `PS36`
 - `PS38`, `PS49`, `PS50`, `PS51`, `PS55`, `PS59`, `PS60`, `PS62`, `PS65`, `PS69`
 - `PS73`, `PS78`, `PS82`
 
@@ -50,7 +50,7 @@ The 84 problem statements are cleanly separated into three mastery levels to hel
 *Full Stack RESTful application endpoints, Node.js + Express environments, and MongoDB integrations requiring robust CRUD (Create, Read, Update, Delete) capability.*
 
 **Problem Statements Covered:**
-- `PS4`, `PS7`, `PS11`, `PS18`, `PS23`, `PS28`, `PS29`, `PS39`, `PS40`, `PS41`
+- `PS04`, `PS07`, `PS11`, `PS18`, `PS23`, `PS28`, `PS29`, `PS39`, `PS40`, `PS41`
 - `PS56`, `PS57`, `PS76`, `PS77`, `PS79`, `PS83`, `PS84`
 
 ---
