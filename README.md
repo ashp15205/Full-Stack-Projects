@@ -6,8 +6,6 @@
   <br />
   <h1>🚀 Full Stack Development Lab (FSDL)</h1>
   <p><strong>A comprehensive repository of 84 Web Development projects strictly optimized for practical examinations.</strong></p>
-  <br />
-  <br />
   <p align="center">
     <a href="https://github.com/ashp15205/Full-Stack-Projects" target="_blank">
       <img alt="GitHub stars" src="https://img.shields.io/github/stars/ashp15205/Full-Stack-Projects?style=social">
@@ -23,7 +21,6 @@
   </p>
 </div>
 
-<hr />
 
 ## 🎯 About This Repository
 
