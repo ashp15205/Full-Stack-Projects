@@ -9,7 +9,6 @@
   <br />
 
   [![Star Repository](https://img.shields.io/github/stars/ashp15205/Full-Stack-Projects?style=social)](https://github.com/ashp15205/Full-Stack-Projects)
-  [![Follow Me](https://img.shields.io/github/followers/ashp15205?style=social)](https://github.com/ashp15205)
   <br />
   <a href="https://www.linkedin.com/in/ashishpatil2005/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=flat-square&logo=linkedin&logoColor=white"></a>
   <a href="https://buymeacoffee.com/ashishp05" target="_blank"><img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black"></a>
