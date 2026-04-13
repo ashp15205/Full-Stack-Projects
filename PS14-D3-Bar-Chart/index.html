@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html><head><title>PS14 - D3 Bar Chart</title><script src="https://d3js.org/d3.v7.min.js"></script><link rel="stylesheet" href="style.css"></head>
+<body>
+  <h2>Department Enrollment (D3.js)</h2>
+  <div class="card"><div id="chart"></div></div>
+  <script>
+    const data=[{dept:"CSE",cnt:120},{dept:"IT",cnt:95},{dept:"ECE",cnt:80},{dept:"MECH",cnt:60},{dept:"CIVIL",cnt:45}];
+    const w=500, h=300, m={top:20,right:20,bottom:40,left:40};
+    const svg=d3.select("#chart").append("svg").attr("width",w).attr("height",h);
+    const chart=svg.append("g").attr("transform",`translate(${m.left},${m.top})`);
+    
+    const x=d3.scaleBand().domain(data.map(d=>d.dept)).range([0,w-m.left-m.right]).padding(0.2);
+    const y=d3.scaleLinear().domain([0,d3.max(data,d=>d.cnt)]).range([h-m.top-m.bottom,0]);
+    
+    chart.append("g").attr("transform",`translate(0,${h-m.top-m.bottom})`).call(d3.axisBottom(x)).attr("color","#aab4fc");
+    chart.append("g").call(d3.axisLeft(y)).attr("color","#aab4fc");
+    
+    chart.selectAll(".bar").data(data).enter().append("rect").attr("class","bar").attr("x",d=>x(d.dept)).attr("y",d=>y(d.cnt)).attr("width",x.bandwidth()).attr("height",d=>h-m.top-m.bottom-y(d.cnt)).attr("fill","#f72585");
+  </script>
+</body></html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html><head><title>PS22 - Component Library</title><link rel="stylesheet" href="style.css"></head>
+<body>
+  <h2>PS22 — Modular UI Component Library</h2>
+  <div id="hero"></div>
+  <div class="card">
+    <h3 class="section-title">Button Components</h3>
+    <div class="btn-row" id="btns"></div>
+  </div>
+  <div class="card">
+    <h3 class="section-title">Input Components</h3>
+    <div id="inputs-demo"></div>
+  </div>
+  <div class="card">
+    <h3 class="section-title">Card Components</h3>
+    <div id="cards-demo"></div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    // Render button variants
+    const variants = [
+      {label:"Primary", v:"primary"}, {label:"Outline", v:"outline"},
+      {label:"Danger", extra:"background:rgba(247,37,133,.8)"}, {label:"Success", extra:"background:rgba(76,175,80,.8)"}
+    ];
+    document.getElementById("btns").innerHTML = variants.map(b =>
+      `<button style="${b.extra||''}" onclick="alert('${b.label} clicked!')">${b.label}</button>`).join('');
+  </script>
+</body></html>

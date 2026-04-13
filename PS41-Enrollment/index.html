@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html><head><title>PS41 - Course Enrollment</title><link rel="stylesheet" href="style.css"></head>
+<body>
+  <h2>PS41 — Course Enrollment System</h2>
+  <div class="layout">
+    <div class="card">
+      <h3>Enroll</h3>
+      <input id="sn" placeholder="Student Name">
+      <input id="cn" placeholder="Course Name">
+      <button onclick="enroll()">Enroll</button>
+    </div>
+    <div class="card" style="flex:2">
+      <h3>All Enrollments</h3>
+      <div id="list"></div>
+    </div>
+  </div>
+  <script>
+    const BASE='http://localhost:3007';
+    async function enroll(){const body={studentName:document.getElementById('sn').value,courseName:document.getElementById('cn').value};await fetch(BASE+'/enrollments',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});document.getElementById('sn').value='';document.getElementById('cn').value='';load();}
+    async function del(id){await fetch(BASE+'/enrollments/'+id,{method:'DELETE'});load();}
+    async function load(){const d=await(await fetch(BASE+'/enrollments')).json();document.getElementById('list').innerHTML=d.length?d.map(e=>`<div class="row"><div><b>${e.studentName}</b> → <span style="color:#aab4fc">${e.courseName}</span></div><button onclick="del('${e._id}')">🗑</button></div>`).join(''):'<p style="color:#888">No enrollments yet.</p>';}
+    load();
+  </script>
+</body></html>

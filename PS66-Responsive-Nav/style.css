@@ -1,0 +1,10 @@
+body { background: #0f0f18; color: #fff; font-family: 'Segoe UI', sans-serif; }
+.custom-nav { background: rgba(15,15,24,0.95) !important; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+.nav-link { color: #aab4fc !important; font-weight: 500; transition: 0.2s; }
+.nav-link:hover { color: #fff !important; }
+.custom-drop { background: #1a1a2e; border: 1px solid rgba(255,255,255,0.1); }
+.dropdown-item { color: #aab4fc; }
+.dropdown-item:hover { background: rgba(108,99,255,0.2); color: #fff; }
+.hero { min-height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(135deg, rgba(108,99,255,0.15), rgba(247,37,133,0.08)); }
+.hero h1 { font-size: 3rem; color: #fff; }
+.navbar-toggler-icon { filter: invert(1); }

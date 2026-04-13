@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="style.css"></head>
+<body>
+  <div id="progBar"><div id="progFill" style="width:25%"></div></div>
+  <div id="dots"></div>
+
+  <div id="s1" class="step">
+    <input id="fn" placeholder="First Name"><div class="err" id="fnE"></div>
+    <input id="dob" type="date"><div class="err" id="dobE"></div>
+    <button onclick="next(1)">Next</button>
+  </div>
+  <div id="s2" class="step" hidden>
+    <input id="email" placeholder="Email"><div class="err" id="emE"></div>
+    <input id="ph" placeholder="Phone"><div class="err" id="phE"></div>
+    <button onclick="next(2)">Next</button>
+  </div>
+  <div id="s3" class="step" hidden>
+    <input id="usr" placeholder="Username"><div class="err" id="usE"></div>
+    <input id="pwd" placeholder="Password"><div class="err" id="pwE"></div>
+    <button onclick="next(3)">Next</button>
+  </div>
+  <div id="s4" class="step" hidden>
+    <h3>Review</h3><div id="rev"></div>
+    <button onclick="next(4)">Submit</button>
+  </div>
+  <div id="s5" class="step" hidden>
+    <h3>🎉 Account Created!</h3><button onclick="location.reload()">Start Over</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

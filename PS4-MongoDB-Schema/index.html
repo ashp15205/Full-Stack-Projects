@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html><head><title>PS4 - Ecommerce API</title><link rel="stylesheet" href="style.css"></head>
+<body>
+  <h2>PS4 — Product & Category API</h2>
+  <div class="layout">
+    <div class="card">
+      <h3>Add Category</h3>
+      <input id="cname" placeholder="Category Name">
+      <button onclick="addCat()">Add Category</button>
+      <div id="cats"></div>
+    </div>
+    <div class="card">
+      <h3>Add Product</h3>
+      <input id="pname" placeholder="Product Name">
+      <input id="pprice" type="number" placeholder="Price">
+      <input id="pstock" type="number" placeholder="Stock">
+      <input id="pcat" placeholder="Category ID">
+      <button onclick="addProd()">Add Product</button>
+    </div>
+    <div class="card" style="flex:2">
+      <h3>All Products</h3>
+      <div id="prods"></div>
+    </div>
+  </div>
+  <script>
+    const BASE = 'http://localhost:3000';
+    async function addCat() {
+      await fetch(BASE+'/categories', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name: document.getElementById('cname').value})});
+      loadCats(); loadProds();
+    }
+    async function addProd() {
+      const body = {name: document.getElementById('pname').value, price: +document.getElementById('pprice').value, stock: +document.getElementById('pstock').value, category: document.getElementById('pcat').value};
+      await fetch(BASE+'/products', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+      loadProds();
+    }
+    async function delProd(id) { await fetch(BASE+'/products/'+id, {method:'DELETE'}); loadProds(); }
+    async function loadCats() { const r = await fetch(BASE+'/categories'); const d = await r.json(); document.getElementById('cats').innerHTML = d.map(c=>`<div class="row">${c.name} <small style="color:#888">(${c._id})</small></div>`).join(''); }
+    async function loadProds() { const r = await fetch(BASE+'/products'); const d = await r.json(); document.getElementById('prods').innerHTML = d.map(p=>`<div class="row"><b>${p.name}</b> — ₹${p.price} | Stock: ${p.stock}<button onclick="delProd('${p._id}')">🗑</button></div>`).join(''); }
+    loadCats(); loadProds();
+  </script>
+</body></html>

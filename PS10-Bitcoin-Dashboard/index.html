@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html><head><title>PS10 - Bitcoin Dashboard</title><link rel="stylesheet" href="style.css"></head>
+<body>
+  <h2>Bitcoin Live Price ₿</h2>
+  <div class="card">
+    <div style="font-size:4rem;margin-bottom:15px">₿</div>
+    <div id="price" class="price-val pulse">Fetching...</div>
+    <div id="time" class="last-upd">Last updated: —</div>
+    <div style="margin-top:20px;color:#aab4fc;font-size:.85rem">Auto-refreshes every 30 seconds</div>
+  </div>
+  <script>
+    async function fetchPrice() {
+      try {
+        const res = await fetch("https://api.coindesk.com/v1/bpi/currentprice.json");
+        const data = await res.json();
+        document.getElementById("price").innerText = "$" + data.bpi.USD.rate;
+        document.getElementById("time").innerText = "Last updated: " + new Date().toLocaleTimeString();
+      } catch(e) {
+        document.getElementById("price").innerText = "API unavailable";
+        document.getElementById("time").innerText = "Check network connection";
+      }
+    }
+    fetchPrice();
+    setInterval(fetchPrice, 30000);
+  </script>
+</body></html>

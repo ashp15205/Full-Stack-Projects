@@ -1,0 +1,11 @@
+body { font-family: 'Segoe UI', Tahoma, Verdana, sans-serif; background: #0f0f18; color: #fff; padding: 20px; text-align: center; }
+#prods { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+.card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 15px; width: 160px; transition: 0.2s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(108,99,255,0.2); }
+.card img { width: 100%; height: 100px; object-fit: cover; border-radius: 8px; }
+.card h4 { margin: 8px 0 4px; color: #fff; }
+.price { color: #f72585; font-weight: bold; margin-bottom: 8px; }
+button { background: linear-gradient(135deg, #6c63ff, #f72585); color: white; border: none; padding: 7px 12px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: bold; width: 100%; }
+.cart-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #1a1a2e; border-top: 1px solid rgba(255,255,255,0.1); padding: 12px 20px; text-align: center; }
+.cart-bar button { width: auto; padding: 7px 20px; margin-left: 15px; }
+h2 { color: #aab4fc; margin-bottom: 20px; }

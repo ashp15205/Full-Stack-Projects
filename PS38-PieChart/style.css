@@ -1,0 +1,4 @@
+body { font-family: 'Segoe UI', Tahoma, Verdana, sans-serif; background: #0f0f18; color: #fff; text-align: center; padding-top: 50px; }
+.card { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; margin: 20px auto; width: 300px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+.pie { width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 15px; background: conic-gradient(#4caf50 0% var(--p), #f44336 var(--p) calc(var(--p) + var(--a)), #ff9800 calc(var(--p) + var(--a)) 100%); }
+.legend { font-size: 13px; font-weight: bold; }

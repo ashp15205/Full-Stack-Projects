@@ -1,0 +1,10 @@
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f18; color: #fff; text-align: center; padding-top: 50px; }
+.step { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); width: 320px; margin: 20px auto; padding: 30px; }
+input { background: #1a1a2e; border: 1px solid #333; color: white; padding: 10px; border-radius: 6px; margin: 5px auto; width: 90%; display: block; }
+button { background: linear-gradient(135deg, #6c63ff, #f72585); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 15px; width: 100%; }
+#progBar { width: 320px; height: 8px; background: rgba(255,255,255,0.1); margin: 20px auto; border-radius: 10px; overflow: hidden; }
+#progFill { height: 100%; background: linear-gradient(90deg, #6c63ff, #f72585); transition: 0.4s; }
+.dot { display: inline-block; margin: 5px; width: 25px; height: 25px; line-height: 25px; border-radius: 50%; background: #333; font-size: 12px; }
+.active { background: #6c63ff; }
+.done { background: #00d2ff; }
+.err { color: #f72585; font-size: 12px; height: 15px; margin-bottom: 5px; }

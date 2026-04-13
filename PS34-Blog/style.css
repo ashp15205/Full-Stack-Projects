@@ -1,0 +1,12 @@
+* { box-sizing: border-box; margin: 0; }
+body { font-family: 'Segoe UI', Tahoma, Verdana, sans-serif; background: #0f0f18; color: #fff; }
+header { background: linear-gradient(135deg, #6c63ff, #f72585); padding: 25px; text-align: center; }
+header h1 { color: white; font-size: 2rem; }
+.layout { display: flex; gap: 20px; padding: 25px; max-width: 900px; margin: 0 auto; }
+main { flex: 2; background: rgba(255,255,255,0.05); border-radius: 12px; padding: 25px; border: 1px solid rgba(255,255,255,0.1); }
+main h2 { color: #aab4fc; margin-bottom: 10px; }
+main p { color: #ccc; line-height: 1.7; }
+aside { flex: 1; background: rgba(255,255,255,0.03); border-radius: 12px; padding: 20px; border: 1px solid rgba(255,255,255,0.1); }
+aside h3 { color: #f72585; margin: 15px 0 8px; }
+aside ul { padding-left: 15px; color: #aab4fc; line-height: 2; }
+footer { text-align: center; padding: 20px; background: rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.1); color: #555; }

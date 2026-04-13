@@ -1,0 +1,9 @@
+body{font-family:'Segoe UI',sans-serif;background:#0f0f18;color:#fff;text-align:center;padding:40px;}h2{color:#aab4fc;}
+.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:30px;max-width:420px;margin:0 auto;box-shadow:0 8px 32px rgba(0,0,0,.3);}
+.qText{font-size:1.15rem;margin:15px 0;font-weight:bold;}
+.opt{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:12px;margin:8px 0;cursor:pointer;transition:.2s;text-align:left;}
+.opt:hover{background:rgba(108,99,255,.2);}
+.opt.correct{background:rgba(76,175,80,.3);border-color:#4caf50;}
+.opt.wrong{background:rgba(247,37,133,.3);border-color:#f72585;}
+.feedback{font-size:.9rem;margin:10px 0;min-height:20px;}
+button{background:linear-gradient(135deg,#6c63ff,#f72585);color:#fff;border:none;padding:10px 25px;border-radius:6px;cursor:pointer;font-weight:bold;margin-top:10px;}

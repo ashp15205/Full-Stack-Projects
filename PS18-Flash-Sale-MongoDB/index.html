@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html><head><title>PS18 - Flash Sale</title><link rel="stylesheet" href="style.css"></head>
+<body>
+  <h2>PS18 — Flash Sale Manager</h2>
+  <div class="layout">
+    <div class="card">
+      <h3>Add Flash Sale</h3>
+      <input id="name" placeholder="Product Name">
+      <input id="orig" type="number" placeholder="Original Price">
+      <input id="sale" type="number" placeholder="Sale Price">
+      <input id="sizes" placeholder="Sizes (S,M,L,XL)">
+      <input id="colors" placeholder="Colors (Red,Blue)">
+      <input id="brand" placeholder="Brand">
+      <button onclick="add()">Add Sale</button>
+    </div>
+    <div class="card" style="flex:2">
+      <h3>Flash Sales <button onclick="load()" style="font-size:.75rem;padding:5px 10px;">Refresh</button></h3>
+      <div id="list"></div>
+    </div>
+  </div>
+  <script>
+    const BASE = 'http://localhost:3002';
+    async function add() {
+      const body = { productName: document.getElementById('name').value, originalPrice: +document.getElementById('orig').value, salePrice: +document.getElementById('sale').value,
+        attributes: { sizes: document.getElementById('sizes').value.split(','), colors: document.getElementById('colors').value.split(','), brand: document.getElementById('brand').value }
+      };
+      await fetch(BASE+'/sales', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+      load();
+    }
+    async function del(id) { await fetch(BASE+'/sales/'+id, {method:'DELETE'}); load(); }
+    async function load() {
+      const d = await (await fetch(BASE+'/sales')).json();
+      document.getElementById('list').innerHTML = d.map(s=>`<div class="row">
+        <div><b>${s.productName}</b> <span style="color:#f72585">₹${s.salePrice}</span> <s style="color:#888">₹${s.originalPrice}</s><br>
+        Sizes: ${s.attributes?.sizes?.join(', ')} | Colors: ${s.attributes?.colors?.join(', ')}</div>
+        <button onclick="del('${s._id}')">🗑</button></div>`).join('');
+    }
+    load();
+  </script>
+</body></html>

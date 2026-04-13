@@ -1,0 +1,10 @@
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f18; color: #fff; margin: 0; }
+#app { display: flex; gap: 20px; padding: 20px; justify-content: center; }
+#form, #preview { width: 45%; padding: 25px; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+input { display: block; margin: 8px 0; padding: 10px; width: 90%; background: #1a1a2e; border: 1px solid #333; color: white; border-radius: 6px; }
+button { background: linear-gradient(135deg, #6c63ff, #f72585); color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+h2, h3 { color: #aab4fc; }
+.sec { border: 1px solid rgba(255,255,255,0.1); margin: 15px 0; padding: 15px; border-radius: 8px; }
+.tag { font-size: 13px; background: #6c63ff; color: white; border-radius: 20px; padding: 4px 10px; margin: 3px; display: inline-block; }
+#pInit { background: linear-gradient(135deg, #6c63ff, #f72585); padding: 10px 15px; border-radius: 50%; font-size: 1.2rem; }
+@media print { #form { display: none; } #preview { width: 100%; border: none; background: white; color: black; } }

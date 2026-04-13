@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>PS5 - Profile Previewer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h2>Profile Previewer</h2>
+  <div class="layout">
+    <div class="card">
+      <h3>Form</h3>
+      <input id="nm" placeholder="Full Name" oninput="upd()">
+      <input id="role" placeholder="Job Title" oninput="upd()">
+      <input id="em" placeholder="Email" oninput="upd()">
+      <input id="ph" placeholder="Phone" oninput="upd()">
+    </div>
+    <div class="card biz">
+      <div id="bName" class="bName">Your Name</div>
+      <div id="bRole" class="bRole">Job Title</div>
+      <hr>
+      <div id="bEm">📧 email@example.com</div>
+      <div id="bPh">📞 +00 0000000000</div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

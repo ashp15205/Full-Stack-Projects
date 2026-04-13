@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html><head><title>PS79 - Dynamic Shopping Cart</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><link rel="stylesheet" href="style.css"></head>
+<body>
+  <h2>PS79 — Dynamic Shopping Cart</h2>
+  <div id="cart-items"></div>
+  <div class="summary card">
+    <div class="summary-row"><span>Subtotal:</span><b>₹<span id="sub">0</span></b></div>
+    <div class="coupon-row">
+      <input id="coup" placeholder="Coupon code (SAVE10 / SAVE20)">
+      <button onclick="applyCoupon()">Apply</button>
+    </div>
+    <div id="disc-msg" class="disc-msg"></div>
+    <div class="summary-row total-row"><span>Total:</span><b style="color:#f72585;font-size:1.3rem">₹<span id="tot">0</span></b></div>
+    <button onclick="checkout()" style="width:100%;margin-top:10px;">Checkout 🛒</button>
+  </div>
+  <script src="script.js"></script>
+</body></html>

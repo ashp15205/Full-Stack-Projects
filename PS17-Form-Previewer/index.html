@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head><title>Resume Builder</title><link rel="stylesheet" href="style.css"></head>
+<body>
+  <div id="app">
+    <div id="form">
+      <h2>Resume Form</h2>
+      <input id="inName" placeholder="Full Name" oninput="upd()">
+      <input id="inTitle" placeholder="Job Title" oninput="upd()">
+      <input id="inSkills" placeholder="Skills (comma spec)" oninput="upd()">
+      
+      <div class="sec">
+        <h3>Experience <button onclick="showForm('ex')">+ Add</button></h3>
+        <ul id="exList"></ul>
+        <div id="exForm" hidden>
+          <input id="exRole" placeholder="Role"><input id="exComp" placeholder="Company">
+          <input id="exDur" placeholder="Duration"><input id="exDesc" placeholder="Description">
+          <button onclick="save('ex')">Save</button>
+        </div>
+      </div>
+
+      <div class="sec">
+        <h3>Education <button onclick="showForm('ed')">+ Add</button></h3>
+        <ul id="edList"></ul>
+        <div id="edForm" hidden>
+          <input id="edDeg" placeholder="Degree"><input id="edCol" placeholder="College"><input id="edYr" placeholder="Year">
+          <button onclick="save('ed')">Save</button>
+        </div>
+      </div>
+      
+      <button onclick="window.print()">Download Resume</button>
+    </div>
+
+    <div id="preview">
+      <h1><span id="pInit">YN</span> <span id="pName">Your Name</span></h1>
+      <p id="pTitle">Job Title</p>
+      <h3>Skills</h3><div id="pSkills"></div>
+      <h3>Experience</h3><div id="pEx"></div>
+      <h3>Education</h3><div id="pEd"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

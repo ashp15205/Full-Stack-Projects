@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html><head><title>PS48 - Quiz App</title><link rel="stylesheet" href="style.css"></head>
+<body>
+  <h2>Quiz App</h2>
+  <div class="card" id="quizCard">
+    <div id="qNo"></div>
+    <div id="qText" class="qText"></div>
+    <div id="options"></div>
+    <div id="feedback" class="feedback"></div>
+    <button id="nextBtn" onclick="next()" style="display:none">Next →</button>
+  </div>
+  <div class="card" id="resultCard" style="display:none">
+    <h3>Quiz Complete!</h3>
+    <p>Score: <b id="score"></b></p>
+    <button onclick="restart()">Restart</button>
+  </div>
+  <script src="script.js"></script>
+</body></html>
