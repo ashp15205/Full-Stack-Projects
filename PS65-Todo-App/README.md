@@ -1,90 +1,23 @@
 # Problem 65 – To-Do List
 
-## 🎯 Objective
-Task manager with Add, Inline Edit, Delete, Complete toggle — persisted in localStorage.
-
-## 🛠 Tech Stack
-`HTML` · `CSS` · `JavaScript` · `localStorage`
-
-## 📁 Files
-| File | Purpose |
-|------|---------|
-| `index.html` | Add row + filter tabs + task list |
-| `style.css` | Dark task cards + inline edit styles |
-| `script.js` | CRUD: add, edit (inline), delete, toggle, filter, persist |
+> **Problem:** A highly practical CRUD application handling continuous, persistent user data modification.
+>
+> **Stack:** Vanilla HTML/CSS/JS
 
 ---
 
-## ✨ Features
-- Add task with **priority** (🟢 Low / 🟡 Medium / 🔴 High) using dropdown + Enter key
-- **Inline Edit**: Click ✏️ on any task → text field opens in-place → change text + priority → ✓ to save
-- ✕ Cancel edit without changes
-- Checkbox to mark task done (strikethrough + fade)
-- 🗑 Delete with confirm
-- Filter tabs: **All / Active / Completed**
-- **Clear Completed** button
-- Task count display ("X tasks · Y completed")
-- **All data persists after page refresh** via `localStorage`
+## 🛠️ Detailed Setup & Initialization Guide
 
----
+### 1. Initialize the Frontend Environment
+No package manager (`npm`) is strictly required. The project automatically loads external dependencies (like Bootstrap or Chart.js) via CDNs in the HTML.
 
-## 🔑 Key Concepts
+## 📝 Architecture & What to Write Where
 
-### localStorage Persistence
-```javascript
-// Save every time data changes
-function save() {
-  localStorage.setItem('tasks', JSON.stringify(tasks));
-}
+- **`index.html`**: The structural layout of the web page. Import your custom CSS stylesheet inside the `<head>` tag.
+- **`style.css`**: Custom visual styling logic.
+- **`script.js`**: JavaScript logic for selecting DOM elements (`document.getElementById`), adding interactivity (`addEventListener`), Array Mapping, and performing JSON fetch queries.
 
-// Load on page start
-let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-```
+## 🚀 How to Run & Start
 
-### Inline Edit Pattern
-```javascript
-let editingId = null;
-
-function startEdit(id) {
-  editingId = id;
-  render();   // re-render with edit input visible
-}
-
-function saveEdit(id) {
-  const t = tasks.find(t => t.id === id);
-  t.text     = document.getElementById('editInput_' + id).value;
-  t.priority = document.getElementById('editPrio_' + id).value;
-  editingId = null;
-  save();
-  render();
-}
-```
-
-### Filter
-```javascript
-const filtered = tasks.filter(t => {
-  if (filter === 'active')    return !t.done;
-  if (filter === 'completed') return t.done;
-  return true;  // 'all'
-});
-```
-
----
-
-## 🚀 How to Run
-Open `index.html` in browser. Data persists after refresh.
-
----
-
-## 🎓 Checklist
-- [ ] Add task with High priority → red dot appears
-- [ ] Press Enter to add task quickly
-- [ ] Click checkbox → task gets strikethrough
-- [ ] Click ✏️ → inline edit appears with current text + priority dropdown
-- [ ] Change text + priority → click ✓ → task updates
-- [ ] Press ✕ Cancel → no changes made
-- [ ] Click 🗑 → task deleted after confirm
-- [ ] Filter "Active" → completed tasks hide
-- [ ] Filter "Completed" → only done tasks show
-- [ ] Refresh page → all tasks still there (localStorage)
-- [ ] Clear Completed → done tasks all removed
+Simply open the **`index.html`** file inside this folder directly in any web browser.
+*(Tip: Using Visual Studio Code's **Live Server** extension is recommended for automatic browser reloading during development edits.)*

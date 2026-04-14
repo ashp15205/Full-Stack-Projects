@@ -1,90 +1,23 @@
 # Problem 51 – Drag & Drop List
 
-## 🎯 Objective
-Draggable task list for reordering items using the HTML5 Drag & Drop API — with two panels (Todo ↔ Done).
-
-## 🛠 Tech Stack
-`HTML5 Drag & Drop API` · `JavaScript` · `CSS`
-
-## 📁 Files  
-| File | Purpose |
-|------|---------|
-| `index.html` | Two-panel layout + add task input |
-| `style.css` | Dark cards + drag highlight + done list styles |
-| `script.js` | Drag & Drop events + CRUD (add, complete, restore, delete) |
+> **Problem:** A completely responsive application leveraging asynchronous behaviors to power dynamic Drag Drop states.
+>
+> **Stack:** Vanilla HTML/CSS/JS
 
 ---
 
-## ✨ Features
-- **Drag items** up/down within Todo list to reorder
-- **Drag items** from Todo panel → Done panel (marks complete)
-- **Drag back** from Done panel → Todo panel (restores)
-- **⠿ drag handle** visual indicator
-- **✓ Check button** → moves item to Done
-- **↩ Restore button** → moves back to Todo
-- **✕ Delete** on both panels
-- **Add new tasks** via text input + Enter or + button
-- Priority color dots (🔴 High / 🟡 Medium / 🟢 Low)
-- **Current order display** (ID tags update live)
-- Fastest lap highlighted green, slowest red
+## 🛠️ Detailed Setup & Initialization Guide
 
----
+### 1. Initialize the Frontend Environment
+No package manager (`npm`) is strictly required. The project automatically loads external dependencies (like Bootstrap or Chart.js) via CDNs in the HTML.
 
-## 🔑 Key Concepts
+## 📝 Architecture & What to Write Where
 
-### HTML5 Drag & Drop — 5 Events
-```javascript
-item.draggable = true;
+- **`index.html`**: The structural layout of the web page. Import your custom CSS stylesheet inside the `<head>` tag.
+- **`style.css`**: Custom visual styling logic.
+- **`script.js`**: JavaScript logic for selecting DOM elements (`document.getElementById`), adding interactivity (`addEventListener`), Array Mapping, and performing JSON fetch queries.
 
-// When drag starts
-item.addEventListener('dragstart', e => {
-  e.dataTransfer.setData('text/plain', `${item.dataset.id}|todo`);
-  item.classList.add('dragging');
-});
+## 🚀 How to Run & Start
 
-// While hovering over a target
-target.addEventListener('dragover', e => {
-  e.preventDefault();         // MUST preventDefault to allow drop
-  target.classList.add('over');
-});
-
-// When dropped
-target.addEventListener('drop', e => {
-  const [srcId, srcList] = e.dataTransfer.getData('text/plain').split('|');
-  // reorder or move between lists
-});
-```
-
-### Reorder by Splice
-```javascript
-const srcIdx = arr.findIndex(i => i.id === srcId);
-const tgtIdx = arr.findIndex(i => i.id === targetId);
-const [moved] = arr.splice(srcIdx, 1);    // remove from old position
-arr.splice(tgtIdx, 0, moved);              // insert at new position
-renderLists();
-```
-
-### Move Between Lists
-```javascript
-// Todo → Done
-const idx = items.findIndex(i => i.id === srcId);
-doneItems.unshift(items.splice(idx, 1)[0]);
-```
-
----
-
-## 🚀 How to Run
-Open `index.html` in browser — no dependencies.
-
----
-
-## 🎓 Checklist
-- [ ] Drag task up/down within Todo list → order changes
-- [ ] Current order display updates after every drag
-- [ ] Drag task to Done panel → moves to completed section
-- [ ] Drag from Done back to Todo → restored
-- [ ] Click ✓ check button → moves to Done
-- [ ] Click ↩ in Done → restores to Todo
-- [ ] Click ✕ Delete → item removed from either panel  
-- [ ] Type new task + press Enter → appears at top of Todo
-- [ ] Add a task via + button
+Simply open the **`index.html`** file inside this folder directly in any web browser.
+*(Tip: Using Visual Studio Code's **Live Server** extension is recommended for automatic browser reloading during development edits.)*

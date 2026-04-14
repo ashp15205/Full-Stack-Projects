@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Stack Development Projects</title>
+    <!-- Modern Font: Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background Animated Shapes -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="container">
+
+        <!-- Header Section -->
+        <header class="hero">
+            <h1 class="gradient-text">Full Stack Development Projects</h1>
+            <p class="subtitle">80+ Projects structured to master UI, API, and MERN capabilities</p>
+
+            <div class="header-links">
+                <!-- Row 1: Primary Star Badge -->
+                <div class="primary-badge">
+                    <a class="badge github-stars pulse-glow" href="https://github.com/ashp15205/Full-Stack-Projects"
+                        target="_blank" title="Star on GitHub">
+                        <img src="https://img.shields.io/github/stars/ashp15205/Full-Stack-Projects?style=for-the-badge&color=2ea043&logo=github&logoColor=white"
+                            alt="GitHub Stars">
+                    </a>
+                </div>
+
+
+            </div>
+        </header>
+
+        <!-- Search & Filter Controls -->
+        <section class="controls">
+            <div class="search-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="search-icon">
+                    <path
+                        d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <input type="text" id="searchInput" placeholder="Search projects (e.g. Bitcoin Dashboard, Todo)..."
+                    autocomplete="off">
+            </div>
+
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="All">All Projects</button>
+                <button class="filter-btn simple-btn" data-filter="Simple">🟢 Simple (UI & DOM)</button>
+                <button class="filter-btn medium-btn" data-filter="Medium">🟡 Medium (API & Storage)</button>
+                <button class="filter-btn hard-btn" data-filter="Hard">🔴 Hard (MERN & Backend)</button>
+            </div>
+        </section>
+
+        <!-- Result Stats -->
+        <div class="stats-container">
+            <p id="resultCount" class="result-count">Showing 84 projects</p>
+        </div>
+
+        <!-- Projects Grid -->
+        <main>
+            <div id="projectsGrid" class="projects-grid">
+                <!-- Cards will be injected here via JS -->
+            </div>
+
+            <div id="noResults" class="hidden">
+                <p>No projects found matching your search. Try adjusting the keywords.</p>
+            </div>
+        </main>
+
+        <footer>
+            <div style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
+                <a class="badge bmac" href="https://buymeacoffee.com/ashishp05" target="_blank"
+                    title="Buy Me A Coffee">
+                    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" style="height: 45px !important; width: auto !important; object-fit: contain; border-radius: 8px;"
+                        alt="Buy me a coffee">
+                </a>
+            </div>
+            <p>Built by Ashish Patil</p>
+        </footer>
+    </div>
+
+    <button id="scrollToTop" class="scroll-top-btn hidden" title="Go to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
