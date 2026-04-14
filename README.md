@@ -24,7 +24,7 @@
   </a>
 
   <a href="https://buymeacoffee.com/ashishp05" target="_blank">
-    <img src="https://img.shields.io/badge/☕_Support-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" />
+    <img src="https://img.shields.io/badge/_BUY COFFEE-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" />
   </a>
 
 </div>
