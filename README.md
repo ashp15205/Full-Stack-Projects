@@ -11,13 +11,11 @@
 
   <!-- Animated CTA -->
   <img src="https://readme-typing-svg.herokuapp.com?size=22&duration=2500&color=F7B801&center=true&vCenter=true&width=500&lines=⭐+Star+this+repo+if+it+helped!;🔥+Boost+your+full+stack+skills!;💻+Projects+%2B+learning+roadmap!" />
-<br/>
-  <!-- Star Badge (BIGGER + CLICKABLE) -->
-  <a href="https://github.com/ashp15205/Full-Stack-Projects" target="_blank">
-    <img alt="GitHub stars" src="https://img.shields.io/github/stars/ashp15205/Full-Stack-Projects?style=for-the-badge&color=green">
-  </a>
 
-<br/>
+  <!-- Star Badge (BIGGER + CLICKABLE) -->
+  
+  [![GitHub Stars](https://img.shields.io/github/stars/ashp15205/Full-Stack-Projects?style=for-the-badge&logo=github&color=2ea043)](https://github.com/ashp15205/Full-Stack-Projects)
+
   <!-- Social Links -->
   <a href="https://www.linkedin.com/in/ashishpatil2005/" target="_blank">
     <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
