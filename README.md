@@ -14,7 +14,7 @@
 <br/>
   <!-- Star Badge (BIGGER + CLICKABLE) -->
   <a href="https://github.com/ashp15205/Full-Stack-Projects" target="_blank">
-    <img alt="GitHub stars" src="https://img.shields.io/github/stars/ashp15205/Full-Stack-Projects?style=for-the-badge&color=green&cacheSeconds=60">
+    <img alt="GitHub stars" src="https://img.shields.io/github/stars/ashp15205/Full-Stack-Projects?style=for-the-badge&color=green">
   </a>
 
 <br/>
