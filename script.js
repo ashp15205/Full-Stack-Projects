@@ -679,3 +679,16 @@ const projectsData = [
 
   // Initial Render
   renderProjects();
+  
+  // Update Stars Count Badge Live (every 60 sec)
+  function refreshStarsBadge() {
+      const badge = document.getElementById('githubStarsBadge');
+      if (badge) {
+          const baseUrl = "https://img.shields.io/github/stars/ashp15205/Full-Stack-Projects?style=for-the-badge&color=2ea043&logo=github&logoColor=white&cacheSeconds=60";
+          // Append timestamp to bust browser cache
+          badge.src = `${baseUrl}&t=${new Date().getTime()}`;
+      }
+  }
+
+  // Refresh every 60 seconds
+  setInterval(refreshStarsBadge, 60000);
