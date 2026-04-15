@@ -1,20 +1,44 @@
-<!DOCTYPE html>
-<html><head><title>PS30 - Dashboard Sidebar</title><link rel="stylesheet" href="style.css"></head>
-<body>
-  <div class="layout">
-    <div class="sidebar" id="sidebar">
-      <button class="close-btn" onclick="toggle()">✕</button>
-      <h3>Dashboard</h3>
-      <a href="#bar">📊 Bar Chart</a>
-      <a href="#line">📈 Line Chart</a>
-      <a href="#pie">🥧 Pie Chart</a>
+<!doctype html>
+<html>
+  <head>
+    <title>PS30 - Dashboard Sidebar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <div class="sidebar" id="sidebar">
+        <button class="close-btn" onclick="toggle()">
+          ✕
+        </button>
+        <h3>Dashboard</h3>
+        <a href="#bar">📊 Bar Chart</a>
+        <a href="#line">📈 Line Chart</a>
+        <a href="#pie">🥧 Pie Chart</a>
+      </div>
+      <div class="main">
+        <button class="ham" onclick="toggle()">
+          ☰ Menu
+        </button>
+        <section id="bar">
+          <h2>Bar Chart</h2>
+          <div class="chart-placeholder">
+            Bar chart visualization here
+          </div>
+        </section>
+        <section id="line">
+          <h2>Line Chart</h2>
+          <div class="chart-placeholder">
+            Line chart visualization here
+          </div>
+        </section>
+        <section id="pie">
+          <h2>Pie Chart</h2>
+          <div class="chart-placeholder">
+            Pie chart visualization here
+          </div>
+        </section>
+      </div>
     </div>
-    <div class="main">
-      <button class="ham" onclick="toggle()">☰ Menu</button>
-      <section id="bar"><h2>Bar Chart</h2><div class="chart-placeholder">Bar chart visualization here</div></section>
-      <section id="line"><h2>Line Chart</h2><div class="chart-placeholder">Line chart visualization here</div></section>
-      <section id="pie"><h2>Pie Chart</h2><div class="chart-placeholder">Pie chart visualization here</div></section>
-    </div>
-  </div>
-  <script src="script.js"></script>
-</body></html>
+    <script src="script.js"></script>
+  </body>
+</html>

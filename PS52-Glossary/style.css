@@ -1,8 +1,49 @@
-body { font-family: 'Segoe UI', Tahoma, Verdana, sans-serif; background: #0f0f18; color: #fff; text-align: center; padding: 30px; }
-.card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; max-width: 620px; margin: 0 auto; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
-input { background: #1a1a2e; border: 1px solid #333; color: white; padding: 10px; border-radius: 6px; width: 90%; margin-bottom: 15px; }
-table { width: 100%; border-collapse: collapse; text-align: left; }
-th { color: #f72585; padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.15); }
-td { padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; }
-code { background: rgba(108,99,255,0.2); color: #aab4fc; padding: 2px 6px; border-radius: 4px; }
-h2 { color: #aab4fc; }
+body {
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  background: #0f0f18;
+  color: #fff;
+  text-align: center;
+  padding: 30px;
+}
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 620px;
+  margin: 0 auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+input {
+  background: #1a1a2e;
+  border: 1px solid #333;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  width: 90%;
+  margin-bottom: 15px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+th {
+  color: #f72585;
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.9rem;
+}
+code {
+  background: rgba(108, 99, 255, 0.2);
+  color: #aab4fc;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+h2 {
+  color: #aab4fc;
+}

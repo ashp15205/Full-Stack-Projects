@@ -1,22 +1,58 @@
-<!DOCTYPE html>
-<html><head><title>PS29 - Aggregation</title><link rel="stylesheet" href="style.css"></head>
-<body>
-  <h2>PS29 — MongoDB Aggregation</h2>
-  <div class="layout">
-    <div class="card">
-      <h3>Average Price by Category</h3>
-      <button onclick="loadAvg()">Run $match + $group</button>
-      <div id="avg"></div>
+<!doctype html>
+<html>
+  <head>
+    <title>PS29 - Aggregation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>PS29 — MongoDB Aggregation</h2>
+    <div class="layout">
+      <div class="card">
+        <h3>Average Price by Category</h3>
+        <button onclick="loadAvg()">
+          Run $match + $group
+        </button>
+        <div id="avg"></div>
+      </div>
+      <div class="card" style="flex: 2">
+        <h3>
+          All Products
+          <button
+            onclick="loadAll()"
+            style="font-size: 0.75rem; padding: 5px 10px"
+          >
+            Refresh
+          </button>
+        </h3>
+        <div id="prods"></div>
+      </div>
     </div>
-    <div class="card" style="flex:2">
-      <h3>All Products <button onclick="loadAll()" style="font-size:.75rem;padding:5px 10px;">Refresh</button></h3>
-      <div id="prods"></div>
-    </div>
-  </div>
-  <script>
-    const BASE='http://localhost:3005';
-    async function loadAll(){const d=await(await fetch(BASE+'/products')).json();document.getElementById('prods').innerHTML=d.map(p=>`<div class="row"><span>${p.name} (${p.category})</span><b style="color:#f72585">₹${p.price}</b></div>`).join('');}
-    async function loadAvg(){const d=await(await fetch(BASE+'/products/avg-price')).json();document.getElementById('avg').innerHTML=d.map(r=>`<div class="row"><span>${r._id}</span><div><b style="color:#4caf50">Avg ₹${Math.round(r.avgPrice)}</b> <span style="color:#888">(${r.count} items)</span></div></div>`).join('');}
-    loadAll();loadAvg();
-  </script>
-</body></html>
+    <script>
+      const BASE = "http://localhost:3005";
+      async function loadAll() {
+        const d = await (
+          await fetch(BASE + "/products")
+        ).json();
+        document.getElementById("prods").innerHTML = d
+          .map(
+            (p) =>
+              `<div class="row"><span>${p.name} (${p.category})</span><b style="color:#f72585">₹${p.price}</b></div>`,
+          )
+          .join("");
+      }
+      async function loadAvg() {
+        const d = await (
+          await fetch(BASE + "/products/avg-price")
+        ).json();
+        document.getElementById("avg").innerHTML = d
+          .map(
+            (r) =>
+              `<div class="row"><span>${r._id}</span><div><b style="color:#4caf50">Avg ₹${Math.round(r.avgPrice)}</b> <span style="color:#888">(${r.count} items)</span></div></div>`,
+          )
+          .join("");
+      }
+      loadAll();
+      loadAvg();
+    </script>
+  </body>
+</html>

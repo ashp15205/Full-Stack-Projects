@@ -1,25 +1,69 @@
-<!DOCTYPE html>
-<html><head><title>PS83 - Contact Manager</title><link rel="stylesheet" href="style.css"></head>
-<body>
-  <h2>PS83 — Contact Manager API</h2>
-  <div class="layout">
-    <div class="card">
-      <h3>Add Contact</h3>
-      <input id="nm" placeholder="Name">
-      <input id="em" placeholder="Email">
-      <input id="ph" placeholder="Phone">
-      <button onclick="add()">Save Contact</button>
+<!doctype html>
+<html>
+  <head>
+    <title>PS83 - Contact Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>PS83 — Contact Manager API</h2>
+    <div class="layout">
+      <div class="card">
+        <h3>Add Contact</h3>
+        <input id="nm" placeholder="Name" />
+        <input id="em" placeholder="Email" />
+        <input id="ph" placeholder="Phone" />
+        <button onclick="add()">Save Contact</button>
+      </div>
+      <div class="card" style="flex: 2">
+        <h3>
+          All Contacts
+          <button
+            onclick="load()"
+            style="font-size: 0.75rem; padding: 5px 10px"
+          >
+            Refresh
+          </button>
+        </h3>
+        <div id="list"></div>
+      </div>
     </div>
-    <div class="card" style="flex:2">
-      <h3>All Contacts <button onclick="load()" style="font-size:.75rem;padding:5px 10px;">Refresh</button></h3>
-      <div id="list"></div>
-    </div>
-  </div>
-  <script>
-    const BASE='http://localhost:3083';
-    async function add(){await fetch(BASE+'/contacts',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:document.getElementById('nm').value,email:document.getElementById('em').value,phone:document.getElementById('ph').value})});document.getElementById('nm').value='';document.getElementById('em').value='';document.getElementById('ph').value='';load();}
-    async function del(id){await fetch(BASE+'/contacts/'+id,{method:'DELETE'});load();}
-    async function load(){const d=await(await fetch(BASE+'/contacts')).json();document.getElementById('list').innerHTML=d.length?d.map(c=>`<div class="row"><div><b>${c.name}</b><br><span style="color:#aab4fc">📞 ${c.phone} | ✉ ${c.email}</span></div><button onclick="del('${c._id}')">🗑</button></div>`).join(''):'<p style="color:#888">No contacts found.</p>';}
-    load();
-  </script>
-</body></html>
+    <script>
+      const BASE = "http://localhost:3083";
+      async function add() {
+        await fetch(BASE + "/contacts", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: document.getElementById("nm").value,
+            email: document.getElementById("em").value,
+            phone: document.getElementById("ph").value,
+          }),
+        });
+        document.getElementById("nm").value = "";
+        document.getElementById("em").value = "";
+        document.getElementById("ph").value = "";
+        load();
+      }
+      async function del(id) {
+        await fetch(BASE + "/contacts/" + id, {
+          method: "DELETE",
+        });
+        load();
+      }
+      async function load() {
+        const d = await (
+          await fetch(BASE + "/contacts")
+        ).json();
+        document.getElementById("list").innerHTML = d.length
+          ? d
+              .map(
+                (c) =>
+                  `<div class="row"><div><b>${c.name}</b><br><span style="color:#aab4fc">📞 ${c.phone} | ✉ ${c.email}</span></div><button onclick="del('${c._id}')">🗑</button></div>`,
+              )
+              .join("")
+          : '<p style="color:#888">No contacts found.</p>';
+      }
+      load();
+    </script>
+  </body>
+</html>

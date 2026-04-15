@@ -1,23 +1,45 @@
-<!DOCTYPE html>
-<html><head><title>PS35 - Calculator</title><link rel="stylesheet" href="style.css"></head>
-<body>
-  <h2>Calculator</h2>
-  <div class="calc">
-    <input id="disp" readonly>
-    <div class="keys">
-      <button onclick="cl()">C</button>
-      <button onclick="ap('/')">÷</button>
-      <button onclick="ap('*')">×</button>
-      <button onclick="ap('-')">−</button>
-      <button onclick="ap('7')">7</button><button onclick="ap('8')">8</button><button onclick="ap('9')">9</button>
-      <button onclick="ap('+')">+</button>
-      <button onclick="ap('4')">4</button><button onclick="ap('5')">5</button><button onclick="ap('6')">6</button>
-      <button onclick="ap('1')" class="eq" style="background:rgba(255,255,255,0.05)">1</button>
-      <button onclick="ap('1')">1</button><button onclick="ap('2')">2</button><button onclick="ap('3')">3</button>
-      <button onclick="calc()" class="eq">=</button>
-      <button onclick="ap('0')" style="grid-column: span 2">0</button>
-      <button onclick="ap('.')">.</button>
+<!doctype html>
+<html>
+  <head>
+    <title>PS35 - Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Calculator</h2>
+    <div class="calc">
+      <input id="disp" readonly />
+      <div class="keys">
+        <button onclick="cl()">C</button>
+        <button onclick="ap('/')">÷</button>
+        <button onclick="ap('*')">×</button>
+        <button onclick="ap('-')">−</button>
+        <button onclick="ap('7')">7</button
+        ><button onclick="ap('8')">8</button
+        ><button onclick="ap('9')">9</button>
+        <button onclick="ap('+')">+</button>
+        <button onclick="ap('4')">4</button
+        ><button onclick="ap('5')">5</button
+        ><button onclick="ap('6')">6</button>
+        <button
+          onclick="ap('1')"
+          class="eq"
+          style="background: rgba(255, 255, 255, 0.05)"
+        >
+          1
+        </button>
+        <button onclick="ap('1')">1</button
+        ><button onclick="ap('2')">2</button
+        ><button onclick="ap('3')">3</button>
+        <button onclick="calc()" class="eq">=</button>
+        <button
+          onclick="ap('0')"
+          style="grid-column: span 2"
+        >
+          0
+        </button>
+        <button onclick="ap('.')">.</button>
+      </div>
     </div>
-  </div>
-  <script src="script.js"></script>
-</body></html>
+    <script src="script.js"></script>
+  </body>
+</html>

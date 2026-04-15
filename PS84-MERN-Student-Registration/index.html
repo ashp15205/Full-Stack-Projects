@@ -1,62 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>PS84 - MERN Student Registration</title>
-  <style>
-    body{font-family:'Segoe UI',sans-serif;background:#0f0f18;color:#fff;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;padding:20px;}
-    .card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:40px;max-width:650px;width:100%;box-shadow:0 12px 40px rgba(0,0,0,.4);}
-    h1{background:linear-gradient(135deg,#6c63ff,#f72585);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:0 0 8px;}
-    p{color:#888;margin-bottom:25px;}
-    .steps{display:flex;flex-direction:column;gap:15px;}
-    .step{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:16px;}
-    .step-num{background:linear-gradient(135deg,#6c63ff,#f72585);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1.1rem;font-weight:bold;margin-bottom:5px;}
-    .step h3{color:#aab4fc;margin:0 0 8px;font-size:1rem;}
-    pre{background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:12px;margin:0;overflow-x:auto;font-size:.85rem;color:#ccc;}
-    .badge{display:inline-flex;gap:8px;flex-wrap:wrap;margin-top:20px;}
-    .tag{background:rgba(108,99,255,.2);color:#aab4fc;padding:4px 12px;border-radius:12px;font-size:.8rem;}
-  </style>
-</head>
-<body>
-  <div class="card">
-    <h1>🎓 PS84 — MERN Student Registration</h1>
-    <p>Full CRUD Student Management System built on the MERN stack.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">Step 1 — Start the Backend</div>
-        <h3>Navigate to server/ folder and run:</h3>
-        <pre>cd server
+  <head>
+    <meta charset="UTF-8" />
+    <title>PS84 - MERN Student Registration</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: #0f0f18;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+      }
+      .card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 16px;
+        padding: 40px;
+        max-width: 650px;
+        width: 100%;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+      }
+      h1 {
+        background: linear-gradient(
+          135deg,
+          #6c63ff,
+          #f72585
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0 0 8px;
+      }
+      p {
+        color: #888;
+        margin-bottom: 25px;
+      }
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .step {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        padding: 16px;
+      }
+      .step-num {
+        background: linear-gradient(
+          135deg,
+          #6c63ff,
+          #f72585
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .step h3 {
+        color: #aab4fc;
+        margin: 0 0 8px;
+        font-size: 1rem;
+      }
+      pre {
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        padding: 12px;
+        margin: 0;
+        overflow-x: auto;
+        font-size: 0.85rem;
+        color: #ccc;
+      }
+      .badge {
+        display: inline-flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+      .tag {
+        background: rgba(108, 99, 255, 0.2);
+        color: #aab4fc;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>🎓 PS84 — MERN Student Registration</h1>
+      <p>
+        Full CRUD Student Management System built on the
+        MERN stack.
+      </p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">
+            Step 1 — Start the Backend
+          </div>
+          <h3>Navigate to server/ folder and run:</h3>
+          <pre>
+cd server
 npm install
 node server.js
-# → API runs on http://localhost:5000</pre>
-      </div>
-      <div class="step">
-        <div class="step-num">Step 2 — Start the React Frontend</div>
-        <h3>Navigate to client/ folder and run:</h3>
-        <pre>cd client
+# → API runs on http://localhost:5000</pre
+          >
+        </div>
+        <div class="step">
+          <div class="step-num">
+            Step 2 — Start the React Frontend
+          </div>
+          <h3>Navigate to client/ folder and run:</h3>
+          <pre>
+cd client
 npm install
 npm start
-# → React app runs on http://localhost:3000</pre>
-      </div>
-      <div class="step">
-        <div class="step-num">Step 3 — Open in Browser</div>
-        <h3>Visit: <a href="http://localhost:3000" style="color:#6c63ff">http://localhost:3000</a></h3>
-        <pre>Features:
+# → React app runs on http://localhost:3000</pre
+          >
+        </div>
+        <div class="step">
+          <div class="step-num">
+            Step 3 — Open in Browser
+          </div>
+          <h3>
+            Visit:
+            <a
+              href="http://localhost:3000"
+              style="color: #6c63ff"
+              >http://localhost:3000</a
+            >
+          </h3>
+          <pre>
+Features:
 • Register students with Name, Email, Roll No, Branch, Year, Phone
 • View all students in sortable table
 • Edit any student (inline form pre-fill)
 • Delete students (with confirmation)
-• Live search by name / roll no / branch</pre>
+• Live search by name / roll no / branch</pre
+          >
+        </div>
+      </div>
+      <div class="badge">
+        <span class="tag">MongoDB</span>
+        <span class="tag">Express</span>
+        <span class="tag">React</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">CRUD</span>
+        <span class="tag">Mongoose</span>
       </div>
     </div>
-    <div class="badge">
-      <span class="tag">MongoDB</span>
-      <span class="tag">Express</span>
-      <span class="tag">React</span>
-      <span class="tag">Node.js</span>
-      <span class="tag">CRUD</span>
-      <span class="tag">Mongoose</span>
-    </div>
-  </div>
-</body>
+  </body>
 </html>

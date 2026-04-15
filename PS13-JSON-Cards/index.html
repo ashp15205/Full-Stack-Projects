@@ -1,20 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head><link rel="stylesheet" href="style.css"></head>
-<body>
-  <h2>Gallery <button onclick="tAdmin()">Admin Login/Logout</button></h2>
-  
-  <div id="adminPanel" hidden>
-    <input id="aid" type="hidden"><input id="aem" placeholder="Emoji"><input id="anm" placeholder="Name">
-    <input id="apr" type="number" placeholder="Price"><input id="act" placeholder="Cat (elec/book/..)"><input id="art" placeholder="Rating(1-5)">
-    <button onclick="save()">Save</button>
-  </div>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>
+      Gallery
+      <button onclick="tAdmin()">Admin Login/Logout</button>
+    </h2>
 
-  <input id="srch" placeholder="Search..." oninput="ren()"><br>
-  <button onclick="setCat('all')">All</button>
-  <button onclick="setCat('elec')">Elec</button><button onclick="setCat('book')">Book</button>
-  <div id="count"></div>
-  <div id="grid"></div>
-  <script src="script.js"></script>
-</body>
+    <div id="adminPanel" hidden>
+      <input id="aid" type="hidden" /><input
+        id="aem"
+        placeholder="Emoji"
+      /><input id="anm" placeholder="Name" />
+      <input
+        id="apr"
+        type="number"
+        placeholder="Price"
+      /><input
+        id="act"
+        placeholder="Cat (elec/book/..)"
+      /><input id="art" placeholder="Rating(1-5)" />
+      <button onclick="save()">Save</button>
+    </div>
+
+    <input
+      id="srch"
+      placeholder="Search..."
+      oninput="ren()"
+    /><br />
+    <button onclick="setCat('all')">All</button>
+    <button onclick="setCat('elec')">Elec</button
+    ><button onclick="setCat('book')">Book</button>
+    <div id="count"></div>
+    <div id="grid"></div>
+    <script src="script.js"></script>
+  </body>
 </html>

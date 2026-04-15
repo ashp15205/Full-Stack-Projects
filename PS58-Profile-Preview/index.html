@@ -1,22 +1,44 @@
-<!DOCTYPE html>
-<html><head><title>PS58 - Profile Previewer</title><link rel="stylesheet" href="style.css"></head>
-<body>
-  <h2>Real-Time Profile Previewer</h2>
-  <div class="layout">
-    <div class="card">
-      <h3>Edit Profile</h3>
-      <input id="nm" placeholder="Full Name" oninput="upd()">
-      <input id="role" placeholder="Role / Title" oninput="upd()">
-      <input id="em" placeholder="Email" oninput="upd()">
-      <textarea id="bio" placeholder="Short bio..." oninput="upd()" rows="3"></textarea>
+<!doctype html>
+<html>
+  <head>
+    <title>PS58 - Profile Previewer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Real-Time Profile Previewer</h2>
+    <div class="layout">
+      <div class="card">
+        <h3>Edit Profile</h3>
+        <input
+          id="nm"
+          placeholder="Full Name"
+          oninput="upd()"
+        />
+        <input
+          id="role"
+          placeholder="Role / Title"
+          oninput="upd()"
+        />
+        <input
+          id="em"
+          placeholder="Email"
+          oninput="upd()"
+        />
+        <textarea
+          id="bio"
+          placeholder="Short bio..."
+          oninput="upd()"
+          rows="3"
+        ></textarea>
+      </div>
+      <div class="preview" id="preview">
+        <div class="avatar" id="av">?</div>
+        <h2 id="pNm">Full Name</h2>
+        <p id="pRole" class="role">Role / Title</p>
+        <p id="pEm">📧 email</p>
+        <p id="pBio" class="bio">Bio appears here...</p>
+      </div>
     </div>
-    <div class="preview" id="preview">
-      <div class="avatar" id="av">?</div>
-      <h2 id="pNm">Full Name</h2>
-      <p id="pRole" class="role">Role / Title</p>
-      <p id="pEm">📧 email</p>
-      <p id="pBio" class="bio">Bio appears here...</p>
-    </div>
-  </div>
-  <script src="script.js"></script>
-</body></html>
+    <script src="script.js"></script>
+  </body>
+</html>

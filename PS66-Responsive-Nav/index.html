@@ -1,47 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>PS66 - Responsive Navbar</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <nav class="navbar navbar-expand-lg sticky-top navbar-dark custom-nav">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#" style="color:#f72585">NavBrand</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
-            <ul class="dropdown-menu custom-drop">
-              <li><a class="dropdown-item" href="#">Web Development</a></li>
-              <li><a class="dropdown-item" href="#">App Development</a></li>
-              <li><a class="dropdown-item" href="#">SEO Optimization</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">About</a>
-            <ul class="dropdown-menu custom-drop">
-              <li><a class="dropdown-item" href="#">Our Team</a></li>
-              <li><a class="dropdown-item" href="#">Company</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-        </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <title>PS66 - Responsive Navbar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg sticky-top navbar-dark custom-nav"
+    >
+      <div class="container">
+        <a
+          class="navbar-brand fw-bold"
+          href="#"
+          style="color: #f72585"
+          >NavBrand</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+                >Services</a
+              >
+              <ul class="dropdown-menu custom-drop">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Web Development</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >App Development</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >SEO Optimization</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+                >About</a
+              >
+              <ul class="dropdown-menu custom-drop">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Our Team</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Company</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
       </div>
+    </nav>
+
+    <div class="hero text-center">
+      <h1>Welcome to NavBrand</h1>
+      <p class="lead text-secondary">
+        Resize the window to see the hamburger menu appear
+        on mobile
+      </p>
     </div>
-  </nav>
 
-  <div class="hero text-center">
-    <h1>Welcome to NavBrand</h1>
-    <p class="lead text-secondary">Resize the window to see the hamburger menu appear on mobile</p>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

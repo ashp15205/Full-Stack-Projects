@@ -1,29 +1,59 @@
-<!DOCTYPE html>
-<html><head><title>PS11 - Insurance Filter</title><link rel="stylesheet" href="style.css"></head>
-<body>
-  <h2>PS11 — Insurance Policy Filter</h2>
-  <div class="card">
-    <input id="minP" type="number" placeholder="Min Premium (₹)">
-    <input id="maxP" type="number" placeholder="Max Premium (₹)">
-    <button onclick="filter()">Filter Policies</button>
-    <button onclick="loadAll()" style="background:rgba(255,255,255,.1)">Show All</button>
-    <div id="list"></div>
-  </div>
-  <script>
-    const BASE = 'http://localhost:3001';
-    async function loadAll() { const r = await fetch(BASE+'/policies'); render(await r.json()); }
-    async function filter() {
-      const min = document.getElementById('minP').value, max = document.getElementById('maxP').value;
-      let url = BASE+'/policies/filter?';
-      if(min) url += 'minPremium='+min+'&';
-      if(max) url += 'maxPremium='+max;
-      const r = await fetch(url); render(await r.json());
-    }
-    function render(data) {
-      document.getElementById('list').innerHTML = data.length ? data.map(p=>`
+<!doctype html>
+<html>
+  <head>
+    <title>PS11 - Insurance Filter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>PS11 — Insurance Policy Filter</h2>
+    <div class="card">
+      <input
+        id="minP"
+        type="number"
+        placeholder="Min Premium (₹)"
+      />
+      <input
+        id="maxP"
+        type="number"
+        placeholder="Max Premium (₹)"
+      />
+      <button onclick="filter()">Filter Policies</button>
+      <button
+        onclick="loadAll()"
+        style="background: rgba(255, 255, 255, 0.1)"
+      >
+        Show All
+      </button>
+      <div id="list"></div>
+    </div>
+    <script>
+      const BASE = "http://localhost:3001";
+      async function loadAll() {
+        const r = await fetch(BASE + "/policies");
+        render(await r.json());
+      }
+      async function filter() {
+        const min = document.getElementById("minP").value,
+          max = document.getElementById("maxP").value;
+        let url = BASE + "/policies/filter?";
+        if (min) url += "minPremium=" + min + "&";
+        if (max) url += "maxPremium=" + max;
+        const r = await fetch(url);
+        render(await r.json());
+      }
+      function render(data) {
+        document.getElementById("list").innerHTML =
+          data.length
+            ? data
+                .map(
+                  (p) => `
         <div class="row"><div><b>${p.name}</b><br><span class="tag">${p.type}</span></div>
-        <div><span>Premium: <b style="color:#f72585">₹${p.premium}</b></span><br><span style="color:#888">Coverage: ₹${p.coverage}</span></div></div>`).join('') : '<p style="color:#888">No policies found.</p>';
-    }
-    loadAll();
-  </script>
-</body></html>
+        <div><span>Premium: <b style="color:#f72585">₹${p.premium}</b></span><br><span style="color:#888">Coverage: ₹${p.coverage}</span></div></div>`,
+                )
+                .join("")
+            : '<p style="color:#888">No policies found.</p>';
+      }
+      loadAll();
+    </script>
+  </body>
+</html>

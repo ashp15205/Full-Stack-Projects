@@ -1,40 +1,101 @@
-<!DOCTYPE html>
-<html><head><title>PS77 - Vehicle Portal</title><link rel="stylesheet" href="style.css"></head>
-<body>
-  <h2>PS77 — Used Vehicle Sale Portal</h2>
-  <div class="layout">
-    <form class="card" onsubmit="add(event)">
-      <h3>List a Vehicle</h3>
-      <input id="mk" placeholder="Make (e.g., Honda)" required>
-      <input id="md" placeholder="Model (e.g., City)" required>
-      <input id="yr" type="number" placeholder="Year (e.g., 2020)">
-      <input id="pr" type="number" placeholder="Price (₹)">
-      <input id="km" type="number" placeholder="KM Driven">
-      <input id="ct" placeholder="Contact Number">
-      <button type="submit">+ List Vehicle</button>
-    </form>
-    <div class="card" style="flex:2">
-      <h3>All Listings <button onclick="load()" style="font-size:.75rem;padding:5px 10px;">Refresh</button></h3>
-      <div id="list"></div>
+<!doctype html>
+<html>
+  <head>
+    <title>PS77 - Vehicle Portal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>PS77 — Used Vehicle Sale Portal</h2>
+    <div class="layout">
+      <form class="card" onsubmit="add(event)">
+        <h3>List a Vehicle</h3>
+        <input
+          id="mk"
+          placeholder="Make (e.g., Honda)"
+          required
+        />
+        <input
+          id="md"
+          placeholder="Model (e.g., City)"
+          required
+        />
+        <input
+          id="yr"
+          type="number"
+          placeholder="Year (e.g., 2020)"
+        />
+        <input
+          id="pr"
+          type="number"
+          placeholder="Price (₹)"
+        />
+        <input
+          id="km"
+          type="number"
+          placeholder="KM Driven"
+        />
+        <input id="ct" placeholder="Contact Number" />
+        <button type="submit">+ List Vehicle</button>
+      </form>
+      <div class="card" style="flex: 2">
+        <h3>
+          All Listings
+          <button
+            onclick="load()"
+            style="font-size: 0.75rem; padding: 5px 10px"
+          >
+            Refresh
+          </button>
+        </h3>
+        <div id="list"></div>
+      </div>
     </div>
-  </div>
-  <script>
-    const BASE = 'http://localhost:3009';
-    async function add(e) {
-      e.preventDefault();
-      const body = { make: document.getElementById('mk').value, model: document.getElementById('md').value, year: +document.getElementById('yr').value, price: +document.getElementById('pr').value, km: +document.getElementById('km').value, contact: document.getElementById('ct').value };
-      await fetch(BASE+'/vehicles', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
-      e.target.reset(); load();
-    }
-    async function del(id) { await fetch(BASE+'/vehicles/'+id, { method:'DELETE' }); load(); }
-    async function load() {
-      try {
-        const d = await (await fetch(BASE+'/vehicles')).json();
-        document.getElementById('list').innerHTML = d.length
-          ? d.map(v => `<div class="row"><div><b>🚗 ${v.make} ${v.model}</b> <span style="color:#888">(${v.year})</span><br><span style="color:#4caf50;font-weight:bold">₹${v.price?.toLocaleString()}</span> | KM: ${v.km?.toLocaleString()} | 📞 ${v.contact}</div><button onclick="del('${v._id}')">🗑 Remove</button></div>`).join('')
-          : '<p style="color:#888">No listings yet. Add the first vehicle!</p>';
-      } catch { document.getElementById('list').innerHTML = '<p style="color:#f72585">Start server: node server.js</p>'; }
-    }
-    load();
-  </script>
-</body></html>
+    <script>
+      const BASE = "http://localhost:3009";
+      async function add(e) {
+        e.preventDefault();
+        const body = {
+          make: document.getElementById("mk").value,
+          model: document.getElementById("md").value,
+          year: +document.getElementById("yr").value,
+          price: +document.getElementById("pr").value,
+          km: +document.getElementById("km").value,
+          contact: document.getElementById("ct").value,
+        };
+        await fetch(BASE + "/vehicles", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        });
+        e.target.reset();
+        load();
+      }
+      async function del(id) {
+        await fetch(BASE + "/vehicles/" + id, {
+          method: "DELETE",
+        });
+        load();
+      }
+      async function load() {
+        try {
+          const d = await (
+            await fetch(BASE + "/vehicles")
+          ).json();
+          document.getElementById("list").innerHTML =
+            d.length
+              ? d
+                  .map(
+                    (v) =>
+                      `<div class="row"><div><b>🚗 ${v.make} ${v.model}</b> <span style="color:#888">(${v.year})</span><br><span style="color:#4caf50;font-weight:bold">₹${v.price?.toLocaleString()}</span> | KM: ${v.km?.toLocaleString()} | 📞 ${v.contact}</div><button onclick="del('${v._id}')">🗑 Remove</button></div>`,
+                  )
+                  .join("")
+              : '<p style="color:#888">No listings yet. Add the first vehicle!</p>';
+        } catch {
+          document.getElementById("list").innerHTML =
+            '<p style="color:#f72585">Start server: node server.js</p>';
+        }
+      }
+      load();
+    </script>
+  </body>
+</html>

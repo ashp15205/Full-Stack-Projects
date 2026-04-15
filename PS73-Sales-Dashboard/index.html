@@ -1,91 +1,177 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Monthly Sales Dashboard</title>
-    <link rel="stylesheet" href="style.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-  <header>
-    <h1>📊 Monthly Sales Dashboard</h1>
-    <p>2026 Annual Sales Performance · <span id="adminBadge">👤 Viewer</span></p>
-    <button id="adminToggle" class="btn-admin">🔐 Admin Login</button>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Monthly Sales Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>📊 Monthly Sales Dashboard</h1>
+      <p>
+        2026 Annual Sales Performance ·
+        <span id="adminBadge">👤 Viewer</span>
+      </p>
+      <button id="adminToggle" class="btn-admin">
+        🔐 Admin Login
+      </button>
+    </header>
 
-  <main class="container">
-    <!-- KPI Cards -->
-    <section class="kpi-row">
-      <div class="kpi-card"><span class="kpi-icon">💰</span><div><div class="kpi-label">Total Revenue</div><div class="kpi-value" id="kpiRevenue">₹0</div></div></div>
-      <div class="kpi-card"><span class="kpi-icon">📦</span><div><div class="kpi-label">Total Records</div><div class="kpi-value" id="kpiOrders">0</div></div></div>
-      <div class="kpi-card"><span class="kpi-icon">📈</span><div><div class="kpi-label">Best Month</div><div class="kpi-value" id="kpiBest">—</div></div></div>
-      <div class="kpi-card"><span class="kpi-icon">🏷</span><div><div class="kpi-label">Avg Monthly</div><div class="kpi-value" id="kpiAvg">₹0</div></div></div>
-    </section>
-
-    <!-- Charts -->
-    <section class="charts-grid">
-      <div class="chart-card wide"><h3>Monthly Sales (Bar)</h3><canvas id="barChart"></canvas></div>
-      <div class="chart-card wide"><h3>Sales Trend (Line)</h3><canvas id="lineChart"></canvas></div>
-      <div class="chart-card"><h3>Category Breakdown (Pie)</h3><canvas id="pieChart"></canvas></div>
-      <div class="chart-card"><h3>Quarterly Performance (Doughnut)</h3><canvas id="doughnutChart"></canvas></div>
-    </section>
-
-    <!-- CRUD Sales Records Table -->
-    <section class="table-section">
-      <div class="table-header">
-        <h2>📋 Sales Records</h2>
-        <button id="addRecordBtn" class="btn-add-record hidden">+ Add Record</button>
-      </div>
-
-      <!-- Add / Edit Form (Admin only) -->
-      <div id="recordForm" class="record-form hidden">
-        <h3 id="formTitle">Add New Record</h3>
-        <div class="form-row">
-          <div class="form-field">
-            <label>Month</label>
-            <select id="fMonth">
-              <option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option>
-              <option>May</option><option>Jun</option><option>Jul</option><option>Aug</option>
-              <option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label>Category</label>
-            <select id="fCategory">
-              <option>Electronics</option><option>Clothing</option><option>Groceries</option><option>Books</option><option>Sports</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label>Amount (₹)</label>
-            <input type="number" id="fAmount" placeholder="e.g. 45000" min="0"/>
-          </div>
-          <div class="form-field">
-            <label>Orders</label>
-            <input type="number" id="fOrders" placeholder="e.g. 120" min="0"/>
+    <main class="container">
+      <!-- KPI Cards -->
+      <section class="kpi-row">
+        <div class="kpi-card">
+          <span class="kpi-icon">💰</span>
+          <div>
+            <div class="kpi-label">Total Revenue</div>
+            <div class="kpi-value" id="kpiRevenue">₹0</div>
           </div>
         </div>
-        <div class="form-actions">
-          <button id="saveRecord" class="btn-save">💾 Save</button>
-          <button id="cancelRecord" class="btn-cancel" onclick="cancelForm()">✕ Cancel</button>
+        <div class="kpi-card">
+          <span class="kpi-icon">📦</span>
+          <div>
+            <div class="kpi-label">Total Records</div>
+            <div class="kpi-value" id="kpiOrders">0</div>
+          </div>
         </div>
-      </div>
+        <div class="kpi-card">
+          <span class="kpi-icon">📈</span>
+          <div>
+            <div class="kpi-label">Best Month</div>
+            <div class="kpi-value" id="kpiBest">—</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-icon">🏷</span>
+          <div>
+            <div class="kpi-label">Avg Monthly</div>
+            <div class="kpi-value" id="kpiAvg">₹0</div>
+          </div>
+        </div>
+      </section>
 
-      <!-- Table -->
-      <div class="table-wrap">
-        <table id="salesTable">
-          <thead>
-            <tr>
-              <th>#</th><th>Month</th><th>Category</th><th>Amount</th><th>Orders</th>
-              <th id="actionHead" class="hidden">Actions</th>
-            </tr>
-          </thead>
-          <tbody id="salesBody"></tbody>
-        </table>
-      </div>
-    </section>
-  </main>
+      <!-- Charts -->
+      <section class="charts-grid">
+        <div class="chart-card wide">
+          <h3>Monthly Sales (Bar)</h3>
+          <canvas id="barChart"></canvas>
+        </div>
+        <div class="chart-card wide">
+          <h3>Sales Trend (Line)</h3>
+          <canvas id="lineChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Category Breakdown (Pie)</h3>
+          <canvas id="pieChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Quarterly Performance (Doughnut)</h3>
+          <canvas id="doughnutChart"></canvas>
+        </div>
+      </section>
 
-  <script src="script.js"></script>
-</body>
+      <!-- CRUD Sales Records Table -->
+      <section class="table-section">
+        <div class="table-header">
+          <h2>📋 Sales Records</h2>
+          <button
+            id="addRecordBtn"
+            class="btn-add-record hidden"
+          >
+            + Add Record
+          </button>
+        </div>
+
+        <!-- Add / Edit Form (Admin only) -->
+        <div id="recordForm" class="record-form hidden">
+          <h3 id="formTitle">Add New Record</h3>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Month</label>
+              <select id="fMonth">
+                <option>Jan</option>
+                <option>Feb</option>
+                <option>Mar</option>
+                <option>Apr</option>
+                <option>May</option>
+                <option>Jun</option>
+                <option>Jul</option>
+                <option>Aug</option>
+                <option>Sep</option>
+                <option>Oct</option>
+                <option>Nov</option>
+                <option>Dec</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Category</label>
+              <select id="fCategory">
+                <option>Electronics</option>
+                <option>Clothing</option>
+                <option>Groceries</option>
+                <option>Books</option>
+                <option>Sports</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Amount (₹)</label>
+              <input
+                type="number"
+                id="fAmount"
+                placeholder="e.g. 45000"
+                min="0"
+              />
+            </div>
+            <div class="form-field">
+              <label>Orders</label>
+              <input
+                type="number"
+                id="fOrders"
+                placeholder="e.g. 120"
+                min="0"
+              />
+            </div>
+          </div>
+          <div class="form-actions">
+            <button id="saveRecord" class="btn-save">
+              💾 Save
+            </button>
+            <button
+              id="cancelRecord"
+              class="btn-cancel"
+              onclick="cancelForm()"
+            >
+              ✕ Cancel
+            </button>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-wrap">
+          <table id="salesTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Month</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Orders</th>
+                <th id="actionHead" class="hidden">
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody id="salesBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -1,8 +1,55 @@
-:root { --bg: #0f0f18; --surface: rgba(255,255,255,0.05); --border: rgba(255,255,255,0.1); --text: #fff; }
-body.light { --bg: #f5f5f5; --surface: white; --border: #ddd; --text: #333; }
-body { font-family: 'Segoe UI', Tahoma, Verdana, sans-serif; background: var(--bg); color: var(--text); text-align: center; padding: 50px; transition: 0.3s; }
-.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 30px; max-width: 300px; margin: 0 auto; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
-h2 { color: #aab4fc; }
-button { background: linear-gradient(135deg, #6c63ff, #f72585); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; margin-top: 10px; }
-.demo { margin-top: 20px; background: var(--bg); border-radius: 8px; padding: 15px; border: 1px solid var(--border); }
-.btn { width: auto; padding: 8px 15px; background: #6c63ff; }
+:root {
+  --bg: #0f0f18;
+  --surface: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.1);
+  --text: #fff;
+}
+body.light {
+  --bg: #f5f5f5;
+  --surface: white;
+  --border: #ddd;
+  --text: #333;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  text-align: center;
+  padding: 50px;
+  transition: 0.3s;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 300px;
+  margin: 0 auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+h2 {
+  color: #aab4fc;
+}
+button {
+  background: linear-gradient(135deg, #6c63ff, #f72585);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  margin-top: 10px;
+}
+.demo {
+  margin-top: 20px;
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid var(--border);
+}
+.btn {
+  width: auto;
+  padding: 8px 15px;
+  background: #6c63ff;
+}

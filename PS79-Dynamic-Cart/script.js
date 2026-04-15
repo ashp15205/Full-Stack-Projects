@@ -6,20 +6,32 @@
 const products = [
   { id: 1, name: "Laptop Pro", price: 45999, img: "💻" },
   { id: 2, name: "Wireless Mouse", price: 899, img: "🖱️" },
-  { id: 3, name: "Mechanical Keyboard", price: 2499, img: "⌨️" },
+  {
+    id: 3,
+    name: "Mechanical Keyboard",
+    price: 2499,
+    img: "⌨️",
+  },
   { id: 4, name: "USB-C Hub", price: 1299, img: "🔌" },
-  { id: 5, name: "Webcam HD", price: 1999, img: "📷" }
+  { id: 5, name: "Webcam HD", price: 1999, img: "📷" },
 ];
 
 let quantities = products.map(() => 1);
 let discountPct = 0;
 
 function render() {
-  const subtotal = products.reduce((sum, p, i) => sum + p.price * quantities[i], 0);
-  const discount = Math.round(subtotal * discountPct / 100);
+  const subtotal = products.reduce(
+    (sum, p, i) => sum + p.price * quantities[i],
+    0,
+  );
+  const discount = Math.round(
+    (subtotal * discountPct) / 100,
+  );
   const total = subtotal - discount;
 
-  document.getElementById("cart-items").innerHTML = products.map((p, i) => `
+  document.getElementById("cart-items").innerHTML = products
+    .map(
+      (p, i) => `
     <div class="card">
       <div class="item-row">
         <div style="font-size:2rem">${p.img}</div>
@@ -34,10 +46,14 @@ function render() {
         </div>
         <div class="line-total">₹${(p.price * quantities[i]).toLocaleString()}</div>
       </div>
-    </div>`).join('');
+    </div>`,
+    )
+    .join("");
 
-  document.getElementById("sub").innerText = subtotal.toLocaleString();
-  document.getElementById("tot").innerText = total.toLocaleString();
+  document.getElementById("sub").innerText =
+    subtotal.toLocaleString();
+  document.getElementById("tot").innerText =
+    total.toLocaleString();
 }
 
 function change(i, delta) {
@@ -45,10 +61,13 @@ function change(i, delta) {
   render();
 }
 
-const COUPONS = { "SAVE10": 10, "SAVE20": 20 };
+const COUPONS = { SAVE10: 10, SAVE20: 20 };
 
 function applyCoupon() {
-  const code = document.getElementById("coup").value.trim().toUpperCase();
+  const code = document
+    .getElementById("coup")
+    .value.trim()
+    .toUpperCase();
   const el = document.getElementById("disc-msg");
   if (COUPONS[code]) {
     discountPct = COUPONS[code];
@@ -61,9 +80,14 @@ function applyCoupon() {
 }
 
 function checkout() {
-  const total = products.reduce((s, p, i) => s + p.price * quantities[i], 0);
-  const discount = Math.round(total * discountPct / 100);
-  alert(`✅ Order Placed!\nTotal: ₹${(total - discount).toLocaleString()}`);
+  const total = products.reduce(
+    (s, p, i) => s + p.price * quantities[i],
+    0,
+  );
+  const discount = Math.round((total * discountPct) / 100);
+  alert(
+    `✅ Order Placed!\nTotal: ₹${(total - discount).toLocaleString()}`,
+  );
   quantities = products.map(() => 1);
   discountPct = 0;
   document.getElementById("coup").value = "";

@@ -4,6 +4,6 @@ function calc() {
     <b>Length:</b> ${s.length}<br>
     <b>Uppercase:</b> ${s.toUpperCase()}<br>
     <b>Lowercase:</b> ${s.toLowerCase()}<br>
-    <b>Reverse:</b> ${s.split('').reverse().join('')}
+    <b>Reverse:</b> ${s.split("").reverse().join("")}
   `;
 }

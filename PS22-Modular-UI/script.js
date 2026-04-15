@@ -2,7 +2,7 @@
 // Each function is a reusable "component" that renders HTML
 
 function Button({ label, variant = "primary", onClick }) {
-  return `<button class="${variant === 'outline' ? 'btn-outline' : ''}" onclick="${onClick}">${label}</button>`;
+  return `<button class="${variant === "outline" ? "btn-outline" : ""}" onclick="${onClick}">${label}</button>`;
 }
 
 function Input({ placeholder, id }) {
@@ -36,8 +36,21 @@ document.getElementById("inputs-demo").innerHTML = `
   </div>`;
 
 const cards = [
-  { title: "Web Dev", body: "Build fast, responsive web apps.", tag: "HTML/CSS/JS" },
-  { title: "Data Science", body: "Analyze and visualize big data.", tag: "Python" },
-  { title: "Mobile Apps", body: "Cross-platform React Native apps.", tag: "React Native" }
+  {
+    title: "Web Dev",
+    body: "Build fast, responsive web apps.",
+    tag: "HTML/CSS/JS",
+  },
+  {
+    title: "Data Science",
+    body: "Analyze and visualize big data.",
+    tag: "Python",
+  },
+  {
+    title: "Mobile Apps",
+    body: "Cross-platform React Native apps.",
+    tag: "React Native",
+  },
 ];
-document.getElementById("cards-demo").innerHTML = `<div class="comp-row">${cards.map(c => Card(c)).join('')}</div>`;
+document.getElementById("cards-demo").innerHTML =
+  `<div class="comp-row">${cards.map((c) => Card(c)).join("")}</div>`;
