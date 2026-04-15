@@ -132,70 +132,32 @@ body {
     flex-wrap: wrap;
 }
 
-/* Repo Insights */
-.insights-section {
-    margin-bottom: 4rem;
-    display: flex;
-    justify-content: center;
-}
-
-.insight-card {
-    background: var(--card-bg);
+/* Mini Chart in Header */
+.mini-chart-container {
+    max-width: 380px;
+    width: 100%;
+    margin-top: 0.25rem;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.15);
     border: 1px solid var(--card-border);
-    border-radius: 24px;
-    padding: 2rem;
-    width: 100%;
-    max-width: 900px;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
+    padding: 0.4rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.insight-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.2);
+.mini-chart-container:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
-.insight-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-    justify-content: center;
-}
-
-.insight-icon {
-    color: var(--accent-cyan);
-    filter: drop-shadow(0 0 5px var(--accent-cyan));
-}
-
-.insight-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
-}
-
-.chart-wrapper {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 12px;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 1rem;
-}
-
-.star-chart-img {
+.mini-star-chart {
     width: 100%;
     height: auto;
     display: block;
-    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
-}
-
-.insight-footer {
-    margin-top: 1rem;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    text-align: center;
-    font-style: italic;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
 /* Controls */
