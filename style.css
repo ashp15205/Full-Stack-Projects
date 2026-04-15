@@ -77,7 +77,6 @@ body {
 /* Header */
 .hero {
     text-align: center;
-    margin: 3rem 0;
 }
 
 .gradient-text {
@@ -134,16 +133,16 @@ body {
 
 /* Mini Chart in Header */
 .mini-chart-container {
-    max-width: 380px;
+    max-width: 500px;
     width: 100%;
-    margin-top: 0.25rem;
-    border-radius: 14px;
+    border-radius: 12px;
     background: rgba(0, 0, 0, 0.15);
     border: 1px solid var(--card-border);
-    padding: 0.4rem;
+    padding: 0.25rem;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     cursor: pointer;
+    margin-bottom: 2rem;
 }
 
 .mini-chart-container:hover {
