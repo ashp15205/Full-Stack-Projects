@@ -1,0 +1,43 @@
+:root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --text-light: #666666;
+    --border: #dddddd;
+    --hover-bg: #f9fafb;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
+body { background: var(--bg); color: var(--text); padding: 4rem 1rem; }
+.container { max-width: 500px; margin: 0 auto; }
+
+header { text-align: center; margin-bottom: 3rem; }
+header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+header p { color: var(--text-light); }
+
+.stopwatch-box { text-align: center; border: 1px solid #000; border-radius: 8px; padding: 3rem 2rem; }
+
+.timer-display { font-size: 4rem; font-weight: 800; font-variant-numeric: tabular-nums; margin-bottom: 3rem; }
+.timer-display small { font-size: 1.5rem; color: var(--text-light); font-weight: 400; }
+
+.controls { display: flex; gap: 1rem; justify-content: center; margin-bottom: 3rem; }
+
+.btn { padding: 1rem 2rem; border-radius: 4px; font-weight: 700; cursor: pointer; font-size: 1rem; transition: 0.2s; border: 2px solid #000; }
+.btn.primary { background: #000; color: #fff; }
+.btn.primary:hover { background: #fff; color: #000; }
+
+.btn.secondary { background: #fff; color: #000; }
+.btn.secondary:hover { background: #f0f0f0; }
+
+.btn.outline { background: #fff; color: #ef4444; border-color: #ef4444; }
+.btn.outline:hover { background: #ef4444; color: #fff; }
+
+.laps-container { text-align: left; border-top: 1px solid var(--border); padding-top: 2rem; }
+.laps-container h3 { font-size: 1rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em; }
+
+.laps-list { list-style: none; max-height: 200px; overflow-y: auto; }
+.lap-item { display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+.lap-item:last-child { border-bottom: none; }
+.lap-item .lap-no { font-weight: 700; color: var(--text-light); }
+.lap-item .lap-time { font-family: monospace; font-weight: 600; }
+
+.no-laps { color: var(--text-light); font-size: 0.9rem; text-align: center; padding: 1rem; }

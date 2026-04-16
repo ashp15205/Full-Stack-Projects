@@ -1,0 +1,44 @@
+:root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --text-light: #666666;
+    --border: #dddddd;
+    --hover-bg: #f9fafb;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
+body { background: var(--bg); color: var(--text); padding: 4rem 1rem; }
+.container { max-width: 1200px; margin: 0 auto; }
+
+header { text-align: center; margin-bottom: 4rem; }
+header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+header p { color: var(--text-light); }
+
+.layout { display: grid; grid-template-columns: 280px 1fr; gap: 3rem; align-items: start; }
+
+.sidebar { border: 1px solid #000; border-radius: 8px; padding: 2rem; background: #fff; }
+.filter-group { margin-bottom: 2rem; }
+.filter-group:last-child { margin-bottom: 0; }
+.filter-group label { display: block; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 1rem; color: var(--text); }
+
+input[type="text"], select { width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 4px; outline: none; }
+input[type="text"]:focus, select:focus { border-color: #000; }
+
+input[type="range"] { width: 100%; cursor: pointer; accent-color: #000; }
+.range-labels { display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--text-light); }
+.range-labels .val { color: #000; font-weight: 800; }
+
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
+
+.product-card { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; padding: 1.5rem; transition: 0.2s; }
+.product-card:hover { border-color: #000; background: var(--hover-bg); }
+
+.p-cat { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.5rem; display: block; }
+.product-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.p-price { font-weight: 800; font-size: 1.25rem; }
+
+.no-results { grid-column: 1 / -1; padding: 4rem; text-align: center; color: var(--text-light); border: 1px dashed var(--border); border-radius: 8px; }
+
+@media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+}

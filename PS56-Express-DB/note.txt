@@ -1,3 +1,0 @@
-// PS56 - Express API with MongoDB frontend tester
-// No separate index.html — use PS4-MongoDB-Schema/index.html 
-// pointing base URL to http://localhost:3011

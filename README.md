@@ -1,131 +1,101 @@
-<div align="center">
+# Web Development Project Hub: 30 Projects
 
-  <!-- Tech Stack Badges -->
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />
-  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+![GitHub stars](https://img.shields.io/github/stars/ashp15205/Full-Stack-Projects?style=for-the-badge&color=6366f1)
+![License](https://img.shields.io/github/license/ashp15205/Full-Stack-Projects?style=for-the-badge&color=black)
+![Projects](https://img.shields.io/badge/Projects-30%2B-blueviolet?style=for-the-badge)
 
-  <!-- Title -->
-  <h1>🧑‍💻 Full Stack Development Projects</h1>
+Welcome to the **Project Mastery Hub**. This repository is a curated collection of 30 specialized projects designed to guide developers through the entire stack of modern web development—from DOM fundamentals and logic to data visualization and full-stack MERN integration.
 
-  <!-- Animated CTA -->
-  <img src="https://readme-typing-svg.herokuapp.com?size=22&duration=2500&color=F7B801&center=true&vCenter=true&width=500&lines=⭐+Star+this+repo+if+it+helped!;🔥+Boost+your+full+stack+skills!;💻+Projects+%2B+learning+roadmap!" />
-
-  <!-- Star Badge (BIGGER + CLICKABLE) -->
-  
-  [![GitHub Stars](https://img.shields.io/github/stars/ashp15205/Full-Stack-Projects?style=for-the-badge&logo=github&color=2ea043)](https://github.com/ashp15205/Full-Stack-Projects)
-
-  <!-- Social Links -->
-  <a href="https://www.linkedin.com/in/ashishpatil2005/" target="_blank">
-    <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-
-  <a href="https://buymeacoffee.com/ashishp05" target="_blank">
-    <img src="https://img.shields.io/badge/_BUY COFFEE-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" />
-  </a>
-
-</div>
-
-## 🎯 About This Repository
-
-This repository is a **structured collection of full stack development projects** designed to help you learn by building real-world applications.
-
-Instead of random tutorials, it follows a **step-by-step roadmap** covering:
-
-- 🎨 Frontend development (UI, DOM, APIs, responsiveness)
-- ⚙️ Backend development (Node.js, APIs, databases)
-- 🔗 Full stack integration (real-world workflows)
-- 🚀 Practical projects that improve problem-solving skills
-
-Each project is built with a focus on **clarity, scalability, and real-world use cases**.
-
-> 💡 Perfect for beginners to intermediate developers looking for project ideas and inspiration
-
-## 📂 Project Categories
-
-The 80+ problem statements are cleanly separated into three mastery levels to help you smoothly transition from pure structural basics into full backend database logic.
-
-### 🟢 Simple (Foundations & UI Logic)
-*Mastering DOM Manipulation, Vanilla HTML/CSS structures, Form Validation, and fundamental JavaScript Logic.*
-
-**Problem Statements Covered:**
-- `PS01`, `PS02`, `PS03`, `PS05`, `PS08`, `PS12`, `PS13`, `PS15`, `PS16`, `PS17`
-- `PS20`, `PS22`, `PS25`, `PS30`, `PS31`, `PS32`, `PS33`, `PS34`, `PS35`, `PS37`
-- `PS42`, `PS43`, `PS44`, `PS45`, `PS46`, `PS47`, `PS48`, `PS52`, `PS53`, `PS54`
-- `PS58`, `PS61`, `PS63`, `PS64`, `PS66`, `PS67`, `PS68`, `PS70`, `PS71`, `PS72`
-- `PS74`, `PS75`, `PS80`, `PS81`
-
-### 🟡 Medium (Local Storage, Fetch API & Visualization)
-*Working with LocalStorage persistence, asynchronous API fetching, complex array mappings, and Data Visualizations (Chart.js / D3.js).*
-
-**Problem Statements Covered:**
-- `PS06`, `PS09`, `PS10`, `PS14`, `PS19`, `PS21`, `PS24`, `PS26`, `PS27`, `PS36`
-- `PS38`, `PS49`, `PS50`, `PS51`, `PS55`, `PS59`, `PS60`, `PS62`, `PS65`, `PS69`
-- `PS73`, `PS78`, `PS82`
-
-### 🔴 Hard (Backend APIs, Databases & MERN Stack)
-*Full Stack RESTful application endpoints, Node.js + Express environments, and MongoDB integrations requiring robust CRUD (Create, Read, Update, Delete) capability.*
-
-**Problem Statements Covered:**
-- `PS04`, `PS07`, `PS11`, `PS18`, `PS23`, `PS28`, `PS29`, `PS39`, `PS40`, `PS41`
-- `PS56`, `PS57`, `PS76`, `PS77`, `PS79`, `PS83`, `PS84`
+## 🚀 Live Dashboard
+Explore the projects interactively through our high-end, responsive live dashboard:
+👉 **[View Project Showcase](https://ashp15205.github.io/Full-Stack-Projects/)**
 
 ---
 
-## 🛠️ Tech Stack Used
-
-- **Frontend Core:** HTML5, CSS3 (Vanilla + CSS Variables), JavaScript (ES6+ Context/Promises)
-- **Frontend Frameworks:** React JS + Vite (For advanced problem sets like PS84)
-- **CSS Frameworks:** Bootstrap 5 (selectively integrated for complex responsive structures)
-- **Visualizations:** Chart.js, D3.js
-- **Backend Development:** Node.js, Express.js
-- **Databases & ODMs:** MongoDB, Mongoose
+## 🛠️ Technology Stack
+This curriculum covers the core ecosystem of modern web engineering:
+- **Frontend Core**: HTML5 Semantic Markup, CSS3 (Modern Grid/Flexbox/Animations).
+- **Interactivity**: Vanilla JavaScript ES6+ (DOM API, Async/Await).
+- **Analytics**: Data Visualization with Chart.js.
+- **Backend / Database**: Node.js, Express.js, and MongoDB.
 
 ---
 
-## 🚀 How To Run The Projects
+## 📂 Repository Structure
+The projects are organized into five strategic domains to ensure a progressive learning curve:
 
-Each of the 84 folders contains its own standalone environment structure.
+### 🔹 Domain 1: UI + DOM + Interactivity
+*Focus: Mastering event-driven programming and stateful interfaces.*
+- `PS01`: Digital Glossary
+- `PS02`: Skill Bar Component
+- `PS03`: Pricing Toggle Interface
+- `PS04`: Real-Time Profile Previewer
+- `PS05`: Theme Switcher (LocalStorage)
+- `PS06`: Product Gallery (JSON Fed)
+- `PS07`: Responsive Navigation Bar
+- `PS08`: Photo Gallery (Zoom/Overlays)
+- `PS09`: Drag-and-Drop List Integration
+- `PS10`: FAQ Accordion
 
-### For Frontend Projects (Simple/Medium)
-1. Navigate to the project directory (e.g., `cd PS10-Bitcoin-Dashboard`).
-2. Simply open `index.html` in any modern web browser.
-3. *No installation required! Everything runs right out of the box.*
+### 🔹 Domain 2: Logic-Based JavaScript
+*Focus: Algorithms, data handling, and complex state logic.*
+- `PS11`: Shopping Cart System (Calculation)
+- `PS12`: Basic Calculator
+- `PS13`: To-Do List Application (Full CRUD)
+- `PS14`: String Operations Utility
+- `PS15`: Stopwatch Application
+- `PS16`: Quiz Application
+- `PS17`: Product Filtering System
+- `PS18`: Notes Application (Storage Persistence)
 
-### For Backend / MongoDB Projects (Hard)
-1. Ensure your local MongoDB server is running (`mongod` / MongoDB Compass).
-2. Navigate to the project directory (e.g., `cd PS76-Appointment-DB`).
-3. Install the dependencies:
-   ```bash
-   npm install
-   ```
-4. Start the Express server:
-   ```bash
-   node server.js
-   ```
-5. Open `index.html` (if applicable) in your browser to interact with the database via the API endpoints.
+### 🔹 Domain 3: Structural Design
+*Focus: Layout architecture, semantic HTML, and responsive CSS.*
+- `PS19`: Structured Resume Webpage
+- `PS20`: Student Registration Form
+- `PS21`: Weekly Timetable (Grid Logic)
+- `PS22`: Modern Blog Layout
+- `PS23`: Personal Portfolio Webpage
+- `PS24`: Image Gallery with Category Filtering
+
+### 🔹 Domain 4: Data Visualization
+*Focus: Representing complex data using modern chart libraries.*
+- `PS25`: Bar Chart for Organizational Data
+- `PS26`: Attendance Pie / Doughnut Chart
+- `PS27`: Weather Dashboard (Multi-Chart)
+- `PS28`: Student Performance Analytics
+
+### 🔹 Domain 5: Full Stack (MERN)
+*Focus: Database integration and RESTful API management.*
+- `PS29`: Student Record Management (MongoDB CRUD)
+- `PS30`: Event Registration System (Database Logic)
 
 ---
 
-## 🤝 Connect & Support
+## ⚙️ Getting Started
 
-Created by **Ashish Patil**. If you found this repository helpful for your academic setups or placements preparation, consider leaving a star to reach more developers!
+### Prerequisites
+- Install **Node.js** (LTS version recommended).
+- Install **MongoDB** locally (or use MongoDB Atlas connection string).
 
-<p align="left">
-  <a href="https://github.com/ashp15205">
-    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
-  </a>
-  <a href="https://www.linkedin.com/in/ashishpatil2005/">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-  </a>
-</p>
+### Running Frontend Projects
+Simply navigate to any directory and open `index.html` in your preferred browser.
 
-If this repository saved your time, a coffee is always incredibly appreciated:
+### Running Backend Projects (MERN)
+For projects `PS29` and `PS30`:
+1. Start your local MongoDB service.
+2. Navigate to the project folder.
+3. Install dependencies: `npm install`.
+4. Start the server: `node server.js`.
+5. Open `index.html` in your browser to interact with the database.
 
-<a href="https://buymeacoffee.com/ashishp05" target="_blank">
-  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 50px !important;width: 200px !important;" >
-</a>
+---
 
-<br><br>
-<p align="center">Made with ❤️ for learners across the globe 🌎 </p>
+## 🤝 Contribution & Feedback
+Feel free to fork this repository, report issues, or suggest new milestone ideas. This hub is built for everyone in the developer community.
+
+## 🤝 Support the Project
+If these projects helped you, consider supporting my work:
+
+[![Buy Me A Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://buymeacoffee.com/ashishp05)
+
+**Developed with ❤️ by [Ashish Patil](https://github.com/ashp15205)**

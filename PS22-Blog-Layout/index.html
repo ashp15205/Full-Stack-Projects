@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standard Blog Layout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">Tech<span>Log</span></div>
+            <nav class="nav-links">
+                <a href="#">Articles</a>
+                <a href="#">Newsletter</a>
+                <a href="#" class="sub-btn">Subscribe</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container layout">
+        <!-- Main Content -->
+        <main class="content-area">
+            <article class="hero-post">
+                <div class="post-img"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200" alt="Tech"></div>
+                <h2>The Evolution of Modern Web Standards</h2>
+                <div class="meta">By Admin • April 16, 2024</div>
+                <p>Exploring how web technologies have evolved over the last decade. From static pages to complex agentic AI systems, the landscape is changing faster than ever before. We dive deep into the protocols that power the internet...</p>
+                <a href="#" class="read-more">Continue Reading →</a>
+            </article>
+
+            <div class="post-grid">
+                <div class="post-card">
+                    <h3>Exploring CSS Grid</h3>
+                    <p>Modern layout techniques for the advanced developer.</p>
+                </div>
+                <div class="post-card">
+                    <h3>Node.js Best Practices</h3>
+                    <p>Building scalable backend systems for millions.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="widget">
+                <h3>About TechLog</h3>
+                <p>Insights into full stack development and modern software engineering principles.</p>
+            </div>
+            <div class="widget">
+                <h3>Popular Topics</h3>
+                <ul>
+                    <li><a href="#">JavaScript <span>(12)</span></a></li>
+                    <li><a href="#">React.js <span>(08)</span></a></li>
+                    <li><a href="#">System Design <span>(05)</span></a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-box">
+            <p>&copy; 2024 TechLog Media. All rights reserved.</p>
+            <div class="f-links">
+                <a href="#">Privacy</a><a href="#">Terms</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

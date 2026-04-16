@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filterable Image Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Visual Gallery</h1>
+            <p>Refine the view by selecting a category below.</p>
+        </header>
+
+        <section class="filters">
+            <button class="filter-btn active" data-filter="all">All Items</button>
+            <button class="filter-btn" data-filter="tech">Technology</button>
+            <button class="filter-btn" data-filter="nature">Nature</button>
+            <button class="filter-btn" data-filter="arch">Architecture</button>
+        </section>
+
+        <main id="galleryGrid" class="gallery-grid">
+            <!-- Items injected by JS -->
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal hidden">
+        <span class="close-btn">&times;</span>
+        <img class="modal-img" id="modalImg">
+        <div id="caption" class="caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

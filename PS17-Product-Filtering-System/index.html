@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Filter Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Product Filter Hub</h1>
+            <p>Refine your search with multi-layered categories and price ranges.</p>
+        </header>
+
+        <div class="layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="filter-group">
+                    <label>Search</label>
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                </div>
+
+                <div class="filter-group">
+                    <label>Category</label>
+                    <select id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Price Range</label>
+                    <div class="range-controls">
+                        <input type="range" id="priceRange" min="0" max="2000" step="100">
+                        <div class="range-labels">
+                            <span>$0</span>
+                            <span id="priceValue" class="val">$2000</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Grid -->
+            <main class="content">
+                <div id="productGrid" class="product-grid">
+                    <!-- Products injected here -->
+                </div>
+                <div id="noResults" class="no-results hidden">
+                    No products match your filters. Try resetting them.
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

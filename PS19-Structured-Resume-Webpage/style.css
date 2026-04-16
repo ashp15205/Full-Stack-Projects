@@ -1,0 +1,49 @@
+:root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --text-light: #666666;
+    --border: #eeeeee;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
+body { background: var(--bg); color: var(--text); padding: 4rem 1rem; line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; border: 1px solid #000; padding: 4rem; }
+
+header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #000; padding-bottom: 2.5rem; margin-bottom: 3rem; }
+.header-main h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.25rem; }
+.role { font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); }
+.contact-info { text-align: right; font-size: 0.9rem; font-weight: 600; }
+
+.resume-section { margin-bottom: 3rem; }
+.resume-section h2 { font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.15em; border-bottom: 1px solid #000; padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+
+.timeline-item { margin-bottom: 1.5rem; }
+.time-box { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem; }
+.time-box h3 { font-size: 1.1rem; }
+.date { font-weight: 700; font-size: 0.9rem; }
+.inst { font-weight: 600; color: var(--text-light); }
+.grade { font-size: 0.85rem; }
+
+.skills-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+.skill-category label { display: block; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--text-light); }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tags span { border: 1px solid #000; padding: 0.2rem 0.6rem; font-size: 0.85rem; font-weight: 600; }
+
+.project { margin-bottom: 1.5rem; }
+.project h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+
+.actions { margin-top: 4rem; text-align: center; }
+.btn-print { padding: 0.8rem 2rem; background: #000; color: #fff; border: none; border-radius: 4px; font-weight: 700; cursor: pointer; }
+.btn-print:hover { background: #333; }
+
+@media print {
+    body { padding: 0; }
+    .container { border: none; padding: 0; }
+    .btn-print { display: none; }
+}
+
+@media (max-width: 600px) {
+    header { flex-direction: column; gap: 1rem; text-align: left; }
+    .contact-info { text-align: left; }
+    .container { padding: 2rem; }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">Portfolio.</div>
+            <nav class="nav-links">
+                <a href="#hero">Intro</a>
+                <a href="#work">Work</a>
+                <a href="#about">About</a>
+                <a href="#contact" class="cta">Connect</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="container">
+                <p class="pre-title">Hello, I'm a developer</p>
+                <h1>Building digital experiences that matter</h1>
+                <p class="hero-sub">Full Stack Engineer specializing in clean code and minimalist interfaces.</p>
+                <a href="#work" class="btn-primary">View Projects →</a>
+            </div>
+        </section>
+
+        <section id="work" class="work">
+            <div class="container">
+                <h2>Featured Work</h2>
+                <div class="work-grid">
+                    <div class="work-card">
+                        <div class="w-img"></div>
+                        <h3>E-Commerce Core</h3>
+                        <p>Architecture & Backend</p>
+                    </div>
+                    <div class="work-card">
+                        <div class="w-img"></div>
+                        <h3>Finance Tracker</h3>
+                        <p>UI Design & Frontend</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container centered">
+                <h2>Start a Project</h2>
+                <p>Have an idea? Let's build something exceptional together.</p>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name">
+                    <input type="email" placeholder="Email Address">
+                    <textarea placeholder="Tell me about your project..."></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2024 Portfolio Showcase</p>
+            <div class="socials">
+                <a href="#">GitHub</a><a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Utils</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>String Utilities</h1>
+            <p>Real-time text analysis and transformation toolbox.</p>
+        </header>
+
+        <main class="utility-box">
+            <div class="input-card">
+                <label>Input Text</label>
+                <textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <label>Length</label>
+                    <div id="lengthResult" class="value">0</div>
+                </div>
+                <div class="result-card">
+                    <label>Reversed</label>
+                    <div id="reverseResult" class="value">None</div>
+                </div>
+                <div class="result-card">
+                    <label>Uppercase</label>
+                    <div id="upperResult" class="value">None</div>
+                </div>
+                <div class="result-card">
+                    <label>Lowercase</label>
+                    <div id="lowerResult" class="value">None</div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

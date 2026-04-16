@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Start Screen -->
+        <main id="startScreen" class="quiz-box centered">
+            <h1>Knowledge Quiz</h1>
+            <p>Test your expertise with our interactive challenge. You have 15 seconds per question.</p>
+            <button id="startBtn" class="btn-primary large">Start Challenge</button>
+        </main>
+
+        <!-- Quiz Screen -->
+        <main id="quizScreen" class="quiz-box hidden">
+            <header class="quiz-header">
+                <div class="progress-bar"><div id="progressFill" class="fill"></div></div>
+                <div class="quiz-meta">
+                    <span id="questionNum">Question 1 of 5</span>
+                    <span id="timer" class="timer">15s</span>
+                </div>
+            </header>
+            
+            <section class="question-section">
+                <h2 id="questionText">Ready to start?</h2>
+                <div id="optionsGrid" class="options-grid">
+                    <!-- Options injected here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Result Screen -->
+        <main id="resultScreen" class="quiz-box hidden centered">
+            <h2>Quiz Completed!</h2>
+            <div class="score-display">
+                <span id="finalScore" class="score">0</span>
+                <p>correct answers</p>
+            </div>
+            <button onclick="location.reload()" class="btn-primary">Restart Quiz</button>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
