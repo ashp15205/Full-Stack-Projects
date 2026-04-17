@@ -4,7 +4,7 @@
 ![License](https://img.shields.io/github/license/ashp15205/Full-Stack-Projects?style=for-the-badge&color=black)
 ![Projects](https://img.shields.io/badge/Projects-30%2B-blueviolet?style=for-the-badge)
 
-Welcome to the **Project Mastery Hub**. This repository is a curated collection of 30 specialized projects designed to guide developers through the entire stack of modern web development—from DOM fundamentals and logic to data visualization and full-stack MERN integration.
+Welcome to the **Web Development Project Mastery Hub**. This repository is a curated collection of 30 specialized projects designed to guide developers through the entire stack of modern web development—from DOM fundamentals and logic to data visualization and full-stack MERN integration.
 
 ## 🚀 Live Dashboard
 Explore the projects interactively through our high-end, responsive live dashboard:
