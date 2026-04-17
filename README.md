@@ -1,4 +1,4 @@
-# Web Development Project Hub: 30 Projects
+# Full Stack Web Development: 30 Projects
 
 ![GitHub stars](https://img.shields.io/github/stars/ashp15205/Full-Stack-Projects?style=for-the-badge&color=6366f1)
 ![License](https://img.shields.io/github/license/ashp15205/Full-Stack-Projects?style=for-the-badge&color=black)
