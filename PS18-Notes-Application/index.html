@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Notes Dashboard</h1>
+            <p>Capture your thoughts and organize them in a minimalist grid.</p>
+        </header>
+
+        <section class="controls">
+            <div class="bar">
+                <input type="text" id="searchInput" placeholder="Search saved notes...">
+                <button id="addNoteBtn" class="btn-primary">+ Add New Note</button>
+            </div>
+        </section>
+
+        <main id="notesGrid" class="notes-grid">
+            <!-- Notes injected here -->
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="noteModal" class="modal hidden">
+        <div class="modal-box">
+            <h2>Compose Note</h2>
+            <input type="text" id="noteTitle" placeholder="Note Title">
+            <textarea id="noteText" placeholder="Start writing..."></textarea>
+            <div class="color-picker">
+                <span class="color active" data-color="#ffffff" style="background:#fff; border:1px solid #ddd;"></span>
+                <span class="color" data-color="#fef2f2" style="background:#fef2f2;"></span>
+                <span class="color" data-color="#f0f9ff" style="background:#f0f9ff;"></span>
+                <span class="color" data-color="#ecfdf5" style="background:#ecfdf5;"></span>
+            </div>
+            <div class="modal-actions">
+                <button id="cancelBtn" class="btn-text">Cancel</button>
+                <button id="saveBtn" class="btn-primary">Save Note</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

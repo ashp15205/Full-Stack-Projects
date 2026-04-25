@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation Bar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="navbar" class="main-header">
+        <div class="container nav-content">
+            <div class="logo">WebProject</div>
+            
+            <nav id="navLinks" class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">Services</a>
+                <div class="dropdown">
+                    <button class="drop-btn">Resources ▾</button>
+                    <div class="dropdown-content">
+                        <a href="#">Blog</a>
+                        <a href="#">Help Center</a>
+                        <a href="#">Community</a>
+                    </div>
+                </div>
+                <a href="#" class="cta-btn">Sign Up</a>
+            </nav>
+
+            <button id="menuToggle" class="menu-btn" aria-label="Toggle Menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+        </div>
+    </header>
+
+    <main class="hero">
+        <div class="container">
+            <h1>Smooth Scrolling & Responsive Nav</h1>
+            <p>This header is sticky and adapts to all device sizes.</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

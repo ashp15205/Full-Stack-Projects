@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Projects</title>
+    <meta name="description"
+        content="Explore a comprehensive curation of 30 Full-Stack projects ranging from DOM interactivity to high-performance charting and database systems.">
+    <meta name="keywords"
+        content="Full Stack, Portfolio, Project Ideas, Web Development, JavaScript, React, Node, MongoDB, Data Visualization">
+    <meta name="author" content="Ashish Patil">
+    <meta property="og:title" content="Modern Web Development Project Hub">
+    <meta property="og:description"
+        content="30 hands-on milestones for developers to master UI design, logic, and full-stack integration.">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNKXM7YF6C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-ZNKXM7YF6C');
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Premium Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="container">
+        <header class="hero">
+            <h1 class="gradient-text">Web Development Projects</h1>
+            <p>Explore a comprehensive curation of 30 projects</p>
+
+            <div class="header-links">
+                <div class="primary-badge">
+                    <a class="badge github-stars pulse-glow" href="https://github.com/ashp15205/Full-Stack-Projects"
+                        target="_blank" title="Explore on GitHub">
+                        <img id="githubStarsBadge"
+                            src="https://img.shields.io/github/stars/ashp15205/Full-Stack-Projects?style=for-the-badge&color=6366f1&logo=github&logoColor=white&cacheSeconds=60"
+                            alt="GitHub Stars">
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Compact Insights -->
+        <section class="insights-section">
+            <div class="insight-card">
+                <a href="https://star-history.com/#ashp15205/Full-Stack-Projects&Date" target="_blank"
+                    title="Growth Analytics">
+                    <img src="https://api.star-history.com/svg?repos=ashp15205/Full-Stack-Projects&type=Date&theme=dark"
+                        alt="Star History" class="star-chart-img">
+                </a>
+            </div>
+        </section>
+
+        <!-- Search & Discovery -->
+        <section class="controls">
+            <div class="search-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="search-icon">
+                    <path
+                        d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <input type="text" id="searchInput" placeholder="Search projects (e.g. 'PS05', 'MERN', 'Chart')..."
+                    autocomplete="off">
+                <span class="search-hint">/</span>
+            </div>
+
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="All">All Milestones</button>
+                <button class="filter-btn" data-filter="UI + DOM + Interactivity">UI / DOM</button>
+                <button class="filter-btn" data-filter="Logic-Based JavaScript Problems">Logic & Math</button>
+                <button class="filter-btn" data-filter="HTML + CSS Design-Based">Structure & Design</button>
+                <button class="filter-btn" data-filter="Data Visualization / Charts">Analytics</button>
+                <button class="filter-btn" data-filter="Backend / Database">Full Stack</button>
+            </div>
+        </section>
+
+        <div class="stats-container">
+            <p id="resultCount" class="result-count">Showing 30 curated milestones</p>
+        </div>
+
+        <main>
+            <div id="projectsGrid" class="projects-grid"></div>
+        </main>
+
+        <footer>
+            <div style="margin-bottom: 2rem; display: flex; justify-content: center;">
+                <a class="badge bmac" href="https://buymeacoffee.com/ashishp05" target="_blank">
+                    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                        style="height: 40px; width: auto; border-radius: 6px;" alt="Support Project">
+                </a>
+            </div>
+            <p>Designed by Ashish Patil</p>
+        </footer>
+    </div>
+
+    <button id="scrollToTop" class="scroll-top-btn hidden" title="Back to Top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

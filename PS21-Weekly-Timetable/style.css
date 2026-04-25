@@ -1,0 +1,35 @@
+:root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --text-light: #666666;
+    --border: #dddddd;
+    --hover-bg: #f9fafb;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
+body { background: var(--bg); color: var(--text); padding: 4rem 1rem; }
+.container { max-width: 1000px; margin: 0 auto; }
+
+header { text-align: center; margin-bottom: 3rem; }
+header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+header p { color: var(--text-light); }
+
+.table-wrapper { border: 2px solid #000; border-radius: 8px; overflow-x: auto; background: #fff; }
+
+table { width: 100%; border-collapse: collapse; min-width: 800px; }
+
+th, td { padding: 1.25rem; text-align: center; border: 1px solid var(--border); transition: 0.2s; }
+th { background: #f5f5f5; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800; }
+
+td.time { font-weight: 700; background: #fafafa; font-size: 0.85rem; color: var(--text-light); }
+td:hover { background: var(--hover-bg); }
+
+.break { background: #fefefe; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3em; font-size: 0.75rem; color: #999; }
+.break.main { background: #000; color: #fff; }
+
+.lab { font-weight: 700; color: var(--text-main); border-left: 4px solid #000; }
+.seminar { font-style: italic; color: var(--text-light); }
+
+@media (max-width: 600px) {
+    header h1 { font-size: 1.5rem; }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Performance Analytics</h1>
+            <p>Comprehensive academic insight via multi-dimensional data mapping.</p>
+        </header>
+
+        <main class="analytics-grid">
+            <div class="chart-card full">
+                <h3>Competency Radar</h3>
+                <div class="radar-wrapper">
+                    <canvas id="radarChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-card">
+                <h3>Activity Distribution</h3>
+                <canvas id="polarAreaChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>Semester Performance</h3>
+                <canvas id="horizontalBarChart"></canvas>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Student Registration</h1>
+            <p>Join our learning community by filling out the form below.</p>
+        </header>
+
+        <main class="form-box">
+            <form id="regForm">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <input type="text" id="name" placeholder="E.g. John Doe" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" id="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Selected Course</label>
+                        <select id="course" required>
+                            <option value="">Choose a course</option>
+                            <option value="fsdl">Full Stack Web Development</option>
+                            <option value="ml">Machine Learning</option>
+                            <option value="uiux">UI/UX Design</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Gender</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="gender" value="male" checked> Male</label>
+                            <label><input type="radio" name="gender" value="female"> Female</label>
+                        </div>
+                    </div>
+                    <div class="input-group full">
+                        <label>Residential Address</label>
+                        <textarea id="address" placeholder="Enter your full address..." required></textarea>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button type="submit" class="btn-submit">Complete Registration</button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="successModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Registration Successful!</h2>
+            <p>Welcome aboard. Our admissions team will reach out via email shortly.</p>
+            <button onclick="location.reload()" class="btn-submit">Done</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
