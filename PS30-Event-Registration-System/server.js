@@ -1,51 +1,42 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+
 const app = express();
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
-mongoose.connect("mongodb://localhost:27017/event_db");
+// MongoDB connect
+mongoose.connect("mongodb://127.0.0.1:27017/eventDB");
 
-const eventSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  email: { type: String, required: true },
-  eventType: { type: String, required: true },
-  createdAt: { type: Date, default: Date.now },
-});
-const EventReg = mongoose.model("EventReg", eventSchema);
-
-app.get("/events", async (req, res) => res.json(await EventReg.find().sort({ createdAt: -1 })));
-
-app.post("/events", async (req, res) => {
-  try {
-    const e = new EventReg(req.body);
-    await e.save();
-    res.json(e);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
+// Schema
+const Event = mongoose.model("Event", {
+    name: String,
+    email: String,
+    event: String
 });
 
-app.put("/events/:id", async (req, res) => {
-  try {
-    const e = await EventReg.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    res.json(e);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
+// CREATE
+app.post("/add", async (req, res) => {
+    await new Event(req.body).save();
+    res.send("Added");
 });
 
-app.delete("/events/:id", async (req, res) => {
-  try {
-    await EventReg.findByIdAndDelete(req.params.id);
-    res.json({ msg: "Deleted" });
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
+// READ
+app.get("/all", async (req, res) => {
+    res.json(await Event.find());
 });
 
-const PORT = 3011;
-app.listen(PORT, () => {
-  console.log(`PS30 Event Registration System running on http://localhost:${PORT}`);
+// UPDATE
+app.put("/update/:id", async (req, res) => {
+    await Event.findByIdAndUpdate(req.params.id, req.body);
+    res.send("Updated");
 });
+
+// DELETE
+app.delete("/delete/:id", async (req, res) => {
+    await Event.findByIdAndDelete(req.params.id);
+    res.send("Deleted");
+});
+
+app.listen(5000, () => console.log("Server running"));

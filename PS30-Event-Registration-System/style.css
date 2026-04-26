@@ -1,58 +1,28 @@
-:root {
-    --bg: #ffffff;
-    --text: #1a1a1a;
-    --text-light: #666666;
-    --border: #dddddd;
-    --hover-bg: #f9fafb;
+body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 50px;
 }
 
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
-body { background: var(--bg); color: var(--text); padding: 4rem 1rem; }
-.container { max-width: 1200px; margin: 0 auto; }
+form {
+    display: inline-block;
+}
 
-header { text-align: center; margin-bottom: 4rem; }
-header h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -1px; }
-header p { color: var(--text-light); }
+input {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+}
 
-.registration-hub { display: grid; grid-template-columns: 360px 1fr; gap: 3rem; align-items: start; }
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
 
-.pane { border: 1px solid #000; border-radius: 8px; padding: 2.5rem; background: #fff; position: sticky; top: 2rem; }
-.pane h2 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
-
-/* Form */
-.input-group { margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
-.input-group label { font-weight: 700; font-size: 0.8rem; text-transform: uppercase; color: var(--text-light); }
-input, select { padding: 0.8rem; border: 1px solid var(--border); border-radius: 4px; outline: none; transition: 0.2s; font-size: 1rem; }
-input:focus, select:focus { border-color: #000; }
-
-.actions { display: flex; gap: 1rem; margin-top: 1rem; }
-.btn-primary { flex: 1; padding: 0.9rem; background: #000; color: #fff; border: 1px solid #000; border-radius: 4px; font-weight: 700; cursor: pointer; transition: 0.2s; }
-.btn-primary:hover { background: #fff; color: #000; }
-.btn-text { background: none; border: none; font-weight: 700; color: #ef4444; text-decoration: underline; cursor: pointer; }
-
-/* Table */
-.list-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
-.list-header h2 { font-size: 1.5rem; font-weight: 800; }
-.badge { background: #eee; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.8rem; font-weight: 700; }
-
-.table-scroll { border: 1px solid var(--border); border-radius: 8px; background: #fff; overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; min-width: 600px; }
-th, td { padding: 1.25rem; text-align: left; border-bottom: 1px solid var(--border); }
-th { color: var(--text-light); font-size: 0.8rem; text-transform: uppercase; font-weight: 800; background: #fafafa; }
-
-.event-badge { background: #000; color: #fff; padding: 0.25rem 0.6rem; font-size: 0.75rem; font-weight: 700; border-radius: 20px; }
-
-.td-actions { display: flex; gap: 1rem; }
-.edit-btn { background: none; border: none; color: #000; font-weight: 800; cursor: pointer; text-decoration: underline; font-size: 0.85rem; }
-.del-btn { background: none; border: none; color: #ef4444; font-weight: 800; cursor: pointer; text-decoration: underline; font-size: 0.85rem; }
-
-/* Toast */
-.toast { position: fixed; bottom: 2rem; right: 2rem; background: #000; color: #fff; padding: 1rem 2rem; border-radius: 4px; font-weight: 600; z-index: 1000; transition: 0.3s; }
-
-.hidden { display: none; }
-.no-data { text-align: center; padding: 5rem 0; color: var(--text-light); }
-
-@media (max-width: 900px) {
-    .registration-hub { grid-template-columns: 1fr; }
-    .pane { position: static; }
+li {
+    margin: 10px;
+}
+button {
+    margin: 5px;
 }

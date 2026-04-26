@@ -1,45 +1,42 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+
 const app = express();
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
-mongoose.connect("mongodb://localhost:27017/student_db");
+// MongoDB connect
+mongoose.connect("mongodb://127.0.0.1:27017/studentDB");
 
-const studentSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  rollNo: { type: String, required: true, unique: true },
-  branch: { type: String, required: true },
-  createdAt: { type: Date, default: Date.now },
-});
-const Student = mongoose.model("Student", studentSchema);
-
-app.get("/students", async (req, res) =>
-  res.json(await Student.find()),
-);
-app.post("/students", async (req, res) => {
-  try {
-    const s = new Student(req.body);
-    await s.save();
-    res.json(s);
-  } catch (e) {
-    res.status(400).json({ error: e.message });
-  }
-});
-app.put("/students/:id", async (req, res) => {
-  const s = await Student.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    { new: true },
-  );
-  res.json(s);
-});
-app.delete("/students/:id", async (req, res) => {
-  await Student.findByIdAndDelete(req.params.id);
-  res.json({ msg: "Deleted" });
+// Schema
+const Student = mongoose.model("Student", {
+    name: String,
+    roll: String,
+    branch: String
 });
 
-app.listen(3010, () =>
-  console.log("PS29 Student Record Management System running on http://localhost:3010"),
-);
+// CREATE
+app.post("/add", async (req, res) => {
+    await new Student(req.body).save();
+    res.send("Added");
+});
+
+// READ
+app.get("/all", async (req, res) => {
+    res.json(await Student.find());
+});
+
+// UPDATE
+app.put("/update/:id", async (req, res) => {
+    await Student.findByIdAndUpdate(req.params.id, req.body);
+    res.send("Updated");
+});
+
+// DELETE
+app.delete("/delete/:id", async (req, res) => {
+    await Student.findByIdAndDelete(req.params.id);
+    res.send("Deleted");
+});
+
+app.listen(5000, () => console.log("Server running"));
