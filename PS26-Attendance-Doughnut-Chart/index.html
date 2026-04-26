@@ -1,33 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance Overview</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Attendance Chart</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 40px;
+            background: #f4f4f4;
+        }
+        canvas {
+            max-width: 400px;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Attendance Analysis</h1>
-            <p>Visualizing student engagement and presence trends.</p>
-        </header>
 
-        <main class="chart-layout">
-            <div class="chart-box">
-                <canvas id="attendanceChart"></canvas>
-            </div>
-            
-            <div class="legend-card">
-                <h3>Engagement Summary</h3>
-                <div class="legend-item"><span class="dot p"></span> Present: 75%</div>
-                <div class="legend-item"><span class="dot a"></span> Absent: 15%</div>
-                <div class="legend-item"><span class="dot l"></span> Late: 10%</div>
-            </div>
-        </main>
-    </div>
-    <script src="script.js"></script>
+<h2>Attendance Distribution</h2>
+
+<canvas id="chart"></canvas>
+
+<!-- OFFLINE Chart.js -->
+<script src="node_modules/chart.js/dist/chart.umd.js"></script>
+
+<script>
+const ctx = document.getElementById('chart');
+
+// change type: 'pie' or 'doughnut'
+new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Present', 'Absent', 'Leave'],
+        datasets: [{
+            data: [70, 20, 10],   // static data
+            backgroundColor: ['green', 'red', 'orange']
+        }]
+    }
+});
+</script>
+
 </body>
 </html>

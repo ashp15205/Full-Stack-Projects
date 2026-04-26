@@ -1,42 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Glossary</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Digital Glossary</h1>
-            <p>Interactive reference for common HTML formatting tags.</p>
-        </header>
 
-        <section class="controls">
-            <input type="text" id="searchInput" placeholder="Search tags (e.g. <b>, <i>)..." autocomplete="off">
-        </section>
+<div class="container">
+    <h2>HTML Formatting Tags</h2>
 
-        <div class="table-view">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Tag</th>
-                        <th>Category</th>
-                        <th>Functionality</th>
-                        <th>Example</th>
-                    </tr>
-                </thead>
-                <tbody id="glossaryBody">
-                    <!-- Javascript will populate this -->
-                </tbody>
-            </table>
-            <div id="noResults" class="no-results hidden">
-                No matching tags found.
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+    <input id="search" placeholder="Search tags..." onkeyup="filter()">
+
+    <table id="table">
+        <tr>
+            <th>Tag</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+
+        <tr>
+            <td>&lt;b&gt;</td>
+            <td>Bold text</td>
+            <td><b>Bold</b></td>
+        </tr>
+
+        <tr>
+            <td>&lt;i&gt;</td>
+            <td>Italic text</td>
+            <td><i>Italic</i></td>
+        </tr>
+
+        <tr>
+            <td>&lt;u&gt;</td>
+            <td>Underline text</td>
+            <td><u>Underline</u></td>
+        </tr>
+
+        <tr>
+            <td>&lt;strong&gt;</td>
+            <td>Important text</td>
+            <td><strong>Strong</strong></td>
+        </tr>
+
+        <tr>
+            <td>&lt;em&gt;</td>
+            <td>Emphasized text</td>
+            <td><em>Emphasis</em></td>
+        </tr>
+
+        <tr>
+            <td>&lt;mark&gt;</td>
+            <td>Highlighted text</td>
+            <td><mark>Highlight</mark></td>
+        </tr>
+
+    </table>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

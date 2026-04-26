@@ -1,41 +1,46 @@
-:root {
-    --bg: #ffffff;
-    --text: #1a1a1a;
-    --text-light: #666666;
-    --border: #dddddd;
-    --hover-bg: #f9fafb;
+body {
+    font-family: Arial;
+    background: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
 }
 
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
-body { background: var(--bg); color: var(--text); padding: 4rem 1rem; }
-.container { max-width: 800px; margin: 0 auto; text-align: center; }
+.container {
+    text-align: center;
+}
 
-header { margin-bottom: 3rem; }
-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-header p { color: var(--text-light); }
+/* Toggle buttons */
+.toggle {
+    margin: 20px 0;
+}
 
-.toggle-section { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 3rem; font-weight: 600; }
+.toggle button {
+    padding: 8px 15px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-weight: bold;
+}
 
-/* Toggle Switch */
-.switch { position: relative; display: inline-block; width: 50px; height: 26px; }
-.switch input { opacity: 0; width: 0; height: 0; }
-.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px; }
-.slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
-input:checked + .slider { background-color: #000; }
-input:checked + .slider:before { transform: translateX(24px); }
+.toggle .active {
+    background: #2c3e50;
+    color: white;
+}
 
-.plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-.plan-card { padding: 2.5rem; border: 1px solid var(--border); border-radius: 8px; transition: 0.2s; }
-.plan-card:hover { border-color: #000; background: var(--hover-bg); }
-.plan-card.featured { border: 2px solid #000; }
+/* Cards */
+.cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
 
-.plan-card h3 { font-size: 1.2rem; margin-bottom: 1.5rem; }
-.price { font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem; }
-.price small { font-size: 1rem; font-weight: 400; color: var(--text-light); }
-
-ul { list-style: none; margin-bottom: 2rem; text-align: left; }
-ul li { margin-bottom: 0.8rem; color: var(--text-light); }
-ul li:before { content: "✓"; margin-right: 0.5rem; color: #000; }
-
-button { width: 100%; padding: 0.8rem; border: 1px solid #000; background: #000; color: #fff; border-radius: 4px; font-weight: 700; cursor: pointer; transition: 0.2s; }
-button:hover { background: #fff; color: #000; }
+.card {
+    background: white;
+    padding: 20px;
+    width: 140px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}

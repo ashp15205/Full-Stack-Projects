@@ -1,28 +1,51 @@
-:root {
-    --bg: #ffffff;
-    --text: #1a1a1a;
-    --text-light: #666666;
-    --border: #dddddd;
+body {
+    font-family: Arial;
+    text-align: center;
 }
 
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
-body { background: var(--bg); color: var(--text); padding: 4rem 1rem; }
-.container { max-width: 1200px; margin: 0 auto; }
+/* Grid */
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
 
-header { text-align: center; margin-bottom: 4rem; }
-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-header p { color: var(--text-light); }
+/* Item */
+.item {
+    position: relative;
+    overflow: hidden;
+}
 
-.gallery-grid { columns: 3; column-gap: 1.5rem; }
+/* Image */
+.item img {
+    width: 200px;
+    height: 200px;
+    transition: 0.3s;
+}
 
-.gallery-item { position: relative; margin-bottom: 1.5rem; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; break-inside: avoid; transition: 0.3s; cursor: pointer; }
-.gallery-item:hover { border-color: #000; transform: translateY(-3px); }
+/* Zoom */
+.item:hover img {
+    transform: scale(1.2);
+}
 
-.gallery-item img { width: 100%; display: block; filter: grayscale(100%); transition: 0.5s; }
-.gallery-item:hover img { filter: grayscale(0%); transform: scale(1.05); }
+/* Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+}
 
-.overlay { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); color: #fff; padding: 1rem; opacity: 0; transform: translateY(100%); transition: 0.3s; }
-.gallery-item:hover .overlay { opacity: 1; transform: translateY(0); }
-
-@media (max-width: 900px) { .gallery-grid { columns: 2; } }
-@media (max-width: 600px) { .gallery-grid { columns: 1; } }
+.item:hover .overlay {
+    opacity: 1;
+}

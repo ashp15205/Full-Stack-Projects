@@ -1,51 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing Toggle Interface</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Pricing Toggle</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Pricing Plans</h1>
-            <p>Flexible options for personal and commercial use.</p>
-        </header>
 
-        <section class="toggle-section">
-            <span>Monthly</span>
-            <label class="switch">
-                <input type="checkbox" id="pricingToggle">
-                <span class="slider"></span>
-            </label>
-            <span>Yearly</span>
-        </section>
+<div class="container">
+    <h2>Pricing Plans</h2>
 
-        <div class="plans-grid">
-            <div class="plan-card">
-                <h3>Basic</h3>
-                <div class="price">$<span id="basicPrice">19</span><small>/mo</small></div>
-                <ul>
-                    <li>1 Project</li>
-                    <li>Basic Support</li>
-                    <li>Free Hosting</li>
-                </ul>
-                <button>Get Started</button>
-            </div>
-            <div class="plan-card featured">
-                <h3>Pro</h3>
-                <div class="price">$<span id="proPrice">49</span><small>/mo</small></div>
-                <ul>
-                    <li>10 Projects</li>
-                    <li>Priority Support</li>
-                    <li>Custom Domain</li>
-                </ul>
-                <button>Upgrade Now</button>
-            </div>
+    <!-- Toggle Buttons -->
+    <div class="toggle">
+        <button id="monthly" onclick="setPlan(false)" class="active">Monthly</button>
+        <button id="yearly" onclick="setPlan(true)">Yearly</button>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="cards">
+        <div class="card">
+            <h3>Basic</h3>
+            <p id="basic">₹500 / mo</p>
+        </div>
+
+        <div class="card">
+            <h3>Pro</h3>
+            <p id="pro">₹1000 / mo</p>
+        </div>
+
+        <div class="card">
+            <h3>Premium</h3>
+            <p id="premium">₹1500 / mo</p>
         </div>
     </div>
-    <script src="script.js"></script>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

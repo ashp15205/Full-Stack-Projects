@@ -1,5 +1,4 @@
-let theme = localStorage.theme || 
-    (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+let theme = localStorage.theme || "light";
 document.body.className = theme;
 
 function toggle() {

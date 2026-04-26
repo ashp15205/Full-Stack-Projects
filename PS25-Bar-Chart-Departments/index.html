@@ -1,37 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Department Analytics</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Bar Chart</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 40px;
+            background: #f4f4f4;
+        }
+        canvas {
+            max-width: 500px;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Workforce Distribution</h1>
-            <p>Annual headcount analysis across major departments.</p>
-        </header>
 
-        <main class="dashboard">
-            <div class="chart-card">
-                <canvas id="barChart"></canvas>
-            </div>
-            
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <label>Total Workforce</label>
-                    <div class="value">1,240</div>
-                </div>
-                <div class="stat-box">
-                    <label>Growth Rate</label>
-                    <div class="value">+12%</div>
-                </div>
-            </div>
-        </main>
-    </div>
-    <script src="script.js"></script>
+<h2>Students in Departments</h2>
+
+<canvas id="chart"></canvas>
+
+<!-- OFFLINE Chart.js -->
+<script src="node_modules/chart.js/dist/chart.umd.js"></script>
+
+<script>
+const ctx = document.getElementById('chart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Computer', 'IT', 'Mechanical', 'Civil'],
+        datasets: [{
+            label: 'Students',
+            data: [60, 50, 40, 30],   // static data
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+
 </body>
 </html>

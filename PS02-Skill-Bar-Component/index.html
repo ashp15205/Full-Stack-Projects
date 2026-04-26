@@ -1,31 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skill Bar Component</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Skill Bars</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Skill Proficiency</h1>
-            <p>Visual representation of technical skills and expertise.</p>
-        </header>
 
-        <section class="skill-input">
-            <div class="input-row">
-                <input type="text" id="skillName" placeholder="Skill Name (e.g. React)">
-                <input type="number" id="skillValue" placeholder="Percentage (0-100)">
-                <button id="addSkillBtn">Add Skill</button>
-            </div>
-        </section>
+<h2>Skill Bars</h2>
 
-        <div id="skillsContainer" class="skills-list">
-            <!-- Dynamic skills will appear here -->
-        </div>
-    </div>
-    <script src="script.js"></script>
+<!-- Inputs -->
+<input id="name" placeholder="Skill Name" required>
+<input id="percent" type="number" placeholder="Percentage" min="0" max="100" required>
+<button onclick="addSkill()">Add Skill</button>
+
+<!-- Output -->
+<div id="skills"></div>
+
+<script src="script.js"></script>
 </body>
 </html>

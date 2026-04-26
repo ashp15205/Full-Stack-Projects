@@ -1,60 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart System</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Shopping Cart</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Your Shopping Cart</h1>
-            <p>Manage your items and proceed to a secure checkout.</p>
-        </header>
 
-        <div class="cart-layout">
-            <!-- Items Table -->
-            <div class="cart-items">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Product</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody id="cartTableBody">
-                        <!-- Items injected by JS -->
-                    </tbody>
-                </table>
-                <div id="emptyMsg" class="empty-msg hidden">
-                    <p>Your cart is currently empty.</p>
-                </div>
-            </div>
+<h2>Shopping Cart</h2>
 
-            <!-- Summary Sidebar -->
-            <aside class="cart-summary">
-                <h2>Summary</h2>
-                <div class="summary-row">
-                    <span>Subtotal</span>
-                    <span id="subtotalVal">$0.00</span>
-                </div>
-                <div class="summary-row">
-                    <span>Tax (5%)</span>
-                    <span id="taxVal">$0.00</span>
-                </div>
-                <div class="summary-row total">
-                    <span>Grand Total</span>
-                    <span id="totalVal">$0.00</span>
-                </div>
-                <button class="checkout-btn">Proceed to Checkout</button>
-                <a href="#" class="continue-link">Continue Shopping</a>
-            </aside>
-        </div>
-    </div>
-    <script src="script.js"></script>
+<div id="cart"></div>
+
+<h3>Total: ₹<span id="total">0</span></h3>
+
+<script src="script.js"></script>
 </body>
 </html>

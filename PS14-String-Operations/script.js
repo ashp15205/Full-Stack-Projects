@@ -1,22 +1,16 @@
-const textInput = document.getElementById('textInput');
-const lengthResult = document.getElementById('lengthResult');
-const reverseResult = document.getElementById('reverseResult');
-const upperResult = document.getElementById('upperResult');
-const lowerResult = document.getElementById('lowerResult');
+function reverse() {
+    let str = text.value;
+    output.innerText = str.split("").reverse().join("");
+}
 
-textInput.addEventListener('input', (e) => {
-    const text = e.target.value.trim();
-    
-    if (!text) {
-        lengthResult.textContent = '0';
-        reverseResult.textContent = 'None';
-        upperResult.textContent = 'None';
-        lowerResult.textContent = 'None';
-        return;
-    }
+function upper() {
+    output.innerText = text.value.toUpperCase();
+}
 
-    lengthResult.textContent = text.length;
-    reverseResult.textContent = text.split('').reverse().join('');
-    upperResult.textContent = text.toUpperCase();
-    lowerResult.textContent = text.toLowerCase();
-});
+function lower() {
+    output.innerText = text.value.toLowerCase();
+}
+
+function lengthCalc() {
+    output.innerText = "Length: " + text.value.length;
+}

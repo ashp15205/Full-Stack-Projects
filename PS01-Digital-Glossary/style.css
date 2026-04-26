@@ -1,131 +1,37 @@
-/* Basic Minimalistic Styles */
-:root {
-    --bg: #ffffff;
-    --text: #1a1a1a;
-    --text-light: #666666;
-    --border: #dddddd;
-    --hover-bg: #f5f5f5;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
-
 body {
-    background-color: var(--bg);
-    color: var(--text);
-    padding: 2rem 1rem;
-    line-height: 1.5;
+    font-family: Arial;
+    background: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-header {
-    margin-bottom: 2rem;
+    width: 500px;
     text-align: center;
 }
 
-header h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-header p {
-    color: var(--text-light);
-}
-
-.controls {
-    margin-bottom: 2rem;
-}
-
-#searchInput {
+input {
     width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    font-size: 1rem;
-    outline: none;
-}
-
-#searchInput:focus {
-    border-color: var(--text);
-}
-
-.table-view {
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    overflow: hidden;
+    padding: 10px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-}
-
-th, td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 th {
-    background-color: var(--hover-bg);
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-transform: uppercase;
+    background: #2c3e50;
+    color: white;
 }
 
-tr:last-child td {
-    border-bottom: none;
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
 }
-
-tr:hover {
-    background-color: var(--hover-bg);
-}
-
-.example-cell {
-    font-family: inherit;
-}
-
-.example-cell code {
-    background: #f2f2f2;
-    padding: 0.15rem 0.35rem;
-    border-radius: 3px;
-}
-
-.example-cell hr {
-    border: none;
-    border-top: 1px solid #999;
-    margin: 0.35rem 0;
-}
-
-.example-cell blockquote {
-    margin: 0;
-    padding-left: 0.8rem;
-    border-left: 3px solid #ccc;
-    color: var(--text-light);
-}
-
-.no-results {
-    padding: 2rem;
-    text-align: center;
-    color: var(--text-light);
-}
-
-.hidden {
-    display: none;
-}
-
-/* For students to customize */
-/*
-.subject-tag {
-    color: blue;
-}
-*/

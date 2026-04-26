@@ -1,32 +1,24 @@
-:root {
-    --bg: #ffffff;
-    --text: #1a1a1a;
-    --text-light: #666666;
-    --border: #dddddd;
-    --hover-bg: #f5f5f5;
+body {
+    font-family: Arial;
+    text-align: center;
 }
 
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
-body { background: var(--bg); color: var(--text); padding: 4rem 1rem; }
-.container { max-width: 500px; margin: 0 auto; }
+ul {
+    list-style: none;
+    padding: 0;
+    width: 200px;
+    margin: auto;
+}
 
-header { text-align: center; margin-bottom: 3rem; }
-header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-header p { color: var(--text-light); }
+li {
+    padding: 10px;
+    margin: 5px 0;
+    background: #3498db;
+    color: white;
+    cursor: grab;
+    border-radius: 5px;
+}
 
-.task-manager { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-
-.input-row { display: flex; border-bottom: 1px solid var(--border); }
-input { flex: 1; border: none; padding: 1rem; outline: none; font-size: 1rem; }
-button { background: #000; color: #fff; border: none; padding: 0 2rem; cursor: pointer; font-weight: 700; }
-button:hover { background: #333; }
-
-.task-list { list-style: none; }
-
-.task-item { padding: 1.2rem; border-bottom: 1px solid var(--border); background: #fff; cursor: grab; transition: background 0.2s, opacity 0.2s; display: flex; align-items: center; }
-.task-item:last-child { border-bottom: none; }
-.task-item:hover { background: var(--hover-bg); }
-.task-item:active { cursor: grabbing; }
-
-.task-item.dragging { opacity: 0.5; background: #eee; border: 1px dashed #999; }
-.task-item::before { content: "⠿"; margin-right: 1rem; color: #ccc; }
+li.dragging {
+    opacity: 0.5;
+}

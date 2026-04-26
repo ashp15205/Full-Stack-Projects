@@ -1,31 +1,20 @@
-const nameInput = document.getElementById('nameInput');
-const jobInput = document.getElementById('jobInput');
-const bioInput = document.getElementById('bioInput');
+function update() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let mobile = document.getElementById("mobile").value;
+    let bio = document.getElementById("bio").value;
 
-const nameDisplay = document.getElementById('nameDisplay');
-const jobDisplay = document.getElementById('jobDisplay');
-const bioDisplay = document.getElementById('bioDisplay');
-const avatar = document.querySelector('.avatar');
-
-function updateAvatar(name) {
-    if (!name) {
-        avatar.textContent = '??';
-        return;
+    // EMAIL: basic format check
+    if (email && !/^\S+@\S+\.\S+$/.test(email)) {
+        pemail.innerText = "Invalid Email";
+    } else {
+        pemail.innerText = email || "your@email.com";
     }
-    const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
-    avatar.textContent = initials || name[0].toUpperCase();
+
+    // MOBILE: exactly 10 digits
+    if (mobile && !/^[0-9]{10}$/.test(mobile)) {
+        pmob.innerText = "Invalid Mobile";
+    } else {
+        pmob.innerText = mobile || "your mobile number";
+    }
 }
-
-nameInput.addEventListener('input', (e) => {
-    const val = e.target.value;
-    nameDisplay.textContent = val || 'John Doe';
-    updateAvatar(val);
-});
-
-jobInput.addEventListener('input', (e) => {
-    jobDisplay.textContent = e.target.value || 'Web Developer';
-});
-
-bioInput.addEventListener('input', (e) => {
-    bioDisplay.textContent = e.target.value || 'Your bio will appear here as you type in the form.';
-});

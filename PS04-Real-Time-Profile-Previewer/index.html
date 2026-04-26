@@ -1,47 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real-Time Profile Previewer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Profile Preview</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Profile Previewer</h1>
-            <p>Update the form to see changes in real-time.</p>
-        </header>
 
-        <div class="layout-grid">
-            <!-- Form Section -->
-            <section class="form-section">
-                <div class="input-group">
-                    <label>Full Name</label>
-                    <input type="text" id="nameInput" placeholder="John Doe">
-                </div>
-                <div class="input-group">
-                    <label>Job Title</label>
-                    <input type="text" id="jobInput" placeholder="Web Developer">
-                </div>
-                <div class="input-group">
-                    <label>Bio</label>
-                    <textarea id="bioInput" placeholder="Write something about yourself..."></textarea>
-                </div>
-            </section>
+<h2>Profile Previewer</h2>
 
-            <!-- Preview Section -->
-            <section class="preview-section">
-                <div class="profile-card" id="profileCard">
-                    <div class="avatar">JP</div>
-                    <h2 id="nameDisplay">John Doe</h2>
-                    <p id="jobDisplay" class="job-tag">Web Developer</p>
-                    <p id="bioDisplay">Your bio will appear here as you type in the form.</p>
-                </div>
-            </section>
-        </div>
+<div class="container">
+
+    <!-- Form -->
+    <div class="form">
+        <input id="name" placeholder="Name" oninput="update()">
+        <input id="email" placeholder="Email" oninput="update()">
+        <input id="mobile" placeholder="Mobile" oninput="update()">
+        <textarea id="bio" placeholder="Bio" oninput="update()"></textarea>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Profile Card -->
+    <div class="card">
+        <h3 id="pname">Your Name</h3>
+        <p id="pemail">your@email.com</p>
+        <p id="pmob">your mobile number</p>
+        <p id="pbio">Your bio appears here...</p>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

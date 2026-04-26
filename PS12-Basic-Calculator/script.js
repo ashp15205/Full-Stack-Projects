@@ -1,73 +1,45 @@
-const historyDisplay = document.getElementById('history');
-const currentDisplay = document.getElementById('current');
+const display = document.getElementById("display");
 
-let currentInput = '0';
-let previousInput = '';
-let operator = null;
-
-function updateDisplay() {
-    currentDisplay.textContent = currentInput;
-    historyDisplay.textContent = previousInput + (operator ? ' ' + operator : '');
+// Button click
+function press(val) {
+    display.value += val;
 }
 
-window.appendNumber = (num) => {
-    if (currentInput === '0' && num !== '.') {
-        currentInput = num;
-    } else {
-        if (num === '.' && currentInput.includes('.')) return;
-        currentInput += num;
+// Clear
+function clearDisplay() {
+    display.value = "";
+}
+
+// Calculate
+function calc() {
+    try {
+        display.value = eval(display.value);
+    } catch {
+        display.value = "Error";
     }
-    updateDisplay();
-};
+}
 
-window.appendOperator = (op) => {
-    if (operator !== null) calculate();
-    previousInput = currentInput;
-    operator = op;
-    currentInput = '0';
-    updateDisplay();
-};
+// 🎯 KEYBOARD SUPPORT
+document.addEventListener("keydown", function(e) {
+    let key = e.key;
 
-window.clearDisplay = () => {
-    currentInput = '0';
-    previousInput = '';
-    operator = null;
-    updateDisplay();
-};
-
-window.deleteDigit = () => {
-    if (currentInput.length > 1) {
-        currentInput = currentInput.slice(0, -1);
-    } else {
-        currentInput = '0';
+    // Numbers & operators
+    if ("0123456789+-*/.".includes(key)) {
+        display.value += key;
     }
-    updateDisplay();
-};
 
-window.calculate = () => {
-    let result;
-    const prev = parseFloat(previousInput);
-    const curr = parseFloat(currentInput);
-    
-    if (isNaN(prev) || isNaN(curr)) return;
-    
-    switch (operator) {
-        case '+': result = prev + curr; break;
-        case '-': result = prev - curr; break;
-        case '*': result = prev * curr; break;
-        case '/': 
-            if (curr === 0) {
-                alert("Cannot divide by zero");
-                clearDisplay();
-                return;
-            }
-            result = prev / curr; 
-            break;
-        default: return;
+    // Enter → calculate
+    else if (key === "Enter") {
+        calc();
     }
-    
-    currentInput = result.toString();
-    operator = null;
-    previousInput = '';
-    updateDisplay();
-};
+
+    // Backspace → delete last
+    else if (key === "Backspace") {
+        display.value = display.value.slice(0, -1);
+    }
+
+    // Escape → clear
+    else if (key === "Escape") {
+        clearDisplay();
+    }
+});
